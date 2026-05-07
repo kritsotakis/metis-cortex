@@ -1,0 +1,11 @@
+feat: brand bundle v3, static export, full content suite
+
+- Manus brand bundle v3 (favicons, lockups, mark variants, social kit, brand guide PDF)
+- Hero + Footer brand mark inline (40x40, navy + transparent variants, optimised PNGs)
+- AI agent persona renamed Mia → Zoe (Greek for "life")
+- next.config.ts: output: export, images.unoptimized, trailingSlash
+- layout.tsx: openGraph + twitter metadata reference static /og.png
+- Removed dynamic OG endpoints (opengraph-image.tsx, twitter-image.tsx)
+- Added 15 customer-facing content docs (LinkedIn, sales prep, onboarding, pilot capture, etc.)
+
+Co-Authored-By: Cowork <noreply@cowork>

@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Metis Cortex — Launch Site
 
-## Getting Started
+One-page launch site for **Frontline**, the Speed-to-Lead AI receptionist.
 
-First, run the development server:
+- Stack: Next.js 16 (App Router) · React 19 · Tailwind CSS v4 · TypeScript
+- Hosting target: Vercel free tier
+- Primary domain: `metiscortex.au`
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Wiring before launch
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Search and replace these placeholders before going live:
 
-## Learn More
+| Placeholder | Where | Replace with |
+|---|---|---|
+| `https://calendly.com/peter-kritsotakis/metis-cortex-demo` | `src/components/CTAButton.tsx` | Real Calendly link |
+| `ASIC business name registration pending` | `src/components/Footer.tsx` | ASIC business name registration number once issued |
+| Pilot stat dashes (`—`) | `src/components/DSKCaseStudy.tsx` | Real DSK 14-day pilot numbers |
+| LinkedIn URL | `src/components/Footer.tsx` | Confirm slug |
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel (free tier)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to GitHub: `gh repo create metis-cortex --private --source . --remote origin --push`
+2. Import the repo at vercel.com/new — it auto-detects Next.js, no config needed
+3. In Vercel → Project → Settings → Domains, add `metiscortex.au`
+4. Vercel gives you the DNS records to set. In GoDaddy DNS for `metiscortex.au`:
+   - **A** record on `@` → `76.76.21.21`
+   - **CNAME** on `www` → `cname.vercel-dns.com`
+5. HTTPS provisions automatically within ~10 min
+6. No env vars required for v1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Hosting cost:** $0 on Vercel free tier (100 GB bandwidth/month, way more than this site needs).
 
-## Deploy on Vercel
+Static rendering, edge-rendered OG image, no client-side JS beyond the native `<details>` accordion. Lighthouse target 95+ on all four axes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── layout.tsx           ← fonts, metadata, JSON-LD
+│   ├── page.tsx             ← composes the 9 sections
+│   ├── globals.css          ← Tailwind v4 theme tokens
+│   ├── opengraph-image.tsx  ← edge-rendered OG (1200×630)
+│   ├── twitter-image.tsx    ← re-exports OG
+│   ├── sitemap.ts
+│   └── robots.ts
+└── components/
+    ├── Hero.tsx
+    ├── CostOfMissedCalls.tsx
+    ├── WhatsIncluded.tsx
+    ├── DSKCaseStudy.tsx
+    ├── HowItWorks.tsx
+    ├── Guarantee.tsx
+    ├── FAQ.tsx
+    ├── ClosingCTA.tsx
+    ├── Footer.tsx
+    └── CTAButton.tsx
+```
+
+## Brand tokens
+
+Defined as CSS custom properties in `src/app/globals.css`:
+
+- `bg-ink` / `text-ink` — deep navy `#0e1e2e`
+- `bg-bone` / `text-bone` — bone white `#f5f1ea`
+- `bg-gold` / `text-gold` — oxidised bronze `#b07843`
+- `font-display` — Cormorant Garamond (H1 + section headings)
+- Default body — Inter
+
+## What's NOT in v1 (deferred per brief)
+
+- About page / Greek mythology storytelling
+- Reception or Handbook SKUs
+- Vertical landing pages
+- Blog, customer login, dashboard, pricing tiers
+
+These return in Phase 2 (after 5 paying clients) and Phase 3 (after 20).
