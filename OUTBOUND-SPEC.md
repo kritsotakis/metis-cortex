@@ -1,9 +1,12 @@
 # Metis Cortex Outbound — Product Specification
 
-> **Status:** DRAFT — Phase 2 product. Do NOT build until Metis Cortex has at least 1 paying external client.
+> **Status: PARKED 2026-05-09** per Manus business review — regulatory risk (ACMA Do Not Call register, July 2026 mandatory AI disclosure rules) plus discipline rule (no Tier 3 work until 1 paying Tier 1 client). Spec preserved for future revisit. **Do not build, do not market, do not list publicly.**
+>
+> **Original status:** DRAFT — Phase 2 product. Do NOT build until Metis Cortex has at least 1 paying external client.
 > **Author:** Claude Code, 2026-05-08
 > **Trigger event:** Belle Property Manly conversation 2026-05-08 — agency stated their #1 pain is "finding buyers" not "missing calls"
-> **Last updated:** 2026-05-08
+> **Parked:** 2026-05-09 (Manus review)
+> **Last updated:** 2026-05-09
 
 ---
 

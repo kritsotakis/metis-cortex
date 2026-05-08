@@ -1,4 +1,4 @@
-import { CONTACT, LEGAL, SITE, SOCIAL, asicLine, contactEmail } from "@/lib/site";
+import { CONTACT, LEGAL, PRICING, SITE, SOCIAL, asicLine, contactEmail, priceFormatAud } from "@/lib/site";
 
 export function Footer() {
   const email = contactEmail();
@@ -27,6 +27,11 @@ export function Footer() {
           </p>
           <p className="mt-2 text-xs text-ink-muted">
             ABN {LEGAL.abn} · Trustee: {LEGAL.trusteeName} (ACN {LEGAL.trusteeAcn}) · {asicLine()}.
+          </p>
+          <p className="mt-3 text-xs text-ink-muted">
+            Founding rate {priceFormatAud(PRICING.foundingMonthlyAud)}/mo for first{" "}
+            {PRICING.foundingClientCap} case-study clients; {priceFormatAud(PRICING.monthlyAud)}/mo
+            standard thereafter.
           </p>
         </div>
 

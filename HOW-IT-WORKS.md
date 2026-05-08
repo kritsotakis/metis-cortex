@@ -2,64 +2,119 @@
 
 > **Plain-English explanation of the business model, customer journey, and unit economics.**
 > Written for: Peter's own mental model, family/partners asking "what is this thing", lawyer/accountant context, and future hires.
-> Last updated: 2026-05-07
+> Last updated: 2026-05-09
 
 ---
 
-## In one sentence
+## The offer (Hormozi-style stack)
 
-Metis Cortex configures proven AI tools (Retell + GoHighLevel + Twilio) on Australian service businesses' phones in 14 days, charges A$1,500 setup + A$600/month, and refunds the setup fee if it doesn't book the customer at least 5 extra appointments in their first month.
+**The 14-Day Receptionist Install** — A$1,500 setup + A$1,200/mo (or A$800/mo founding rate, first 5 case-study clients only, one slot per vertical).
 
-The moat is being a Sydney operator who runs four service businesses himself (DSK Property Cleaning, Eonia Aesthetic Clinic, HydraLab, and Exit Code), so the operator-to-operator credibility transfer is real — not consultancy, not theory.
+| What you get | Stack value |
+|---|---|
+| AI receptionist on your existing number, 24/7 (Zoe picks up every inbound within 60 seconds) | A$4,000/mo |
+| 14-day done-for-you setup (Retell + GHL + Twilio configured + tuned, no IT work on your side) | A$5,000 setup |
+| Custom voice trained on your existing call recordings | A$2,000 setup |
+| CRM + calendar integration (Jobber, ServiceM8, GHL, Cliniko, SevenRooms, NowBookIt, Google Calendar) | A$1,500 setup |
+| Monthly prompt + workflow tuning (1 of each included) | A$500/mo |
+| Real-time transcription + lead routing | A$300/mo |
+| Australian-owned support, business hours (Mon–Fri AEST) | A$200/mo |
+| **Total stack value** | **A$8,500 setup + A$5,000/mo** |
+| **Your investment** | **A$1,500 setup + A$1,200/mo** (or **A$800/mo** founding) |
 
-> **Phase 2 product expansion (locked 2026-05-08):** After customer-discovery with Belle Property Manly identified "finding buyers" as the #1 real estate pain — not "answering questions" — a higher-ARPU upsell layer was added: **Metis Cortex Outbound** (AI database activation). See `OUTBOUND-SPEC.md` for the full spec. The three-tier stack is summarised in the "Three-tier product stack" section below.
+**Stacked guarantees** (both apply):
+- If Zoe doesn't handle 100% of your missed calls + save your team at least 10 hours of phone time in the first 30 days, full refund of the setup fee.
+- If we don't go live in 14 days, we waive the A$1,500 setup fee.
+
+**Founding-rate spots** (5 total, one per vertical): cleaning, restaurant, real estate, dental, beauty. A$800/mo for life. Reason-why: we use these clients as named case studies on the homepage and in cold outreach.
+
+The moat is operator-to-operator credibility. Founder ran **Limani Seafood Restaurant in Narrabeen for 21 years**, currently runs **DSK Property Cleaning, Eonia, HydraLab chemistry, and Exit Code** trading software. Built and proven on DSK first.
+
+> **Tier 3 (Outbound) PARKED 2026-05-09** per Manus business review — regulatory risk (ACMA Do Not Call register, July 2026 mandatory AI disclosure rules) plus discipline rule (no Tier 3 work until 1 paying Tier 1 client). Spec preserved at [OUTBOUND-SPEC.md](OUTBOUND-SPEC.md) for future revisit. Two-tier stack is the active product surface.
 
 ---
 
-## Three-tier product stack
+## Two-tier product stack
 
-The Metis Cortex product is now structured as three SKUs, sold separately or as a bundle. Customers can start at Tier 1 (Metis Cortex) and upgrade to Tier 2 + 3 once value is proven.
+The Metis Cortex product is structured as two SKUs. Customers start at Tier 1 (the public Receptionist) and can add Tier 2 (Knowledge) once value is proven.
 
 | Tier | Product | What it does | Pricing | Customer pain |
 |---|---|---|---|---|
-| **Tier 1** | **Metis Cortex** | Inbound AI receptionist — answers calls, qualifies leads, books appointments | A$1,500 setup + A$600/mo | "We miss too many calls" |
-| **Tier 2** | **Metis Cortex Knowledge** | Per-asset Q&A on inbound calls — Zoe knows your specific listings / properties / customers in detail | +A$300/asset/mo | "Our staff waste hours answering basic questions" |
-| **Tier 3** | **Metis Cortex Outbound** | AI database activation — Zoe makes outbound matching calls against your existing customer/inquirer database based on configurable triggers | A$1,500–5,000/mo per business depending on volume | "We can't generate enough new bookings / sales" |
+| **Tier 1** | **Metis Cortex** (Receptionist) | Inbound AI receptionist — answers calls, qualifies leads, books appointments | A$1,500 setup + A$1,200/mo (founding rate A$800/mo, first 5 only) | "We miss too many calls" |
+| **Tier 2** | **Metis Cortex Knowledge** | Per-asset Q&A on inbound calls — Zoe knows your specific menu / listings / treatments / services | +A$300/asset/mo (typically A$1,500/mo for 5 knowledge categories) | "Our staff waste hours answering basic questions" |
+| ~~Tier 3~~ | ~~Outbound~~ | **PARKED.** AI outbound calling against customer database. Regulatory risk + premature. Revisit after first paying Tier 1 client + ACMA July 2026 rules clarify. | — | — |
 
-**Pricing example — boutique real estate agency with 5 active listings + 3,000 buyer database:**
+### What's IN the A$1,200/mo
 
-- Tier 1 base: A$600/mo
-- Tier 2 (5 listings × A$300): A$1,500/mo
-- Tier 3 outbound buyer activation: A$3,000/mo
-- **Total: A$5,100/mo per agency**
+Defining the "done-for-you" boundary. Anything outside this scope is custom retainer or Tier 2 upsell — never absorbed into base pricing. Closes Manus's "low-margin consulting trap" failure mode.
 
-10 such agencies on the full bundle = A$51,000/mo MRR. That's a real business in one vertical alone.
+**Included monthly:**
+- 1 prompt update per month (e.g. price change, new service, new menu item)
+- 1 standard GHL workflow adjustment (e.g. add a tag, change a routing rule)
+- Standard call recording storage and lead-routing maintenance
+- Email + SMS support during business hours (Mon–Fri AEST)
 
-**Pricing example — mid-size dental practice (2,500 patients):**
-
-- Tier 1 base: A$600/mo
-- Tier 2 not applicable (no per-asset knowledge needed)
-- Tier 3 outbound recall + insurance year-end activation: A$1,500/mo
-- **Total: A$2,100/mo per practice**
-
-ROI math for the dental example: 500 additional appointments/year × A$250 avg = A$125,000 recovered revenue against A$25,200 annual cost. ~5× ROI.
-
-**Pricing example — DSK-style cleaning business:**
-
-- Tier 1 base: A$600/mo
-- Tier 2 not applicable
-- Tier 3 outbound re-engagement of dormant one-off customers: A$800–1,200/mo
-- **Total: A$1,400–1,800/mo per business**
+**NOT included — billed separately:**
+- Multiple prompt rewrites in a month (custom retainer or Tier 2)
+- New CRM integrations beyond launch set (one-time integration fee)
+- Custom voice/agent variants (Tier 2 Knowledge)
+- Per-asset Q&A configuration (Tier 2 Knowledge)
+- After-hours or emergency support (custom retainer)
+- Outbound calling, mass SMS campaigns, or multi-step nurture sequences (PARKED — Tier 3)
 
 ---
 
-## Why three tiers, not one
+## Pricing examples by vertical
 
-Three observations from customer-discovery work:
+All examples assume standard A$1,200/mo Tier 1 (not founding rate).
 
-1. **Customer pain isn't uniform.** Belle Manly's pain is "finding buyers" (Tier 3). A clinic owner's pain is "missed calls" (Tier 1). A real estate office manager's pain is "agents wasting time on Q&A" (Tier 2). Sell what they actually need, not a one-size-fits-all bundle.
-2. **Tier 1 is the wedge — Tier 3 is the engine.** Tier 1 gets you in the door at A$600/mo, low risk, easy to demo, easy to install. Once installed and trusted, Tier 3 is where the business owner actually pays — because Tier 3 generates revenue, not saves cost.
-3. **Pricing scales with value.** Tier 1 is defensive (cost reduction) so willingness-to-pay is capped. Tier 3 is offensive (revenue generation) so willingness-to-pay scales with the customer's revenue uplift. A real estate agency that converts ONE extra sale per quarter from Zoe-sourced calls (A$30K–80K commission) doesn't blink at A$3K/mo.
+**Restaurant / cafe** (e.g. Limani Seafood Narrabeen):
+- Tier 1 base: A$1,200/mo
+- Tier 2 — menu + allergen + wine + dietary + parking knowledge (5 categories × A$300): A$1,500/mo
+- **Total: A$2,700/mo per venue**
+- ROI: 5 booking-error recoveries/month × A$120 avg cover × 4 covers per booking = A$2,400/mo recovered before Zoe handles a single net-new call.
+
+**Office / professional services** (small law firm, accountancy):
+- Tier 1 base: A$1,200/mo
+- Tier 2 — practice areas + fee schedule + intake screening + conflict-check + partner availability (5 categories): A$1,500/mo
+- **Total: A$2,700/mo per firm**
+- ROI: saves 5 hours of partner intake time/month × A$500/hr billable = A$2,500/mo recovered.
+
+**Boutique real estate agency** (5 active listings):
+- Tier 1 base: A$1,200/mo
+- Tier 2 — per-listing recall (5 listings × A$300): A$1,500/mo
+- **Total: A$2,700/mo per agency**
+- ROI: 1 captured vendor-from-missed-call/month × A$30K avg commission = A$30K/mo upside (massive ROI).
+
+**Dental practice**:
+- Tier 1 base: A$1,200/mo
+- Tier 2 — treatment Q&A + insurance handling + recall scheduling (4 categories): A$1,200/mo
+- **Total: A$2,400/mo per practice**
+- ROI: 50+ recovered missed-call appointments/year × A$250 avg = A$12,500/yr against A$28,800/yr cost — Tier 2 lifts this to >5× ROI when patients self-serve treatment Q&A.
+
+**Aesthetic clinic / beauty** (Eonia-style):
+- Tier 1 base: A$1,200/mo
+- Tier 2 — treatment + contraindication + dietary + waitlist categories (4): A$1,200/mo
+- **Total: A$2,400/mo per clinic**
+
+**Cleaning / trade** (DSK-style):
+- Tier 1 base: A$1,200/mo
+- Tier 2 not applicable (price grids only)
+- **Total: A$1,200/mo per business**
+- ROI: 10 missed-call recoveries/month × A$300 avg pre-sale clean = A$3,000/mo recovered.
+
+10 clients across the verticals at average A$2,200/mo = **A$22,000/mo MRR with 0 advertising spend**.
+
+---
+
+## Why two tiers
+
+Two observations from customer-discovery work:
+
+1. **Customer pain isn't uniform.** A clinic owner's pain is "missed calls" (Tier 1). A real estate office manager's pain is "agents wasting time on Q&A" (Tier 2). Sell what they actually need, not a one-size-fits-all bundle.
+2. **Tier 1 is the wedge.** Tier 1 gets the customer in the door at A$1,200/mo (or A$800/mo founding), low risk, easy to demo, easy to install. Once installed and trusted, Tier 2 (Knowledge) is the natural upsell for verticals where listing-level / asset-level recall matters (real estate, clinics with bookable services, dental practices with treatment-specific FAQs).
+
+> **Tier 3 (Outbound) was a third tier in earlier drafts.** Parked 2026-05-09 per Manus business review for regulatory + sequencing reasons. Spec preserved at [OUTBOUND-SPEC.md](OUTBOUND-SPEC.md) for future revisit when (a) at least 1 paying Tier 1 client, (b) ACMA July 2026 AI-disclosure rules clarify, and (c) we have a customer specifically asking for it.
 
 ---
 
@@ -87,7 +142,7 @@ Roughly **30–50% of demos close** at this stage. The prospect just heard the p
 
 ### 3. Prospect pays via Stripe
 
-A$1,500 setup + A$600/month recurring. They put a card in. Auto-charges monthly going forward. Onboarding email 1 fires immediately.
+A$1,500 setup + A$1,200/month recurring. They put a card in. Auto-charges monthly going forward. Onboarding email 1 fires immediately.
 
 ### 4. The 14-day install (the actual work)
 
@@ -133,7 +188,7 @@ The client receives a single email with:
 
 Three outcomes from there:
 
-- **Default — auto-renew** at A$600/month, no action needed
+- **Default — auto-renew** at A$1,200/month, no action needed
 - **Underdelivered** — refund the A$1,500 install fee per the guarantee, client cancels
 - **Strong fit** — client asks "what else can you do?" and gets upsold to Reception or Handbook (Phase 2 products)
 
@@ -145,11 +200,13 @@ Realistic split at scale: ~70% renew, ~15% upsell, ~15% refund.
 
 | Line | Amount |
 |---|---|
-| Revenue (recurring) | A$600/month |
+| Revenue (recurring, standard rate) | A$1,200/month |
+| Revenue (recurring, founding rate) | A$800/month |
 | Retell AI (voice usage) | -A$80 |
 | GoHighLevel (CRM + workflow) | -A$148 |
 | Twilio (number + call usage) | -A$15 |
-| **Gross margin (recurring)** | **~A$357/month per client** |
+| **Gross margin (standard rate)** | **~A$957/month per client** |
+| **Gross margin (founding rate)** | **~A$557/month per client** |
 
 Plus a **A$1,500 setup fee** as one-off (almost pure margin — costs ~A$50 in setup credits).
 
@@ -157,14 +214,18 @@ Plus a **A$1,500 setup fee** as one-off (almost pure margin — costs ~A$50 in s
 
 ## What it looks like at scale
 
+Assumes blended A$1,000/mo (mix of founding A$800 + standard A$1,200 clients) for conservatism.
+
 | Active clients | Monthly recurring revenue | Monthly costs | Monthly net | Founder hours/month on installs + maintenance |
 |---|---|---|---|---|
-| 5 | A$3,000 | A$1,215 | A$1,785 | ~30 hr |
-| 10 | A$6,000 | A$2,430 | A$3,570 | ~45 hr |
-| 20 | A$12,000 | A$4,860 | A$7,140 | ~80 hr (hire becomes necessary) |
-| 30 | A$18,000 | A$7,290 | A$10,710 | ~120 hr (full team mode) |
+| 5 (all founding) | A$4,000 | A$1,215 | A$2,785 | ~30 hr |
+| 10 (5 founding + 5 standard) | A$10,000 | A$2,430 | A$7,570 | ~45 hr |
+| 20 | A$22,000 (mix) | A$4,860 | A$17,140 | ~80 hr (Installer hire trigger per Manus 2026-05-09) |
+| 30 | A$33,000 (mix) | A$7,290 | A$25,710 | ~120 hr (full team mode) |
 
-Plus install fees on the way up — at 30 active clients the business has collected ~A$45,000 in install fees over the climb.
+Plus install fees — at 30 active clients the business has collected ~A$45,000 in install fees over the climb.
+
+**Cashflow positive: 3 paying clients** (per Manus business review). **Installer hire trigger: 10 paying clients** — handles the A$15K/mo gross margin point and the 80-100 hour install bottleneck.
 
 ---
 
@@ -172,12 +233,12 @@ Plus install fees on the way up — at 30 active clients the business has collec
 
 | Period | What happens |
 |---|---|
-| **Months 1–3** | Install Metis Cortex on DSK + Eonia + HydraLab as case studies (free, own businesses). Zero external clients. Three vertical case studies in hand. |
-| **Months 4–6** | First 3–5 paying external clients via warm intro from LinkedIn network. ~A$1,800–3,000 MRR + A$4,500–7,500 in install fees. |
-| **Months 7–9** | 6–10 paying clients. ~A$3,600–6,000 MRR. Install bottleneck starts to bite — first hire decision. |
-| **Months 10–12** | 10–15 paying clients. ~A$5,000–9,000 MRR. Year 1 done. |
+| **Months 1–3** | Install Metis Cortex on DSK (Case Study #1, cleaning) + Eonia (Case Study #2, aesthetic clinic) + Limani goodwill pitch to new owners (Case Study #3, restaurant). Zero external paying clients yet. |
+| **Months 4–6** | First 3–5 paying external clients via warm intro from Northern Beaches restaurant cluster + LinkedIn network. Founding rate A$800/mo. ~A$2,400–4,000 MRR + A$4,500–7,500 in install fees. |
+| **Months 7–9** | 6–10 paying clients (founding rate fills + standard rate begins). ~A$5,000–8,000 MRR. Installer hire decision per Manus rule. |
+| **Months 10–12** | 10–15 paying clients. ~A$10,000–14,000 MRR. Cleaner narrative for Year 2. |
 
-**Year 1 revenue projection: A$50,000–80,000** (recurring + install fees combined). Real money. Not life-changing on its own — but compounds into Year 2 (A$120,000–180,000 projected) without any new strategy work, just continued execution.
+**Year 1 revenue projection: A$80,000–130,000** (recurring + install fees combined). Compounds into Year 2 (A$180,000–280,000 projected) without strategy work — just continued execution at A$1,200/mo standard rate.
 
 Plus the **indirect uplift** on DSK + Eonia + HydraLab from running the same systems internally — probably another A$30,000–60,000 of recovered revenue across those three businesses, since they all stop leaking missed calls.
 
@@ -234,15 +295,15 @@ The trap to refuse on sight: **don't take the A$20,000 bespoke install for one b
 
 ## What's NOT in scope for Metis Cortex launch (deferred to later phases)
 
-- **Metis Cortex Knowledge (Tier 2)** — per-asset Q&A on inbound calls. Phase 2 SKU, build after at least 1 paying Tier 1 client. Spec implicit in `OUTBOUND-SPEC.md` and earlier strategy notes.
-- **Metis Cortex Outbound (Tier 3)** — AI database activation. Phase 2 SKU, build after at least 1 paying Tier 1 client. Full spec in `OUTBOUND-SPEC.md` (locked 2026-05-08 from Belle Property Manly customer-discovery conversation).
+- **Metis Cortex Knowledge (Tier 2)** — per-asset Q&A on inbound calls. Phase 2 SKU, build after at least 1 paying Tier 1 client.
+- ~~**Metis Cortex Outbound (Tier 3)**~~ — **PARKED 2026-05-09** per Manus business review. Regulatory risk (ACMA Do Not Call register, July 2026 AI disclosure rules) plus discipline rule. Spec preserved at [OUTBOUND-SPEC.md](OUTBOUND-SPEC.md) for future revisit.
 - **AI Opportunity Audit** — Phase 2 product (~A$500), sold to installed Metis Cortex clients to identify additional AI opportunities in their business
 - **Custom implementation services** (knowledge bots, marketing automation, custom workflows) — Phase 3, sold direct to installed accounts at A$3K–15K per project or A$1.5K–3K/mo retainer
 - **Vertical-specific landing pages** (`/cleaners`, `/clinics`, `/tradies`, etc.) — Phase 3, only after 10 paying clients
 - **Customer portal / dashboard** — Phase 4, only after 25 paying clients
 - **International expansion** — Phase 4+, AU only for the first 12 months minimum
 
-**Discipline rule (locked 2026-05-08):** Metis Cortex must have at least 1 paying external client before any work begins on Tier 2 or Tier 3. This rule exists to prevent strategic ADHD — the customer-discovery insights that produced the three-tier stack are valuable, but they must not delay the Tier 1 launch.
+**Discipline rule (locked 2026-05-08, reaffirmed 2026-05-09 by Manus review):** Metis Cortex must have at least 1 paying external client before any work begins on Tier 2. Tier 3 is parked indefinitely (Manus 2026-05-09). This rule exists to prevent strategic ADHD — the customer-discovery insights that produced the multi-tier stack are valuable, but they must not delay the Tier 1 launch.
 
 ---
 

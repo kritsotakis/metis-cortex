@@ -176,12 +176,12 @@ Where this lands:
              10-min walkthrough.
              {{ Only show this option block if booking_count >= 5 }}
 
-  Option 3 — Refund. The guarantee was 5 extra bookings in month one;
-             Zoe delivered {{booking_count}}.
-             {{ if booking_count >= 5 }}
-               You're whole regardless of what you pick.
+  Option 3 — Refund. The guarantee was 100% of your missed calls handled + 10 hours of phone time saved in 30 days;
+             Zoe handled {{handled_pct}}% of inbound and saved {{hours_saved}} hours.
+             {{ if handled_pct >= 100 and hours_saved >= 10 }}
+               Both metrics hit. You're whole regardless of what you pick.
              {{ else }}
-               You hit the refund threshold. Reply with "refund"
+               One or both metrics short. You hit the refund threshold — reply with "refund"
                and I send the form. Full $1,500 back to your card
                within 7 days. Zoe stays live for the rest of the
                month at no charge.
@@ -213,7 +213,7 @@ metiscortex.au
 | `{{escalation_count}}` | GHL escalation log | Times Zoe handed off to Peter |
 | `{{baseline_metric}}` | DSK pre-install measurement | Captured during pilot Day -7 to Day 0 |
 | `{{surprise_moment}}` | Peter manually fills in | One specific example from the 28 days. E.g., *"the Mosman pre-sale that came in at 7:42pm on a Sunday — Zoe quoted A$2,500, qualified, booked Monday morning before I even saw the missed call."* |
-| `{{next_charge_amount}}` | Stripe subscription | Usually `A$600` for Metis Cortex-only |
+| `{{next_charge_amount}}` | Stripe subscription | Usually `A$1,200` standard or `A$800` founding rate for Tier 1 only |
 
 ### Rendering rules
 

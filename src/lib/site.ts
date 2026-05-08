@@ -1,9 +1,10 @@
 export const SITE = {
   url: "https://metiscortex.au",
   name: "Metis Cortex",
-  title: "Metis Cortex — Stop missing calls.",
+  shortName: "Metis",
+  title: "Metis Cortex — 100% answered. Or your money back.",
   description:
-    "We install an AI receptionist on your business in 14 days. It picks up every missed call within 60 seconds, qualifies the lead, and books the appointment. A$1,500 setup, A$600/month. Refund guarantee.",
+    "We install an AI receptionist on your business in 14 days. Zoe picks up every missed call within 60 seconds, qualifies the lead, books the appointment. A$1,500 setup, A$1,200/mo (A$800/mo founding rate for first 5 case study clients). 100% answered or your money back; live in 14 days or we waive the setup fee.",
   locale: "en_AU",
 } as const;
 
@@ -36,9 +37,17 @@ export const LEGAL = {
 
 export const PRICING = {
   setupAud: 1500,
-  monthlyAud: 600,
-  guaranteeBookings: 5,
+  monthlyAud: 1200,
+  foundingMonthlyAud: 800,
+  foundingClientCap: 5,
+  guaranteePercentHandled: 100,
+  guaranteeHoursSaved: 10,
   guaranteeWindowDays: 30,
+  installDays: 14,
+} as const;
+
+export const OFFER = {
+  name: "The 14-Day Receptionist Install",
 } as const;
 
 export function bookingHref(): string {
@@ -54,4 +63,8 @@ export function asicLine(): string {
     return `ASIC business name: ${LEGAL.asicBusinessName} (reg ${LEGAL.asicRegistrationNumber})`;
   }
   return "ASIC business name registration pending";
+}
+
+export function priceFormatAud(amount: number): string {
+  return `A$${amount.toLocaleString("en-AU")}`;
 }

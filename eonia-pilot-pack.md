@@ -1,6 +1,6 @@
 # Metis Cortex Eonia Pilot — 14-Day Install Pack
 
-> **Goal of the pilot:** install Metis Cortex on Eonia Aesthetic Clinic, capture before/after metrics, and produce **case study #2 (different vertical to DSK)**. Together with DSK, the two case studies are the multi-vertical proof that lets Metis Cortex sell to non-cleaning service businesses without "but you've only done cleaning" objections.
+> **Goal of the pilot:** install Metis Cortex on Eonia, capture before/after metrics, and produce **case study #2 (different vertical to DSK)**. Together with DSK, the two case studies are the multi-vertical proof that lets Metis Cortex sell to non-cleaning service businesses without "but you've only done cleaning" objections.
 
 ---
 
@@ -104,7 +104,7 @@ Before you sign up for anything:
 
 Same flow as DSK with three differences:
 
-1. **Sub-account** in GHL named "Eonia Aesthetic Clinic" (not appended to the DSK sub-account).
+1. **Sub-account** in GHL named "Eonia" (not appended to the DSK sub-account).
 2. **Twilio number** — different number to DSK's. Sydney area code matching Eonia's location.
 3. **Retell agent** — separate agent, not just a different prompt on the DSK agent. Different KB files, different escalation rules, separate logs.
 
@@ -113,7 +113,7 @@ Same flow as DSK with three differences:
 ## Phase 2 — GHL setup (Days 2–3)
 
 ### Sub-account configuration
-- Business name: Eonia Aesthetic Clinic
+- Business name: Eonia
 - Industry: Cosmetic / Aesthetic
 - Time zone: Australia/Sydney
 - Currency: AUD
@@ -145,12 +145,13 @@ This single workflow is the headline number for the case study.
 ### Agent identity
 - **Name:** Zoe (same brand voice across Metis Cortex products — keeps it familiar across multi-business installs)
 - **Voice:** same Australian female voice as DSK's Zoe
-- **Greeting:** *"Hi, this is Zoe at Eonia Clinic. How can I help today?"*
+- **Greeting:** *"Hi, this is Zoe — the AI receptionist for Eonia. This call is recorded for quality and training. How can I help today?"*
+  - **Why the recording disclosure is mandatory:** NSW Surveillance Devices Act 2007 requires all-party consent to record private conversations. Zoe must announce the recording at the start of every call — non-negotiable. (Confirmed by Manus privacy review 2026-05-09.)
 
 ### System prompt (paste-ready into Retell)
 
 ```
-You are Zoe, the AI receptionist for Eonia Aesthetic Clinic, a Sydney-based skin and aesthetic clinic offering cosmetic injectables, dermal therapy, skin needling, peels, IPL, and related treatments.
+You are Zoe, the AI receptionist for Eonia, a Sydney-based skin and aesthetic clinic offering cosmetic injectables, dermal therapy, skin needling, peels, IPL, and related treatments.
 
 Your job is to:
 1. Answer every incoming call in a warm, professional Australian tone — match the calm, considered manner of an aesthetic clinic, not a sales call.
@@ -321,7 +322,7 @@ Screenshot the GHL call log, the Eonia booking calendar (consultation + treatmen
 > Most clinics are leaking the same patient enquiries. Happy to share the setup if useful — not selling, trying to figure out who this helps most. 10-min demo: [Calendly link]
 >
 > Peter
-> Metis Cortex — built and proven on Eonia Clinic + DSK Property Cleaning
+> Metis Cortex — built and proven on Eonia + DSK Property Cleaning
 > metiscortex.au
 
 The "+ DSK" line in the signature is what makes the email work for a non-clinic prospect too. Cross-vertical proof.

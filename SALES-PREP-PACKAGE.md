@@ -8,12 +8,26 @@
 
 ## Standing principles (internalise once, apply every demo)
 
-- **You're an operator, not a salesperson.** You run DSK. You built Metis Cortex because you needed it. The prospect is a peer. Talk that way.
+- **You're an operator, not a salesperson.** You ran **Limani Seafood Restaurant in Narrabeen for 21 years**. You run DSK Property Cleaning today. You run an aesthetic clinic (Eonia) and a chemistry lab (HydraLab). You built Metis Cortex because you needed it. The prospect is a peer. Talk that way.
 - **Demo > deck.** They booked the call to hear Zoe answer a phone, not to watch slides. Don't open a slide deck. Ever.
 - **Your strongest move is silence.** When they go quiet after the demo, *let them*. Quiet means they're calculating. Filling silence reads as needy.
 - **Match their energy.** High-energy plumber — lean in, faster pace. Considered clinic owner — slower, more space between sentences. Don't push.
 - **Say "I" not "we."** You're a solo founder. Owning the product personally is your differentiation against agencies that hide behind a "team."
-- **The pitch is the demo + the guarantee, not your words.** When in doubt, dial the number again and let Zoe do the work.
+- **The pitch is the demo + the stacked guarantees + the founding-rate scarcity, not your words.** When in doubt, dial the number again and let Zoe do the work.
+
+---
+
+## The Hormozi 4-step close (run this in every demo)
+
+Every demo follows this structure. Don't skip steps. Don't reorder.
+
+1. **Confirm the pain in numbers.** *"How many calls a week do you reckon you miss? × your average job/booking value = $X/month walking out the door."* They feel the math.
+2. **Show the outcome live.** Dial the demo number. Zoe answers. Booking lands in calendar. They see Day-30-with-Metis in real time.
+3. **Stack the value.** *"Here's what you get: 14-day install (worth A$5,000), AI receptionist 24/7 (worth A$4,000/mo), custom voice trained on your calls (worth A$2,000), CRM integration (worth A$1,500), monthly tuning (worth A$500/mo), transcription + routing (worth A$300/mo), Australian support (worth A$200/mo). Total stack: A$8,500 setup + A$5,000/mo. Your investment: A$1,500 setup + A$1,200/mo. Or A$800/mo if you take a founding-rate spot."*
+4. **Risk-reverse with stacked guarantees.** *"If Zoe doesn't handle 100% of your missed calls and save you 10 hours of phone time in the first 30 days, full refund. AND if I don't go live in 14 days, the A$1,500 setup fee is waived. No paperwork. Both apply."*
+5. **Reason-why close (founding rate).** *"There are 5 founding-rate slots — one per vertical. Cleaning's already going to DSK. Restaurant slot is open (I'd love to put it on Limani in Narrabeen as Case Study #3 — full disclosure, I ran the place for 21 years before selling). Real estate, dental, beauty also open. A$800/mo for life if you take a slot. After the 5th client, standard rate is A$1,200/mo with no founding lock. If your vertical's open, this is the moment."*
+
+That's the close. Don't add. Don't soften. Let them respond.
 
 ---
 
@@ -72,7 +86,7 @@ Don't ask if they're impressed. Move on.
 
 Plain numbers. No fancy framing. No "investment" language.
 
-> *"Pricing is $1,500 to install — that's the build, the integrations, the testing, the 14-day setup. Then $600 a month to run her. Month-to-month, no contract. Month one, if Zoe doesn't book at least 5 extra appointments you would have lost otherwise, full refund of the $1,500. No paperwork."*
+> *"Pricing is $1,500 to install — that's the build, the integrations, the testing, the 14-day setup. Then $1,200 a month (or $800 founding rate, first 5 clients only) to run her. Month-to-month, no contract. Month one, if Zoe doesn't book handle 100% of your missed calls and save your team at least 10 hours in the first 30 days, full refund of the $1,500. No paperwork."*
 
 Pause. Let them ask. If they don't ask, prompt:
 
@@ -121,14 +135,14 @@ For each: the **underlying concern** Peter should hear (not the literal words), 
 
 **Bridge:** dial again. Let Zoe re-prove herself. After the second call: *"Modern voice AI crossed the line about 18 months ago. Most callers don't know they're talking to one until you tell them — that's the actual data."*
 
-### 2. *"$600 a month is a lot"*
+### 2. *"$1,200 a month (or $800 founding rate, first 5 clients only) is a lot"*
 
 **Underlying concern:** ROI / cash flow. They want it to work, the price is the friction.
 
 **Response:**
 > *"It's roughly the cost of one missed booking a month for most service businesses. Zoe catches anywhere from five to twenty. Maths usually works in month one."*
 
-**Bridge:** ask their average job value. Multiply by 5 (the guarantee floor). Compare to $600. The maths makes itself. *"At [their job value × 5] vs $600/month, where does the maths land for you?"*
+**Bridge:** ask their average job value. Add their average phone-handling time per booking, multiply by 10 (the guarantee floor). Compare to $1,200. The maths makes itself. *"At [their job value × 10] vs $1,200/month, where does the maths land for you?"*
 
 ### 3. *"What if it screws up a real customer call?"*
 
@@ -162,7 +176,7 @@ For each: the **underlying concern** Peter should hear (not the literal words), 
 **Underlying concern:** risk aversion. They want social proof before committing.
 
 **Response:**
-> *"Fair. The first 5 clients get the founding-customer rate locked for 12 months — same $600/month, no annual lift. After that I'm putting the price up. So waiting costs you on price, not just on bookings missed."*
+> *"Fair. The first 5 clients get the founding-customer rate locked for 12 months — same $1,200/month, no annual lift. After that I'm putting the price up. So waiting costs you on price, not just on bookings missed."*
 
 **Bridge:** *"And the refund guarantee handles the case-study gap. If month one doesn't deliver, you're whole. Worst case is you got a 14-day install for free."*
 
@@ -226,10 +240,10 @@ Holding price discipline matters more than any single deal. Discounting before y
 ### 2. *"What if I just buy the setup, skip the monthly?"*
 
 **The rebuttal:**
-> *"Won't work — there's no Zoe without the monthly. The $600 covers Retell credits, the GHL sub-account, the SMS volume, ongoing tuning. Without it, the agent dies after week one."*
+> *"Won't work — there's no Zoe without the monthly. The $1,200 covers Retell credits, the GHL sub-account, the SMS volume, ongoing tuning, and Australian-hours support. Without it, the agent dies after week one."*
 
 **The concession:**
-> *"What I can do — pay 6 months upfront ($3,600), get month 7 free. That's the only bundling I do. Same install fee."*
+> *"What I can do — pay 6 months upfront ($4,800), get month 7 free. That's the only bundling I do. Same install fee."*
 
 > Only offer the 6-months-upfront discount if cash flow matters more than holding price discipline. If you're cash-positive, hold the price.
 
@@ -239,14 +253,14 @@ Holding price discipline matters more than any single deal. Discounting before y
 > *"Metis Cortex's already month-to-month, no contract. If I gave you a discount for committing 6 months, I'm trading flexibility you already have for money I don't need to take."*
 
 **The reframe:**
-> *"What I'd rather give you is the founding-customer-rate hold — same $600/month, no annual increases, locked for 12 months. That's actually worth more long-term than a 6-month discount."*
+> *"What I'd rather give you is the founding-customer-rate hold — same $1,200/month, no annual increases, locked for 12 months. That's actually worth more long-term than a 6-month discount."*
 
 > Same caveat as Objection #6 — only deploy the founding-rate framing if it's a real commitment.
 
 ### 4. *"Pay me when it works, refund if not"*
 
 **The rebuttal — they want pure performance pricing, you're already doing this:**
-> *"That's literally what the refund guarantee is. You pay $1,500 upfront, but if month one doesn't book at least 5 extra appointments, the money comes straight back. Net cost zero if it doesn't work, $1,500 if it does. That's the same thing as performance pricing, just structured to keep me honest."*
+> *"That's literally what the refund guarantee is. You pay $1,500 upfront, but if month one doesn't book handle 100% of your missed calls + save 10 hours of phone time, the money comes straight back. Net cost zero if it doesn't work, $1,500 if it does. That's the same thing as performance pricing, just structured to keep me honest."*
 
 **The bridge:**
 > *"The reason it's structured this way and not pure pay-on-results — your billing system already knows how to handle a $1,500 invoice. Pay-on-results means I'm chasing you for performance fees forever. Cleaner this way for both of us."*
@@ -257,7 +271,7 @@ Holding price discipline matters more than any single deal. Discounting before y
 > *"The 14 days is the install — that's where the work happens. There's no Metis Cortex to test before then; we're building it for your business in those 14 days."*
 
 **The reframe:**
-> *"What you actually want is risk reversal. That's the refund guarantee — you pay the install, and if it doesn't book 5 extra in month one, you're whole. Better than free trial because it puts skin in the game on both sides."*
+> *"What you actually want is risk reversal. That's the refund guarantee — you pay the install, and if it doesn't handle 100% of your missed calls + save 10 hours, you're whole. Better than free trial because it puts skin in the game on both sides."*
 
 **The walk-away:**
 > *"If the only way you'd do this is free first, Metis Cortex's probably not the right fit yet. Wait until missed calls are costing you visibly more than $1,500. Then it's an obvious yes."*

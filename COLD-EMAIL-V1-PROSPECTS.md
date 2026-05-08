@@ -169,7 +169,7 @@ Ran a 14-day pilot on my own cleaning company last fortnight. Installed an
 AI receptionist that picks up every missed call within 60 seconds and books
 the job. Result: [N] inbound enquiries, [X] booked jobs that would have gone
 to voicemail, A$[Y,YYY] in recovered revenue. Total install cost: A$1,500
-once + A$600/month. Refund if it doesn't book 5 extra jobs in month one.
+once + A$1,200/month. Refund if it doesn't book 5 extra jobs in month one.
 
 Most Australian [vertical-specific noun: cleaners / tradies / real estate
 agents / clinics / practices] are leaking the same leads. Happy to share

@@ -1,25 +1,31 @@
 import { CTAButton } from "./CTAButton";
+import { PRICING, priceFormatAud } from "@/lib/site";
 
 export function ClosingCTA() {
   return (
     <section className="relative overflow-hidden bg-ink text-bone py-28 sm:py-36">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 70% 30%, #b07843 0%, transparent 55%)",
-        }}
-      />
       <div className="relative mx-auto max-w-5xl px-6 text-center sm:px-10">
+        <p className="mb-6 text-xs uppercase tracking-[0.22em] text-gold">
+          Founding rate · {PRICING.foundingClientCap} spots
+        </p>
+
         <p className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tight">
           Your next missed call is at{" "}
-          <span className="italic text-gold-soft">7pm tonight.</span>
+          <span className="mc-italic-display text-gold-soft">7pm tonight.</span>
           <br />
           Want it booked by 7:01?
         </p>
+
+        <p className="mt-10 mx-auto max-w-2xl text-base leading-relaxed text-bone/75">
+          {priceFormatAud(PRICING.foundingMonthlyAud)}/mo for life if you&rsquo;re
+          one of the first {PRICING.foundingClientCap} case-study clients —
+          one slot per vertical (cleaning, restaurant, real estate, dental,
+          beauty). After that, {priceFormatAud(PRICING.monthlyAud)}/mo standard.
+          15-minute demo, no pitch deck.
+        </p>
+
         <div className="mt-12 flex justify-center">
-          <CTAButton>Book a 10-minute demo</CTAButton>
+          <CTAButton>Book a 15-min demo</CTAButton>
         </div>
       </div>
     </section>

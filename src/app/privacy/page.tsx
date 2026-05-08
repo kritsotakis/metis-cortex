@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CONTACT, LEGAL, SITE, contactEmail } from "@/lib/site";
 
-const EFFECTIVE_DATE = "9 May 2026";
+const EFFECTIVE_DATE = "9 May 2026 (revised after Manus privacy review)";
 
 export const metadata: Metadata = {
   title: `Privacy policy — ${SITE.name}`,
@@ -91,13 +91,20 @@ export default function PrivacyPage() {
               <li>
                 <strong>Pilot and customer data:</strong> if you become a
                 pilot or paying customer, we will hold the information needed
-                to deliver the service — call transcripts, lead notes, billing
-                details, and integration credentials you choose to share.
+                to deliver the service — lead notes, billing details, and
+                integration credentials you choose to share.
+              </li>
+              <li>
+                <strong>Call recordings and transcripts:</strong> when a
+                caller interacts with our AI voice agent (Zoe), we record the
+                audio and generate a text transcript. We use these recordings
+                to provide the service, qualify leads, and improve system
+                accuracy. We do not use your voice data to train third-party
+                foundational AI models. Callers are informed that the call is
+                recorded at the start of every call. You may request deletion
+                of your call recordings by contacting us.
               </li>
             </ul>
-            <p className="mt-4">
-              We do not knowingly collect information from anyone under 18.
-            </p>
           </section>
 
           <section>
@@ -170,25 +177,53 @@ export default function PrivacyPage() {
                 example, the ATO, ASIC, or a valid court order).
               </li>
             </ul>
-            <p className="mt-4">
-              We do not sell your information, share it for advertising, or
-              use it to train third-party AI models without your specific
-              consent.
-            </p>
+            <div className="mt-6 rounded-md border-l-2 border-gold/60 bg-bone-soft px-5 py-4">
+              <p className="font-medium text-ink">
+                How we share your data — and how we don&rsquo;t.
+              </p>
+              <p className="mt-2">
+                We are in the business of answering your phones, not selling
+                your data.
+              </p>
+              <ul className="mt-3 list-disc space-y-1 pl-6">
+                <li>
+                  We <strong>do not</strong> sell your customer lists or lead
+                  data to anyone.
+                </li>
+                <li>
+                  We <strong>do not</strong> share your data with advertisers.
+                </li>
+                <li>
+                  We <strong>do not</strong> allow our AI providers (like
+                  Retell AI) to use your private conversations to train their
+                  public models.
+                </li>
+              </ul>
+              <p className="mt-3">
+                We only share data with the specific software providers (like
+                GoHighLevel and Twilio) needed to make your AI receptionist
+                work.
+              </p>
+            </div>
           </section>
 
           <section>
             <h2 className="font-display text-2xl font-semibold tracking-tight text-ink">
-              4. Overseas storage
+              4. Overseas data storage
             </h2>
             <p className="mt-3">
-              Several of our service providers (Calendly, Cloudflare, Google,
-              Retell, Twilio, GoHighLevel) store data outside Australia,
-              primarily in the United States. By using the site or engaging
-              us, you consent to your information being handled in those
-              jurisdictions, which may have different privacy protections to
-              Australia. We choose providers we believe meet a reasonable
-              standard of security and contractual protection.
+              We use third-party service providers located outside of
+              Australia, primarily in the <strong>United States</strong>{" "}
+              (including Retell AI, GoHighLevel, Twilio, Calendly, and Google
+              Workspace). By using our service, you consent to the transfer
+              of your personal information to these overseas locations.
+            </p>
+            <p className="mt-4">
+              In line with our obligations under{" "}
+              <strong>Australian Privacy Principle 8.1</strong>, we take
+              reasonable steps to ensure these providers handle your personal
+              information in a manner consistent with the Australian Privacy
+              Principles.
             </p>
           </section>
 
@@ -211,11 +246,16 @@ export default function PrivacyPage() {
               6. How we keep it safe
             </h2>
             <p className="mt-3">
-              We use reputable hosting and SaaS providers, encrypted
-              connections (HTTPS/TLS), strong passwords, and two-factor
-              authentication on accounts that hold personal information. No
-              system is perfect. If a data breach happens that is likely to
-              cause serious harm, we will notify you and the Office of the
+              We take <strong>reasonable steps</strong> to protect your
+              personal information from misuse, interference, and loss, in
+              line with{" "}
+              <strong>Australian Privacy Principle 11</strong>. This includes
+              using encrypted connections (HTTPS/TLS) and requiring strong
+              authentication for systems that access customer data.
+            </p>
+            <p className="mt-4">
+              No system is perfect. If a data breach happens that is likely
+              to cause serious harm, we will notify you and the Office of the
               Australian Information Commissioner (OAIC) as required by the
               Notifiable Data Breaches scheme.
             </p>
@@ -247,8 +287,9 @@ export default function PrivacyPage() {
                 incomplete;
               </li>
               <li>
-                Ask us to delete it (subject to records we&rsquo;re required
-                by law to keep);
+                Ask us to delete it — including call recordings and
+                transcripts — subject to records we&rsquo;re required by law
+                to keep;
               </li>
               <li>Withdraw consent for future communications at any time;</li>
               <li>Make a complaint about how we&rsquo;ve handled your data.</li>

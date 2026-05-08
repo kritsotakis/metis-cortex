@@ -55,7 +55,7 @@ You said "hire on a profit split". That phrase covers three legally very differe
 **Employer:**
 Kritsotakis Investments Pty Ltd (ACN 153 844 136 / ABN 58 153 844 136)
 as trustee for the Kritsotakis Family Trust (ABN 45 984 876 899)
-trading as **Eonia Aesthetic Clinic**
+trading as **Eonia**
 [Eonia clinic address, Sydney NSW]
 
 **Employee:**
@@ -72,7 +72,7 @@ Working rights status: [Australian citizen / PR / valid work visa with condition
 
 - **Title:** Beauty Therapist
 - **Reports to:** Peter Kritsotakis (Owner / Operations)
-- **Place of work:** Eonia Aesthetic Clinic, [address], Sydney
+- **Place of work:** Eonia, [address], Sydney
 - **Engagement type:** Casual employee
 - **Award classification:** Beauty Industry Award 2020, Level [3 / 4 — to confirm with lawyer based on qualifications and scope]
 - **Start date:** ____________________

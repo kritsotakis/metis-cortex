@@ -34,7 +34,7 @@ You are designing collateral for **Metis Cortex**, an Australian-founded product
 
 **Refund guarantee:** If Metis Cortex doesn't book at least 5 extra appointments in month one, full refund of the install fee. No paperwork.
 
-**The dogfood:** Built and proven on the founder's own cleaning business (DSK Property Cleaning) before being sold externally. The founder runs four service businesses — DSK, Eonia Aesthetic Clinic, HydraLab (chemistry R&D), Exit Code (trading software). Operator-to-operator credibility is the core moat.
+**The dogfood:** Built and proven on the founder's own cleaning business (DSK Property Cleaning) before being sold externally. The founder runs four service businesses — DSK, Eonia, HydraLab (chemistry R&D), Exit Code (trading software). Operator-to-operator credibility is the core moat.
 
 ## Who the customer is
 
@@ -153,7 +153,7 @@ The **refund guarantee** is the single strongest piece of copy in any compositio
 
 When credibility needs to be established (cold email, founder bio, about section):
 
-> Peter Kritsotakis runs four Sydney service businesses — DSK Property Cleaning, Eonia Aesthetic Clinic, HydraLab chemistry, Exit Code trading software. Metis Cortex was built to fix the missed-call problem on his own businesses first. Operator-to-operator, not consultant-to-client.
+> Peter Kritsotakis runs four Sydney service businesses — DSK Property Cleaning, Eonia, HydraLab chemistry, Exit Code trading software. Metis Cortex was built to fix the missed-call problem on his own businesses first. Operator-to-operator, not consultant-to-client.
 
 ## Scope rules for any artifact
 

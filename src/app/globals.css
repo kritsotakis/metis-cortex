@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
+/* Metis Cortex design tokens — locked.
+ * Three colours: ink #0e1e2e, bone #f5f1ea, bronze #b07843.
+ * Soft variants are layering tones, not new colours.
+ * Source: metis-cortex-design-system/project/colors_and_type.css
+ */
+
 @theme inline {
   --color-ink: #0e1e2e;
   --color-ink-soft: #142840;
   --color-ink-muted: #4a5b73;
   --color-bone: #f5f1ea;
-  --color-bone-soft: #faf6ec;
+  --color-bone-soft: #efe9df;
   --color-gold: #b07843;
-  --color-gold-soft: #cc9359;
+  --color-gold-soft: #d6a072;
   --color-charcoal: #1f2937;
   --color-rule: #1f3553;
 
@@ -17,6 +23,47 @@
 
 :root {
   color-scheme: light;
+
+  /* Foreground tones (opacity-derived, no new hues) */
+  --mc-fg-on-ink-1:    #f5f1ea;
+  --mc-fg-on-ink-2:    rgba(245, 241, 234, 0.72);
+  --mc-fg-on-ink-3:    rgba(245, 241, 234, 0.48);
+  --mc-fg-on-ink-rule: rgba(245, 241, 234, 0.12);
+  --mc-fg-on-bone-1:    #0e1e2e;
+  --mc-fg-on-bone-2:    rgba(14, 30, 46, 0.72);
+  --mc-fg-on-bone-3:    rgba(14, 30, 46, 0.48);
+  --mc-fg-on-bone-rule: rgba(14, 30, 46, 0.12);
+
+  /* Tracking (Cormorant +6 default, +12 on the "CORTEX" subline) */
+  --mc-tracking-display: 0.06em;
+  --mc-tracking-cortex:  0.12em;
+
+  /* Spacing scale */
+  --mc-space-1:   4px;
+  --mc-space-2:   8px;
+  --mc-space-3:  12px;
+  --mc-space-4:  16px;
+  --mc-space-6:  24px;
+  --mc-space-8:  32px;
+  --mc-space-12: 48px;
+  --mc-space-16: 64px;
+  --mc-space-24: 96px;
+  --mc-space-32: 128px;
+
+  /* Radii */
+  --mc-radius-sm: 4px;
+  --mc-radius-md: 8px;
+  --mc-radius-lg: 12px;
+
+  /* Elevation — single recipe */
+  --mc-shadow-card:
+    0 1px 2px rgba(14, 30, 46, 0.06),
+    0 8px 24px rgba(14, 30, 46, 0.04);
+
+  /* Motion */
+  --mc-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --mc-dur-fast: 200ms;
+  --mc-dur-base: 260ms;
 }
 
 html {
@@ -34,9 +81,37 @@ body {
 .font-display {
   font-family: var(--font-display), Georgia, serif;
   font-feature-settings: "liga", "dlig";
-  letter-spacing: -0.01em;
+  letter-spacing: var(--mc-tracking-display);
 }
 
+/* Bronze underline — used on hero anchor and guarantee closer.
+ * Two sizes: hero (8px) and body (4px). Background-image not text-decoration
+ * because thickness control is browser-inconsistent on text-decoration.
+ */
+.mc-bronze-underline {
+  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 4px;
+  padding-bottom: 6px;
+}
+.mc-bronze-underline-hero {
+  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 8px;
+  padding-bottom: 10px;
+}
+
+/* Display italic — italic + 600 weight (not the default italic 400).
+ * Used for the italicised word inside Cormorant headlines.
+ */
+.mc-italic-display {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Hairline rules — divide sections without introducing a fourth colour */
 .rule {
   height: 1px;
   background: linear-gradient(
@@ -45,4 +120,16 @@ body {
     rgba(14, 30, 46, 0.15),
     transparent
   );
+}
+.mc-rule-on-ink  { border: 0; border-top: 1px solid var(--mc-fg-on-ink-rule); }
+.mc-rule-on-bone { border: 0; border-top: 1px solid var(--mc-fg-on-bone-rule); }
+
+/* Focus ring — bronze 2px outline, 2px offset.
+ * Bronze is allowed here even when there's already a bronze element
+ * on screen — focus is a state, not a composition element.
+ */
+:where(a, button, [role="button"], input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
