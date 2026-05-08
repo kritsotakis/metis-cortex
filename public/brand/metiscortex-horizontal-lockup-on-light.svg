@@ -6,9 +6,9 @@
   <text x="240" y="105"
         font-family="'Cormorant Garamond', 'Tiempos Headline', 'GT Sectra', Georgia, serif"
         font-size="48" font-weight="600" letter-spacing="5"
-        fill="#0e1e2e">METIS</text>
+        fill="#0f203f">METIS</text>
   <text x="240" y="148"
         font-family="'Inter', 'IBM Plex Sans', -apple-system, Helvetica, sans-serif"
         font-size="20" font-weight="400" letter-spacing="10"
-        fill="#0e1e2e">C<tspan fill="#b07843">O</tspan>RTEX</text>
+        fill="#0f203f">C<tspan fill="#b07843">O</tspan>RTEX</text>
 </svg>

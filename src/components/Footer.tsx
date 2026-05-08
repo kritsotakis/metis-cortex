@@ -10,7 +10,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 sm:px-10 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <img
-            src="/brand/metiscortex-stacked-lockup-on-light.png"
+            src="/brand/metiscortex-stacked-lockup-transparent.png"
             alt={SITE.name}
             className="h-24 w-auto"
           />

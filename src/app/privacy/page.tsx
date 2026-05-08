@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-80"
         >
           <img
-            src="/brand/metiscortex-horizontal-lockup-on-light.png"
+            src="/brand/metiscortex-horizontal-lockup-transparent.png"
             alt={SITE.name}
             className="h-9 w-auto"
           />
