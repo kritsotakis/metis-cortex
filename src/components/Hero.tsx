@@ -8,21 +8,13 @@ export function Hero() {
         <a
           href="#"
           aria-label="Metis Cortex"
-          className="inline-flex items-center gap-4 transition-opacity hover:opacity-85"
+          className="inline-flex items-center transition-opacity hover:opacity-85"
         >
           <img
-            src="/brand/metiscortex-mark-transparent.png"
-            alt=""
-            className="h-14 w-14"
+            src="/brand/metiscortex-horizontal-lockup.png"
+            alt="Metis Cortex"
+            className="h-24 w-auto"
           />
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-5xl font-medium tracking-[0.06em] text-bone">
-              METIS
-            </span>
-            <span className="mt-2 font-sans text-[14px] font-medium tracking-[0.32em] text-bone/85">
-              C<span className="text-bronze">O</span>RTEX
-            </span>
-          </span>
         </a>
         <nav
           aria-label="Primary"
