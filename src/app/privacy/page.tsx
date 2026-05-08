@@ -19,12 +19,17 @@ export default function PrivacyPage() {
         <Link
           href="/"
           aria-label={SITE.name}
-          className="inline-flex items-center transition-opacity hover:opacity-80"
+          className="inline-flex items-center gap-3 text-ink transition-opacity hover:opacity-80"
         >
           <img
-            src="/brand/metiscortex-horizontal-lockup-transparent.png"
+            src="/brand/metiscortex-mark-transparent.png"
+            alt=""
+            className="h-12 w-12"
+          />
+          <img
+            src="/brand/metiscortex-wordmark-tight.svg"
             alt={SITE.name}
-            className="h-20 w-auto"
+            className="h-10 w-auto"
           />
         </Link>
       </header>

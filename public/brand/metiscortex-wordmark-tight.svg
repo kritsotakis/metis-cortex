@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100">
+  <!-- Metis Cortex wordmark — tight viewBox, currentColor fill so it adapts
+       to surface (text-bone on dark hero, text-ink on bone footer/privacy).
+       Bronze "O" stays bronze regardless of surface. -->
+  <text x="240" y="64"
+        text-anchor="middle"
+        font-family="'Cormorant Garamond', 'Tiempos Headline', 'GT Sectra', Georgia, serif"
+        font-size="64" font-weight="600" letter-spacing="6"
+        fill="currentColor">METIS</text>
+  <text x="240" y="92"
+        text-anchor="middle"
+        font-family="'Inter', 'IBM Plex Sans', -apple-system, Helvetica, sans-serif"
+        font-size="22" font-weight="500" letter-spacing="11"
+        fill="currentColor">C<tspan fill="#b07843">O</tspan>RTEX</text>
+</svg>
