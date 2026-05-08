@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           <img
             src="/brand/metiscortex-horizontal-lockup-transparent.png"
             alt={SITE.name}
-            className="h-9 w-auto"
+            className="h-12 w-auto"
           />
         </Link>
       </header>

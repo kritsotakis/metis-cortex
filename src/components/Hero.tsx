@@ -13,7 +13,7 @@ export function Hero() {
           <img
             src="/brand/metiscortex-horizontal-lockup.png"
             alt="Metis Cortex"
-            className="h-10 w-auto"
+            className="h-16 w-auto"
           />
         </a>
         <nav
