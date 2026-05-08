@@ -12,6 +12,55 @@ Metis Cortex configures proven AI tools (Retell + GoHighLevel + Twilio) on Austr
 
 The moat is being a Sydney operator who runs four service businesses himself (DSK Property Cleaning, Eonia Aesthetic Clinic, HydraLab, and Exit Code), so the operator-to-operator credibility transfer is real — not consultancy, not theory.
 
+> **Phase 2 product expansion (locked 2026-05-08):** After customer-discovery with Belle Property Manly identified "finding buyers" as the #1 real estate pain — not "answering questions" — a higher-ARPU upsell layer was added: **Frontline Outbound** (AI database activation). See `FRONTLINE-OUTBOUND-SPEC.md` for the full spec. The three-tier stack is summarised in the "Three-tier product stack" section below.
+
+---
+
+## Three-tier product stack
+
+The Metis Cortex product is now structured as three SKUs, sold separately or as a bundle. Customers can start at Tier 1 (Frontline base) and upgrade to Tier 2 + 3 once value is proven.
+
+| Tier | Product | What it does | Pricing | Customer pain |
+|---|---|---|---|---|
+| **Tier 1** | **Frontline base** | Inbound AI receptionist — answers calls, qualifies leads, books appointments | A$1,500 setup + A$600/mo | "We miss too many calls" |
+| **Tier 2** | **Frontline Knowledge** | Per-asset Q&A on inbound calls — Zoe knows your specific listings / properties / customers in detail | +A$300/asset/mo | "Our staff waste hours answering basic questions" |
+| **Tier 3** | **Frontline Outbound** | AI database activation — Zoe makes outbound matching calls against your existing customer/inquirer database based on configurable triggers | A$1,500–5,000/mo per business depending on volume | "We can't generate enough new bookings / sales" |
+
+**Pricing example — boutique real estate agency with 5 active listings + 3,000 buyer database:**
+
+- Tier 1 base: A$600/mo
+- Tier 2 (5 listings × A$300): A$1,500/mo
+- Tier 3 outbound buyer activation: A$3,000/mo
+- **Total: A$5,100/mo per agency**
+
+10 such agencies on the full bundle = A$51,000/mo MRR. That's a real business in one vertical alone.
+
+**Pricing example — mid-size dental practice (2,500 patients):**
+
+- Tier 1 base: A$600/mo
+- Tier 2 not applicable (no per-asset knowledge needed)
+- Tier 3 outbound recall + insurance year-end activation: A$1,500/mo
+- **Total: A$2,100/mo per practice**
+
+ROI math for the dental example: 500 additional appointments/year × A$250 avg = A$125,000 recovered revenue against A$25,200 annual cost. ~5× ROI.
+
+**Pricing example — DSK-style cleaning business:**
+
+- Tier 1 base: A$600/mo
+- Tier 2 not applicable
+- Tier 3 outbound re-engagement of dormant one-off customers: A$800–1,200/mo
+- **Total: A$1,400–1,800/mo per business**
+
+---
+
+## Why three tiers, not one
+
+Three observations from customer-discovery work:
+
+1. **Customer pain isn't uniform.** Belle Manly's pain is "finding buyers" (Tier 3). A clinic owner's pain is "missed calls" (Tier 1). A real estate office manager's pain is "agents wasting time on Q&A" (Tier 2). Sell what they actually need, not a one-size-fits-all bundle.
+2. **Tier 1 is the wedge — Tier 3 is the engine.** Tier 1 gets you in the door at A$600/mo, low risk, easy to demo, easy to install. Once installed and trusted, Tier 3 is where the business owner actually pays — because Tier 3 generates revenue, not saves cost.
+3. **Pricing scales with value.** Tier 1 is defensive (cost reduction) so willingness-to-pay is capped. Tier 3 is offensive (revenue generation) so willingness-to-pay scales with the customer's revenue uplift. A real estate agency that converts ONE extra sale per quarter from Zoe-sourced calls (A$30K–80K commission) doesn't blink at A$3K/mo.
+
 ---
 
 ## The customer journey, end to end
@@ -183,14 +232,17 @@ The trap to refuse on sight: **don't take the A$20,000 bespoke install for one b
 
 ---
 
-## What's NOT in scope (deliberately deferred)
+## What's NOT in scope for Frontline base launch (deferred to later phases)
 
-- **Reception and Handbook SKUs** — Phase 2 products, only sold to existing Frontline customers as upsells, never pitched cold
+- **Frontline Knowledge (Tier 2)** — per-asset Q&A on inbound calls. Phase 2 SKU, build after at least 1 paying Tier 1 client. Spec implicit in `FRONTLINE-OUTBOUND-SPEC.md` and earlier strategy notes.
+- **Frontline Outbound (Tier 3)** — AI database activation. Phase 2 SKU, build after at least 1 paying Tier 1 client. Full spec in `FRONTLINE-OUTBOUND-SPEC.md` (locked 2026-05-08 from Belle Property Manly customer-discovery conversation).
 - **AI Opportunity Audit** — Phase 2 product (~A$500), sold to installed Frontline clients to identify additional AI opportunities in their business
-- **Implementation services** (knowledge bots, marketing automation, custom workflows) — Phase 3, sold direct to installed accounts at A$3K–15K per project or A$1.5K–3K/mo retainer
+- **Custom implementation services** (knowledge bots, marketing automation, custom workflows) — Phase 3, sold direct to installed accounts at A$3K–15K per project or A$1.5K–3K/mo retainer
 - **Vertical-specific landing pages** (`/cleaners`, `/clinics`, `/tradies`, etc.) — Phase 3, only after 10 paying clients
 - **Customer portal / dashboard** — Phase 4, only after 25 paying clients
 - **International expansion** — Phase 4+, AU only for the first 12 months minimum
+
+**Discipline rule (locked 2026-05-08):** Frontline base must have at least 1 paying external client before any work begins on Tier 2 or Tier 3. This rule exists to prevent strategic ADHD — the customer-discovery insights that produced the three-tier stack are valuable, but they must not delay the Tier 1 launch.
 
 ---
 
