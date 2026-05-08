@@ -24,13 +24,13 @@ export default function PrivacyPage() {
           <img
             src="/brand/metiscortex-mark-transparent.png"
             alt=""
-            className="h-10 w-10"
+            className="h-12 w-12"
           />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-2xl font-medium tracking-[0.06em] text-ink">
+            <span className="font-display text-4xl font-medium tracking-[0.06em] text-ink">
               METIS
             </span>
-            <span className="mt-1 font-sans text-[10px] font-medium tracking-[0.32em] text-ink/85">
+            <span className="mt-1.5 font-sans text-[12px] font-medium tracking-[0.32em] text-ink/85">
               C<span className="text-bronze">O</span>RTEX
             </span>
           </span>

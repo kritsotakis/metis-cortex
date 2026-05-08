@@ -13,13 +13,13 @@ export function Hero() {
           <img
             src="/brand/metiscortex-mark-transparent.png"
             alt=""
-            className="h-12 w-12"
+            className="h-14 w-14"
           />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-3xl font-medium tracking-[0.06em] text-bone">
+            <span className="font-display text-5xl font-medium tracking-[0.06em] text-bone">
               METIS
             </span>
-            <span className="mt-1.5 font-sans text-[11px] font-medium tracking-[0.32em] text-bone/85">
+            <span className="mt-2 font-sans text-[14px] font-medium tracking-[0.32em] text-bone/85">
               C<span className="text-bronze">O</span>RTEX
             </span>
           </span>
