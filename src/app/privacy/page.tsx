@@ -22,10 +22,18 @@ export default function PrivacyPage() {
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-80"
         >
           <img
-            src="/brand/metiscortex-horizontal-lockup-transparent.png"
-            alt={SITE.name}
-            className="h-12 w-auto"
+            src="/brand/metiscortex-mark-transparent.png"
+            alt=""
+            className="h-10 w-10"
           />
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-2xl font-medium tracking-[0.06em] text-ink">
+              METIS
+            </span>
+            <span className="mt-1 font-sans text-[10px] font-medium tracking-[0.32em] text-ink/85">
+              C<span className="text-bronze">O</span>RTEX
+            </span>
+          </span>
         </Link>
       </header>
 
