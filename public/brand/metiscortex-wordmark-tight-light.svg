@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100">
-  <!-- Metis Cortex wordmark — tight, bone fill, for dark (ink) surfaces.
-       On-light variant lives in metiscortex-wordmark-tight-light.svg. -->
+  <!-- Metis Cortex wordmark — tight, ink fill, for light (bone) surfaces.
+       Dark variant lives in metiscortex-wordmark-tight.svg. -->
   <text x="240" y="64"
         text-anchor="middle"
         font-family="'Cormorant Garamond', 'Tiempos Headline', 'GT Sectra', Georgia, serif"
         font-size="64" font-weight="600" letter-spacing="6"
-        fill="#f5f1ea">METIS</text>
+        fill="#0f203f">METIS</text>
   <text x="240" y="92"
         text-anchor="middle"
         font-family="'Inter', 'IBM Plex Sans', -apple-system, Helvetica, sans-serif"
         font-size="22" font-weight="500" letter-spacing="11"
-        fill="#f5f1ea">C<tspan fill="#b07843">O</tspan>RTEX</text>
+        fill="#0f203f">C<tspan fill="#b07843">O</tspan>RTEX</text>
 </svg>

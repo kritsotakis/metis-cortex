@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             className="h-12 w-12"
           />
           <img
-            src="/brand/metiscortex-wordmark-tight.svg"
+            src="/brand/metiscortex-wordmark-tight-light.svg"
             alt={SITE.name}
             className="h-10 w-auto"
           />

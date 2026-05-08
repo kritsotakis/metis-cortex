@@ -38,7 +38,7 @@ export function Hero() {
         </p>
 
         <h1 className="font-display text-[clamp(3.5rem,9vw,8.25rem)] font-semibold leading-[0.96] tracking-[0.02em] text-bone">
-          <span className="mc-bronze-underline-hero">100% answered.</span>
+          <span className="mc-bronze-underline-hero">100%</span> answered.
           <br />
           <span className="mc-italic-display text-bone/85">
             Or your money back.
