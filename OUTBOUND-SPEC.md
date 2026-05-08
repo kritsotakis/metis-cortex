@@ -1,6 +1,6 @@
-# Frontline Outbound — Product Specification
+# Metis Cortex Outbound — Product Specification
 
-> **Status:** DRAFT — Phase 2 product. Do NOT build until Frontline base has at least 1 paying external client.
+> **Status:** DRAFT — Phase 2 product. Do NOT build until Metis Cortex has at least 1 paying external client.
 > **Author:** Claude Code, 2026-05-08
 > **Trigger event:** Belle Property Manly conversation 2026-05-08 — agency stated their #1 pain is "finding buyers" not "missing calls"
 > **Last updated:** 2026-05-08
@@ -9,11 +9,11 @@
 
 ## TL;DR
 
-Frontline Outbound is the **revenue-generating** counterpart to Frontline base (Inbound). Same Zoe persona, opposite direction.
+Metis Cortex Outbound is the **revenue-generating** counterpart to Metis Cortex (Inbound). Same Zoe persona, opposite direction.
 
-Where Frontline base **answers** calls coming in, Outbound **makes** calls going out — to a business's existing customer/inquirer database, matched against a re-engagement trigger.
+Where Metis Cortex **answers** calls coming in, Outbound **makes** calls going out — to a business's existing customer/inquirer database, matched against a re-engagement trigger.
 
-| | Frontline base (Inbound) | Frontline Outbound |
+| | Metis Cortex (Inbound) | Metis Cortex Outbound |
 |---|---|---|
 | **Direction** | Answers calls | Makes calls |
 | **Job to be done** | Stop missing calls | Activate dormant database |
@@ -23,7 +23,7 @@ Where Frontline base **answers** calls coming in, Outbound **makes** calls going
 | **Switching cost** | Low (forward a phone) | High (CRM integration) |
 | **Vertical fit** | All target verticals | All target verticals — even better fit because each vertical has clear triggers |
 
-**This is likely the SaaS-able layer of the Metis Cortex product stack.** Frontline base is the wedge to get into accounts. Outbound is the upsell that generates 3–5× the ARPU and creates real switching costs.
+**This is likely the SaaS-able layer of the Metis Cortex product stack.** Metis Cortex is the wedge to get into accounts. Outbound is the upsell that generates 3–5× the ARPU and creates real switching costs.
 
 ---
 
@@ -194,7 +194,7 @@ Mid-size Sydney dental practice with 2,500 active patients:
 - **Opt-out path** — every call has a clear way to say "don't call me again." Honored within 5 business days per Spam Act.
 - **Audit trail** — every call logged with timestamp, recipient, script used, outcome, opt-outs received. Defensive against regulatory complaints.
 
-This is harder than Frontline base but well-trodden territory; existing voice AI platforms (Retell, Air, Vapi) have compliance hooks.
+This is harder than Metis Cortex but well-trodden territory; existing voice AI platforms (Retell, Air, Vapi) have compliance hooks.
 
 ---
 
@@ -242,9 +242,9 @@ Setup fee A$2,500 one-off (CRM integration + trigger config + script tuning).
 
 ## Build phases
 
-**Strict prerequisite: do NOT begin Phase 1 of Outbound build until Frontline base has at least 1 paying external client.** This rule exists to prevent strategic ADHD. Customer revenue on the base product is the gate.
+**Strict prerequisite: do NOT begin Phase 1 of Outbound build until Metis Cortex has at least 1 paying external client.** This rule exists to prevent strategic ADHD. Customer revenue on the base product is the gate.
 
-### Phase 0 — Validation (concurrent with Frontline base launch)
+### Phase 0 — Validation (concurrent with Metis Cortex launch)
 
 **Cost: ~A$0. Time: 2 weeks of customer conversations.**
 
@@ -319,7 +319,7 @@ To preserve scope discipline:
 - ❌ NOT a sales SDR replacement for prospecting NEW customers (operates against the EXISTING database — that's the wedge)
 - ❌ NOT a marketing automation platform (no email-blast, no funnel-build, just outbound voice with smart targeting)
 - ❌ NOT for clinics with privacy concerns until AU-residency RAG infrastructure is in place
-- ❌ NOT a feature of Frontline base — it's a separate SKU with separate pricing, separate install playbook, separate value prop
+- ❌ NOT a feature of Metis Cortex — it's a separate SKU with separate pricing, separate install playbook, separate value prop
 
 ---
 
@@ -332,7 +332,7 @@ To preserve scope discipline:
 5. **Real estate agents may resist losing the relationship moment.** "Cold buyer pickup" is part of an agent's craft. Sell it as augmentation not replacement: hot leads still go to the human, Zoe handles the database mining the agent doesn't have time for.
 6. **Conversion attribution disputes.** Customers will challenge "did Zoe really cause that booking?" Build robust attribution from day 1.
 7. **Voice AI hallucinations on outbound.** Worse than inbound because the recipient didn't initiate — they're already skeptical. Strict quote-only mode needed.
-8. **Strategic ADHD.** Building Outbound before Frontline base has paying clients is the single biggest risk. Discipline gate locked.
+8. **Strategic ADHD.** Building Outbound before Metis Cortex has paying clients is the single biggest risk. Discipline gate locked.
 
 ---
 
@@ -340,7 +340,7 @@ To preserve scope discipline:
 
 Before Phase 1 starts, all five must be true:
 
-- [ ] Frontline base has at least 1 paying external client
+- [ ] Metis Cortex has at least 1 paying external client
 - [ ] At least 3 customer conversations in target verticals have produced "yes, I'd pay A$X/month for that"
 - [ ] Belle Property Manly (or another real estate agency) has signed a letter of intent or paid setup fee for the v1 pilot
 - [ ] CRM API access confirmed working with AgentBox sandbox account
@@ -358,16 +358,16 @@ This product reframes the company:
 Metis Cortex = AI receptionist installer for Australian service businesses. Path-(i) leveraged boutique. ARPU ceiling A$600/mo per client. Year 1 revenue projection A$50–80K.
 
 **After this spec:**
-Metis Cortex = AI database activation for Australian service businesses, with inbound receptionist as the wedge. Path-(i) base + path-(i+) Outbound layer. ARPU ceiling A$5,000/mo per client. Year 1 revenue projection unchanged (A$50–80K) because Outbound doesn't ship until Frontline base has paying clients. Year 2 revenue projection upgraded to A$300–600K with Outbound layer landing 3–5× the ARPU per client.
+Metis Cortex = AI database activation for Australian service businesses, with inbound receptionist as the wedge. Path-(i) base + path-(i+) Outbound layer. ARPU ceiling A$5,000/mo per client. Year 1 revenue projection unchanged (A$50–80K) because Outbound doesn't ship until Metis Cortex has paying clients. Year 2 revenue projection upgraded to A$300–600K with Outbound layer landing 3–5× the ARPU per client.
 
 The product stack becomes:
 
 | Tier | Product | When it ships |
 |---|---|---|
-| Tier 0 | **Frontline Triage** (inverse of Frontline base — politely declines new business, routes existing) | Phase 2, after Outbound is live |
-| Tier 1 | **Frontline base** (inbound AI receptionist) | NOW (the launch product) |
-| Tier 2 | **Frontline Knowledge** (per-asset Q&A on inbound) | Phase 2, with Outbound |
-| Tier 3 | **Frontline Outbound** (database activation) | After 1 paying Frontline base client |
+| Tier 0 | **Metis Cortex Triage** (inverse of Metis Cortex — politely declines new business, routes existing) | Phase 2, after Outbound is live |
+| Tier 1 | **Metis Cortex** (inbound AI receptionist) | NOW (the launch product) |
+| Tier 2 | **Metis Cortex Knowledge** (per-asset Q&A on inbound) | Phase 2, with Outbound |
+| Tier 3 | **Metis Cortex Outbound** (database activation) | After 1 paying Metis Cortex client |
 
 ---
 
@@ -375,7 +375,7 @@ The product stack becomes:
 
 - Belle Property Manly conversation 2026-05-08 (the trigger event)
 - `HOW-IT-WORKS.md` — base business model (will be updated to reflect three-tier stack)
-- `dsk-frontline-pilot-pack.md` — Frontline base install for DSK
-- `eonia-frontline-pilot-pack.md` — Frontline base install for Eonia
+- `dsk-pilot-pack.md` — Metis Cortex install for DSK
+- `eonia-pilot-pack.md` — Metis Cortex install for Eonia
 - `COLD-EMAIL-V1-PROSPECTS.md` — 26 verified Sydney prospects, useful for Outbound validation conversations
 - `STATUS.md` — canonical state

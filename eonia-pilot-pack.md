@@ -1,6 +1,6 @@
-# Frontline Eonia Pilot — 14-Day Install Pack
+# Metis Cortex Eonia Pilot — 14-Day Install Pack
 
-> **Goal of the pilot:** install Frontline on Eonia Aesthetic Clinic, capture before/after metrics, and produce **case study #2 (different vertical to DSK)**. Together with DSK, the two case studies are the multi-vertical proof that lets Metis Cortex sell to non-cleaning service businesses without "but you've only done cleaning" objections.
+> **Goal of the pilot:** install Metis Cortex on Eonia Aesthetic Clinic, capture before/after metrics, and produce **case study #2 (different vertical to DSK)**. Together with DSK, the two case studies are the multi-vertical proof that lets Metis Cortex sell to non-cleaning service businesses without "but you've only done cleaning" objections.
 
 ---
 
@@ -23,7 +23,7 @@ Three numbers, with one bonus that matters more for clinics than for cleaning.
 | **Consultation bookings from inbound enquiries** | Bookings per 100 enquiries | +30% lift minimum |
 | **Bonus: same-day reschedule recovery** | Rescheduled-and-rebooked rate | > 70% (clinic-specific) |
 
-Why the bonus metric matters: aesthetic clinics see way more same-day reschedules than service businesses. A patient cancels a botox top-up at 2pm; without an AI, that slot stays empty. With Frontline + a waitlist workflow in GHL, the slot fills automatically. This is one of the highest-leverage outcomes you can show prospective clinic clients.
+Why the bonus metric matters: aesthetic clinics see way more same-day reschedules than service businesses. A patient cancels a botox top-up at 2pm; without an AI, that slot stays empty. With Metis Cortex + a waitlist workflow in GHL, the slot fills automatically. This is one of the highest-leverage outcomes you can show prospective clinic clients.
 
 Capture screenshots of the booking system before/after. Recovered consultation revenue is what writes the clinic-vertical cold email.
 
@@ -54,7 +54,7 @@ Identical to DSK except for the clinic management system (CMS) integration.
 |---|---|---|---|
 | Voice AI | **Retell AI** | ~A$50–150 (usage-based) | Picks up the phone, holds the conversation |
 | CRM + workflow + SMS + calendar | **GoHighLevel** (Starter, $97 USD/mo) | ~A$148 | Records every call, sends SMS, books to calendar, runs follow-up |
-| Phone number | **Twilio** (1 AU local, separate from DSK's) | ~A$15 | Eonia's Frontline number |
+| Phone number | **Twilio** (1 AU local, separate from DSK's) | ~A$15 | Eonia's Metis Cortex number |
 | Existing CMS | **Cliniko / Pabau / whatever Eonia uses now** | A$0 incremental | Bookings flow back to clinical system via webhook |
 | **Pilot total** | | **~A$215 for the first month** | |
 
@@ -143,7 +143,7 @@ This single workflow is the headline number for the case study.
 ## Phase 3 — Retell voice agent build (Days 4–5)
 
 ### Agent identity
-- **Name:** Zoe (same brand voice across Frontline products — keeps it familiar across multi-business installs)
+- **Name:** Zoe (same brand voice across Metis Cortex products — keeps it familiar across multi-business installs)
 - **Voice:** same Australian female voice as DSK's Zoe
 - **Greeting:** *"Hi, this is Zoe at Eonia Clinic. How can I help today?"*
 
@@ -224,7 +224,7 @@ Same as DSK — point Eonia's Twilio number's voice webhook at Retell's inbound 
 ### Eonia number cutover
 **Recommendation: Option B (conditional forward) for the first week**, then Option A (full port) after Day 14.
 
-For the pilot, start with: forward to Frontline on no-answer (3 rings) + after-hours. Day 13 onwards, forward unconditionally.
+For the pilot, start with: forward to Metis Cortex on no-answer (3 rings) + after-hours. Day 13 onwards, forward unconditionally.
 
 Important: medical/aesthetic clinics often have legacy front-desk staff who feel threatened by AI. Give them time to see Zoe work alongside them before going full cutover. The therapist hire transition is a good window to make this change.
 
@@ -282,11 +282,11 @@ If any fail, fix the prompt or flow and re-test. Don't go live with a 5-of-6 pas
 
 ## Phase 6 — Go live (Days 13–14)
 
-**Day 13 — Shadow mode 24h.** Forward Eonia's number to Frontline. You and the therapist still have visibility — review every call recording before bed. Fix anything broken.
+**Day 13 — Shadow mode 24h.** Forward Eonia's number to Metis Cortex. You and the therapist still have visibility — review every call recording before bed. Fix anything broken.
 
-**Day 14 — Frontline primary.** Zoe answers first; therapist's mobile is the human escalation when Zoe escalates.
+**Day 14 — Metis Cortex primary.** Zoe answers first; therapist's mobile is the human escalation when Zoe escalates.
 
-Send yourself a "Eonia Frontline live" SMS at 9am Day 14. The 14-day measurement window starts.
+Send yourself a "Eonia Metis Cortex live" SMS at 9am Day 14. The 14-day measurement window starts.
 
 ---
 
@@ -370,7 +370,7 @@ Don't try to do all of this in one sitting. Day 1 is sub-account + Twilio number
 
 - **Created:** 2026-05-06
 - **Author:** Claude Code
-- **Pairs with:** `dsk-frontline-pilot-pack.md` (DSK install pack)
+- **Pairs with:** `dsk-pilot-pack.md` (DSK install pack)
 - **Status:** Draft — pending Peter review and Eonia therapist start date confirmation
 - **Dependencies:** Therapist hire start date confirmed before Day 1 can begin; Eonia CMS choice confirmed (Cliniko / Pabau / Halaxy / other) for webhook spec
 - **Compliance basis:** TGA Therapeutic Goods Advertising Code constraint-framing throughout. No efficacy claims, no comparative claims, no prices on call. Mechanism language only.

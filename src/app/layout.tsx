@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import { CONTACT, LEGAL, PRICING, SITE, SOCIAL, contactEmail } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -15,50 +16,49 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE_URL = "https://metiscortex.au";
-const TITLE = "Metis Cortex — Stop missing calls.";
-const DESCRIPTION =
-  "We install an AI receptionist on your business in 14 days. It picks up every missed call within 60 seconds, qualifies the lead, and books the appointment. A$1,500 setup, A$600/month. Refund guarantee.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: TITLE,
-  description: DESCRIPTION,
+  metadataBase: new URL(SITE.url),
+  title: SITE.title,
+  description: SITE.description,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: SITE_URL,
-    siteName: "Metis Cortex",
-    title: TITLE,
-    description: DESCRIPTION,
-    locale: "en_AU",
+    url: SITE.url,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
+    locale: SITE.locale,
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Metis Cortex — Stop missing calls.",
+        alt: SITE.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: TITLE,
-    description: DESCRIPTION,
+    title: SITE.title,
+    description: SITE.description,
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
 };
 
+const sameAs = [SOCIAL.linkedinCompany, SOCIAL.linkedinPersonal].filter(
+  (v): v is string => Boolean(v),
+);
+
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Metis Cortex",
-  description: DESCRIPTION,
-  url: SITE_URL,
-  email: "peter@kritsotakis.com.au",
-  telephone: "+61423668766",
-  priceRange: "A$1,500 setup + A$600/month",
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  email: contactEmail(),
+  telephone: CONTACT.phoneE164,
+  priceRange: `A$${PRICING.setupAud.toLocaleString()} setup + A$${PRICING.monthlyAud}/month`,
   areaServed: { "@type": "City", name: "Sydney" },
   address: {
     "@type": "PostalAddress",
@@ -66,19 +66,19 @@ const localBusinessJsonLd = {
     addressRegion: "NSW",
     addressCountry: "AU",
   },
+  ...(sameAs.length > 0 ? { sameAs } : {}),
   parentOrganization: {
     "@type": "Organization",
-    name: "Kritsotakis Family Trust",
-    taxID: "45 984 876 899",
-    legalName:
-      "Kritsotakis Family Trust (Trustee: Kritsotakis Investments Pty Ltd, ACN 153 844 136)",
+    name: LEGAL.trustName,
+    taxID: LEGAL.abn,
+    legalName: `${LEGAL.trustName} (Trustee: ${LEGAL.trusteeName}, ACN ${LEGAL.trusteeAcn})`,
   },
   makesOffer: {
     "@type": "Offer",
-    name: "Frontline — AI Receptionist",
+    name: "Metis Cortex Receptionist",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
-      price: "1500",
+      price: String(PRICING.setupAud),
       priceCurrency: "AUD",
       unitText: "setup",
     },

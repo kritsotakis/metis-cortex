@@ -16,7 +16,7 @@ export function WhatsIncluded() {
               What you get
             </p>
             <h2 className="font-display text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-              Frontline. Installed on your business in fourteen days.
+              Metis Cortex. Installed on your business in fourteen days.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-ink-muted">
               Built on Retell AI for voice, GoHighLevel for CRM and workflow,

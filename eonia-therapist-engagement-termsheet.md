@@ -261,7 +261,7 @@ Common pushbacks and how to respond:
 
 ## Why this matters strategically
 
-You said earlier: hire the therapist to free up your time for the Metis Cortex Frontline install on Eonia.
+You said earlier: hire the therapist to free up your time for the Metis Cortex Metis Cortex install on Eonia.
 
 That's correct, but only if:
 1. The therapist genuinely owns clinical delivery (not just "helps when needed")
@@ -277,7 +277,7 @@ Get the structure right once, save yourself two years of headaches.
 - **Created:** 2026-05-06
 - **Author:** Claude Code
 - **Status:** DRAFT TEMPLATE — not for execution. Lawyer review required before use.
-- **Pairs with:** `eonia-frontline-pilot-pack.md` (Frontline install requires this hire to free up Peter's time)
+- **Pairs with:** `eonia-pilot-pack.md` (Metis Cortex install requires this hire to free up Peter's time)
 - **Legal basis:** Fair Work Act 2009 (Cth), Beauty Industry Award 2020, NSW workers compensation, NSW LSL Act, Anti-Discrimination Act 1977 (NSW)
 - **Out of scope:** Cosmetic injectable practitioner agreements (different — RN/medical practitioner contracts have additional clauses around Schedule 4 medications, infection control, etc.)
 - **Critical dependencies:** Karren's signing authority confirmed OR board resolution drafted; lawyer engaged; Award classification confirmed; therapist's qualifications + working rights verified; STP + super + workers comp set up

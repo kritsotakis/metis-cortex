@@ -53,7 +53,7 @@ no deck, no slide pitch.
 
 One ask before we talk: have your current weekly missed-call number roughly
 in mind. Even a guess is fine. We'll work backward from that to whether
-Frontline makes sense for your business or doesn't.
+Metis Cortex makes sense for your business or doesn't.
 
 If you need to reschedule: {{reschedule_url}}
 
@@ -103,7 +103,7 @@ Hi {{invitee_first_name}},
 
 Looks like {{event_date}} got away from you. Happens — no drama on this end.
 
-Frontline's still here whenever you want the 10 minutes. AI receptionist
+Metis Cortex's still here whenever you want the 10 minutes. AI receptionist
 installed on your business in 14 days, A$1,500 setup, refund if it doesn't
 book 5 extra jobs in month one.
 

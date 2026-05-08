@@ -1,8 +1,7 @@
 import Link from "next/link";
+import { bookingHref } from "@/lib/site";
 
 type Variant = "primary" | "ghost";
-
-const CALENDLY_URL = "https://calendly.com/peter-kritsotakis/metis-cortex-demo";
 
 const styles: Record<Variant, string> = {
   primary:
@@ -14,22 +13,23 @@ const styles: Record<Variant, string> = {
 export function CTAButton({
   children,
   variant = "primary",
-  href = CALENDLY_URL,
+  href,
 }: {
   children: React.ReactNode;
   variant?: Variant;
   href?: string;
 }) {
-  const isExternal = href.startsWith("http");
+  const target = href ?? bookingHref();
+  const isExternal = target.startsWith("http") || target.startsWith("mailto:");
   const className = `inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-semibold tracking-tight transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink ${styles[variant]}`;
 
   if (isExternal) {
     return (
       <a
-        href={href}
+        href={target}
         className={className}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={target.startsWith("http") ? "_blank" : undefined}
+        rel={target.startsWith("http") ? "noopener noreferrer" : undefined}
       >
         {children}
         <span aria-hidden="true">→</span>
@@ -37,7 +37,7 @@ export function CTAButton({
     );
   }
   return (
-    <Link href={href} className={className}>
+    <Link href={target} className={className}>
       {children}
       <span aria-hidden="true">→</span>
     </Link>

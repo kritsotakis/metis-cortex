@@ -32,7 +32,7 @@ Metis Cortex installs AI receptionists on Australian service businesses.
 
 We pick up every missed call within 60 seconds, qualify the lead, and book the appointment — so service businesses stop leaking enquiries to voicemail.
 
-Frontline, our flagship product, installs in 14 days. A$1,500 setup, A$600/month, month-to-month. If it doesn't book at least 5 extra appointments in month one, full refund.
+Metis Cortex, our flagship product, installs in 14 days. A$1,500 setup, A$600/month, month-to-month. If it doesn't book at least 5 extra appointments in month one, full refund.
 
 Built and proven on our own cleaning business (DSK Property Cleaning) before we ever sold it externally. Operator-to-operator, not consultant-to-client.
 

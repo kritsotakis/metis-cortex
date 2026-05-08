@@ -8,7 +8,7 @@ export function Guarantee() {
           The guarantee
         </p>
         <p className="font-display text-[clamp(2.25rem,5vw,4rem)] leading-[1.1] tracking-tight text-bone">
-          If Frontline doesn&rsquo;t book at least{" "}
+          If Metis Cortex doesn&rsquo;t book at least{" "}
           <span className="italic text-gold-soft">5 extra appointments</span>{" "}
           in month one, you get a full refund of the setup fee.
         </p>

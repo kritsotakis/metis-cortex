@@ -108,7 +108,7 @@ Filter: **boutique / small-team owner-operated only**. No big chain (Laser Clini
 
 ## Vertical 5 — Allied Health / Dental / Physio (target: 10)
 
-**Why this vertical:** Owner-led practices with high-value bookings (one missed appointment = $200–400 lost) and notoriously bad phone discipline (practitioner is with a patient, no one answers). Booking-management software (Cliniko / Halaxy) integrates cleanly with Frontline.
+**Why this vertical:** Owner-led practices with high-value bookings (one missed appointment = $200–400 lost) and notoriously bad phone discipline (practitioner is with a patient, no one answers). Booking-management software (Cliniko / Halaxy) integrates cleanly with Metis Cortex.
 
 Filter: **single-location practices, owner-practitioner**. No multi-clinic groups.
 
@@ -119,7 +119,7 @@ Filter: **single-location practices, owner-practitioner**. No multi-clinic group
 | 3 | **Invigor Health** | invigorhealth.com.au | (check site) | Eastern Subs | Multi-discipline boutique allied health |
 | 4 | **Fort Healthcare** | forthealthcare.com.au/sydney-cbd | (check site) | Sydney CBD (501 George St) | Physio + chiro + TCM, single CBD location |
 | 5 | **The Allied Health Clinic** | thealliedhealthclinic.com.au | (check site) | Hammondville / Moorebank | Multi-discipline, boutique |
-| **6–10** | **Apollo enrichment** | — | — | — | Pull 5 small dental practices specifically (Apollo filter: "Dentist Sydney, 1–10 employees, owner-led") — dentists are perfect Frontline ICP and I haven't surfaced any in this round |
+| **6–10** | **Apollo enrichment** | — | — | — | Pull 5 small dental practices specifically (Apollo filter: "Dentist Sydney, 1–10 employees, owner-led") — dentists are perfect Metis Cortex ICP and I haven't surfaced any in this round |
 
 > *Excluded: Complete Allied Health Care (24 clinics = enterprise scale), Smile Solutions / Pacific Smiles type chains (national).*
 

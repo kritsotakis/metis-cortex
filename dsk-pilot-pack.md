@@ -1,6 +1,6 @@
-# Frontline DSK Pilot — 14-Day Install Pack
+# Metis Cortex DSK Pilot — 14-Day Install Pack
 
-> **Goal of the pilot:** install Frontline on DSK Property Cleaning, capture before/after metrics, and produce **case study #1** that drives the first 5 paying Metis Cortex clients (path-(i) leveraged boutique, warm-intro selling, NOT cold outbound).
+> **Goal of the pilot:** install Metis Cortex on DSK Property Cleaning, capture before/after metrics, and produce **case study #1** that drives the first 5 paying Metis Cortex clients (path-(i) leveraged boutique, warm-intro selling, NOT cold outbound).
 
 ---
 
@@ -24,7 +24,7 @@ Capture screenshots of the Jobber dashboard before and after. The recovered reve
 |---|---|---|---|
 | Voice AI | **Retell AI** | ~A$50–150 (usage-based) | Picks up the phone, holds the conversation, books the appointment |
 | CRM + workflow + SMS + calendar | **GoHighLevel** (Starter, $97 USD/mo for the pilot) | ~A$148 | Records every call, sends SMS, books to calendar, runs follow-up |
-| Phone number | **Twilio** (1 AU local number) | ~A$15 | The actual number Frontline answers on |
+| Phone number | **Twilio** (1 AU local number) | ~A$15 | The actual number Metis Cortex answers on |
 | Existing CRM | **Jobber** (DSK already pays) | A$0 incremental | Bookings flow back to Jobber via webhook |
 | **Pilot total** | | **~A$215 for the first month** | |
 
@@ -46,9 +46,9 @@ Accounts needed at:
 | 4–5 | **Retell agent build** | Voice prompt configured, knowledge base loaded |
 | 6–7 | **Workflow + routing** | GHL workflows wired, Twilio routing set, Jobber webhook tested |
 | 8–10 | **Internal testing** | 5 scripted test calls, fix everything that breaks |
-| 11–12 | **Live with forwarding only** | DSK number forwards to Frontline only when missed; you still answer when available |
-| 13 | **Soft launch** | 24-hour shadow mode — Frontline takes everything, you monitor |
-| 14 | **Go live** | Frontline is the primary — it picks up first, you're the human escalation |
+| 11–12 | **Live with forwarding only** | DSK number forwards to Metis Cortex only when missed; you still answer when available |
+| 13 | **Soft launch** | 24-hour shadow mode — Metis Cortex takes everything, you monitor |
+| 14 | **Go live** | Metis Cortex is the primary — it picks up first, you're the human escalation |
 | 14–28 | **Capture data** | Track the three metrics. Screenshot weekly. |
 
 ---
@@ -62,10 +62,10 @@ Before signing up for anything:
 - [ ] DSK Google Calendar share access for the booking calendar
 - [ ] List of DSK service types and standard prices (pre-sale clean, end-of-lease, builders clean, strata, etc.)
 - [ ] DSK service area (suburbs DSK actually services)
-- [ ] DSK availability hours (when Frontline books vs. when it just takes a message)
+- [ ] DSK availability hours (when Metis Cortex books vs. when it just takes a message)
 - [ ] DSK quote variables — what does the AI need to ask to give a price (sqm? bedrooms? garage? rooms? oven? carpet?)
 - [ ] One DSK call recording (real or mock) — to feed the AI as a tone reference
-- [ ] Email + SMS template you currently send after a quote — Frontline will copy that voice
+- [ ] Email + SMS template you currently send after a quote — Metis Cortex will copy that voice
 
 Have all the above in one place before Day 1.
 
@@ -124,7 +124,7 @@ Have all the above in one place before Day 1.
 
 ## Phase 3 — Retell voice agent build (Days 4–5)
 
-This is the heart of Frontline. The AI's behaviour lives here.
+This is the heart of Metis Cortex. The AI's behaviour lives here.
 
 ### Agent identity
 - **Name:** Zoe (warm, neutral Australian female name)
@@ -192,20 +192,20 @@ Upload to Retell:
 
 Configure your Twilio AU number's voice webhook to point at Retell's inbound number-forward URL (Retell will give you the exact URL when you create the agent).
 
-### DSK number → Frontline cutover
+### DSK number → Metis Cortex cutover
 
-Two ways to cut DSK's existing number over to Frontline. Pick one:
+Two ways to cut DSK's existing number over to Metis Cortex. Pick one:
 
 **Option A — Number port (cleanest, ~3–5 days lead time):**
-Port the existing DSK number from its current carrier to Twilio. Once ported, all existing customers calling the same number get Frontline. Recommended for the long-term.
+Port the existing DSK number from its current carrier to Twilio. Once ported, all existing customers calling the same number get Metis Cortex. Recommended for the long-term.
 
 **Option B — Conditional call forward (Day 1, no porting):**
 Set DSK's existing number to forward to the Twilio number under three conditions:
-- Always (Frontline answers everything; you still see the call in GHL and can grab it)
+- Always (Metis Cortex answers everything; you still see the call in GHL and can grab it)
 - On no-answer after 3 rings
 - After hours (7pm–7am)
 
-For the pilot, **start with Option B "after-hours + no-answer"** so you stay in control while you build trust in the system. By Day 14, switch to "always" and let Frontline take the front line.
+For the pilot, **start with Option B "after-hours + no-answer"** so you stay in control while you build trust in the system. By Day 14, switch to "always" and let Metis Cortex take the front line.
 
 ### GHL workflows to wire up
 
@@ -260,11 +260,11 @@ If any fail, fix the prompt or flow and re-test. Don't go live with a 4-out-of-5
 
 ## Phase 6 — Go live (Day 13–14)
 
-**Day 13 — Shadow mode for 24 hours.** Forward DSK's number to Frontline, but you also still pick up your mobile if able. Listen to every call recording before bed. Fix anything broken.
+**Day 13 — Shadow mode for 24 hours.** Forward DSK's number to Metis Cortex, but you also still pick up your mobile if able. Listen to every call recording before bed. Fix anything broken.
 
-**Day 14 — Frontline is primary.** Frontline answers first; your mobile is the human escalation when Zoe escalates.
+**Day 14 — Metis Cortex is primary.** Metis Cortex answers first; your mobile is the human escalation when Zoe escalates.
 
-Send yourself a "Frontline went live" SMS at 9am Day 14. From this moment, the 14-day measurement window starts.
+Send yourself a "Metis Cortex went live" SMS at 9am Day 14. From this moment, the 14-day measurement window starts.
 
 ---
 
@@ -321,6 +321,6 @@ Don't try to do all of this in one sitting. Day 1 is just sign-ups. Day 2 starts
 
 - **Created:** 2026-05-06 (saved as `.md` from earlier paste)
 - **Author:** Peter (original) + Claude Code (formatted)
-- **Pairs with:** `eonia-frontline-pilot-pack.md` (Eonia install pack — case study #2)
+- **Pairs with:** `eonia-pilot-pack.md` (Eonia install pack — case study #2)
 - **Status:** Active — used as template for Eonia + future verticals
 - **Dependencies:** DSK pricing grid + service area + Jobber API key + call-recording reference must be captured at Pre-flight (Day 0) before Day 1 sign-ups begin

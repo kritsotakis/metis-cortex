@@ -11,7 +11,7 @@
 In the next 2 weeks the following milestones land:
 
 1. **First Calendly demo books** (the moment Peter publishes the URL)
-2. **DSK Frontline pilot Day 28 — metrics report needs to fire** (the email that decides whether the customer renews / refunds / refers)
+2. **DSK pilot Day 28 — metrics report needs to fire** (the email that decides whether the customer renews / refunds / refers)
 3. **First LinkedIn case-study post** (LinkedIn first-post template already drafted, needs the DSK pilot data slotted in)
 
 Two of those need pre-drafted content Cowork can produce now. **Don't pre-build past these — anything Phase-2-or-later is premature.**
@@ -149,7 +149,7 @@ Specific list of what to capture from where, in what state, at what time:
 
 **Structure:**
 
-- Subject: *"Your month-one Frontline report — {{business_name}}"*
+- Subject: *"Your month-one Metis Cortex report — {{business_name}}"*
 - Preview: 1 line
 - Body:
    - Headline number first — total inbound calls handled by Zoe in 28 days

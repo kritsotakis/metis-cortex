@@ -12,19 +12,19 @@ Metis Cortex configures proven AI tools (Retell + GoHighLevel + Twilio) on Austr
 
 The moat is being a Sydney operator who runs four service businesses himself (DSK Property Cleaning, Eonia Aesthetic Clinic, HydraLab, and Exit Code), so the operator-to-operator credibility transfer is real — not consultancy, not theory.
 
-> **Phase 2 product expansion (locked 2026-05-08):** After customer-discovery with Belle Property Manly identified "finding buyers" as the #1 real estate pain — not "answering questions" — a higher-ARPU upsell layer was added: **Frontline Outbound** (AI database activation). See `FRONTLINE-OUTBOUND-SPEC.md` for the full spec. The three-tier stack is summarised in the "Three-tier product stack" section below.
+> **Phase 2 product expansion (locked 2026-05-08):** After customer-discovery with Belle Property Manly identified "finding buyers" as the #1 real estate pain — not "answering questions" — a higher-ARPU upsell layer was added: **Metis Cortex Outbound** (AI database activation). See `OUTBOUND-SPEC.md` for the full spec. The three-tier stack is summarised in the "Three-tier product stack" section below.
 
 ---
 
 ## Three-tier product stack
 
-The Metis Cortex product is now structured as three SKUs, sold separately or as a bundle. Customers can start at Tier 1 (Frontline base) and upgrade to Tier 2 + 3 once value is proven.
+The Metis Cortex product is now structured as three SKUs, sold separately or as a bundle. Customers can start at Tier 1 (Metis Cortex) and upgrade to Tier 2 + 3 once value is proven.
 
 | Tier | Product | What it does | Pricing | Customer pain |
 |---|---|---|---|---|
-| **Tier 1** | **Frontline base** | Inbound AI receptionist — answers calls, qualifies leads, books appointments | A$1,500 setup + A$600/mo | "We miss too many calls" |
-| **Tier 2** | **Frontline Knowledge** | Per-asset Q&A on inbound calls — Zoe knows your specific listings / properties / customers in detail | +A$300/asset/mo | "Our staff waste hours answering basic questions" |
-| **Tier 3** | **Frontline Outbound** | AI database activation — Zoe makes outbound matching calls against your existing customer/inquirer database based on configurable triggers | A$1,500–5,000/mo per business depending on volume | "We can't generate enough new bookings / sales" |
+| **Tier 1** | **Metis Cortex** | Inbound AI receptionist — answers calls, qualifies leads, books appointments | A$1,500 setup + A$600/mo | "We miss too many calls" |
+| **Tier 2** | **Metis Cortex Knowledge** | Per-asset Q&A on inbound calls — Zoe knows your specific listings / properties / customers in detail | +A$300/asset/mo | "Our staff waste hours answering basic questions" |
+| **Tier 3** | **Metis Cortex Outbound** | AI database activation — Zoe makes outbound matching calls against your existing customer/inquirer database based on configurable triggers | A$1,500–5,000/mo per business depending on volume | "We can't generate enough new bookings / sales" |
 
 **Pricing example — boutique real estate agency with 5 active listings + 3,000 buyer database:**
 
@@ -105,7 +105,7 @@ Day-by-day inside an install:
 
 **Founder time per install: ~15–25 hours.** Not 80. Most of it is configuring tools, not coding.
 
-### 5. Day 14 onwards — Frontline is live
+### 5. Day 14 onwards — Metis Cortex is live
 
 The client's existing business number now forwards permanently to Zoe's Twilio number.
 
@@ -172,7 +172,7 @@ Plus install fees on the way up — at 30 active clients the business has collec
 
 | Period | What happens |
 |---|---|
-| **Months 1–3** | Install Frontline on DSK + Eonia + HydraLab as case studies (free, own businesses). Zero external clients. Three vertical case studies in hand. |
+| **Months 1–3** | Install Metis Cortex on DSK + Eonia + HydraLab as case studies (free, own businesses). Zero external clients. Three vertical case studies in hand. |
 | **Months 4–6** | First 3–5 paying external clients via warm intro from LinkedIn network. ~A$1,800–3,000 MRR + A$4,500–7,500 in install fees. |
 | **Months 7–9** | 6–10 paying clients. ~A$3,600–6,000 MRR. Install bottleneck starts to bite — first hire decision. |
 | **Months 10–12** | 10–15 paying clients. ~A$5,000–9,000 MRR. Year 1 done. |
@@ -209,8 +209,8 @@ Plus the **indirect uplift** on DSK + Eonia + HydraLab from running the same sys
 |---|---|---|
 | **Exit Code** | Venture-scale software bet — anonymous brand, indicators + course, scalable digital product | path (ii) — chase scale |
 | **Metis Cortex** | Leveraged boutique + AI ops layer for the other businesses | path (i) — leveraged boutique |
-| **DSK** | Cash-cow service business + Frontline case study #1 | cash flow + reference customer |
-| **Eonia** | Clinic + Frontline case study #2 (different vertical) | cash flow + reference customer |
+| **DSK** | Cash-cow service business + Metis Cortex case study #1 | cash flow + reference customer |
+| **Eonia** | Clinic + Metis Cortex case study #2 (different vertical) | cash flow + reference customer |
 | **HydraLab** | Chemistry R&D + custom AI workflow case study #3 | IP play + reference customer |
 
 Two strategic bets at once (Exit Code = path ii, Metis Cortex = path i) doesn't overload one operator because they have very different rhythms — Exit Code is asynchronous content + product work, Metis Cortex is synchronous client work. They don't compete for the same hours of the day.
@@ -222,7 +222,7 @@ Two strategic bets at once (Exit Code = path ii, Metis Cortex = path i) doesn't 
 These were locked when the strategy was set on 2026-05-06. Holding to them prevents the boutique from accidentally becoming a consultancy:
 
 1. **Charge for outcomes, not hours.** Productized service from day one. The moment "$200/hour" gets quoted once, it's a consultancy forever.
-2. **Refuse bespoke beyond a tight feature set.** Customer asks for a custom Salesforce integration? "We install Frontline. We don't build custom integrations — here's a Zapier template." Saying no is what makes it productize-able later.
+2. **Refuse bespoke beyond a tight feature set.** Customer asks for a custom Salesforce integration? "We install Metis Cortex. We don't build custom integrations — here's a Zapier template." Saying no is what makes it productize-able later.
 3. **Document obsessively.** Every install, every prompt, every workflow, every call recording (with consent). Building the dataset for a SaaS layer two years out, even if not productizing now.
 4. **Build observability into every install.** Real-time dashboard showing calls answered, bookings made, recovered revenue. That dashboard becomes the SaaS UI in path (ii).
 5. **Track cost-to-serve per account ruthlessly.** When the data shows one segment (e.g. Sydney med spas) converts at 80% with low support load, that's the SaaS-able beachhead.
@@ -232,17 +232,17 @@ The trap to refuse on sight: **don't take the A$20,000 bespoke install for one b
 
 ---
 
-## What's NOT in scope for Frontline base launch (deferred to later phases)
+## What's NOT in scope for Metis Cortex launch (deferred to later phases)
 
-- **Frontline Knowledge (Tier 2)** — per-asset Q&A on inbound calls. Phase 2 SKU, build after at least 1 paying Tier 1 client. Spec implicit in `FRONTLINE-OUTBOUND-SPEC.md` and earlier strategy notes.
-- **Frontline Outbound (Tier 3)** — AI database activation. Phase 2 SKU, build after at least 1 paying Tier 1 client. Full spec in `FRONTLINE-OUTBOUND-SPEC.md` (locked 2026-05-08 from Belle Property Manly customer-discovery conversation).
-- **AI Opportunity Audit** — Phase 2 product (~A$500), sold to installed Frontline clients to identify additional AI opportunities in their business
+- **Metis Cortex Knowledge (Tier 2)** — per-asset Q&A on inbound calls. Phase 2 SKU, build after at least 1 paying Tier 1 client. Spec implicit in `OUTBOUND-SPEC.md` and earlier strategy notes.
+- **Metis Cortex Outbound (Tier 3)** — AI database activation. Phase 2 SKU, build after at least 1 paying Tier 1 client. Full spec in `OUTBOUND-SPEC.md` (locked 2026-05-08 from Belle Property Manly customer-discovery conversation).
+- **AI Opportunity Audit** — Phase 2 product (~A$500), sold to installed Metis Cortex clients to identify additional AI opportunities in their business
 - **Custom implementation services** (knowledge bots, marketing automation, custom workflows) — Phase 3, sold direct to installed accounts at A$3K–15K per project or A$1.5K–3K/mo retainer
 - **Vertical-specific landing pages** (`/cleaners`, `/clinics`, `/tradies`, etc.) — Phase 3, only after 10 paying clients
 - **Customer portal / dashboard** — Phase 4, only after 25 paying clients
 - **International expansion** — Phase 4+, AU only for the first 12 months minimum
 
-**Discipline rule (locked 2026-05-08):** Frontline base must have at least 1 paying external client before any work begins on Tier 2 or Tier 3. This rule exists to prevent strategic ADHD — the customer-discovery insights that produced the three-tier stack are valuable, but they must not delay the Tier 1 launch.
+**Discipline rule (locked 2026-05-08):** Metis Cortex must have at least 1 paying external client before any work begins on Tier 2 or Tier 3. This rule exists to prevent strategic ADHD — the customer-discovery insights that produced the three-tier stack are valuable, but they must not delay the Tier 1 launch.
 
 ---
 
@@ -250,12 +250,12 @@ The trap to refuse on sight: **don't take the A$20,000 bespoke install for one b
 
 Detail on each component lives in:
 
-- `dsk-frontline-pilot-pack.md` — full DSK install playbook
-- `eonia-frontline-pilot-pack.md` — full Eonia install playbook (clinic-adapted)
+- `dsk-pilot-pack.md` — full DSK install playbook
+- `eonia-pilot-pack.md` — full Eonia install playbook (clinic-adapted)
 - `SALES-PREP-PACKAGE.md` — 10-min demo flow + 10 objection responses + 5 pricing rebuttals
 - `ONBOARDING-EMAIL-SEQUENCE.md` — Day 1 / 3 / 7 / 14 customer onboarding emails
 - `PILOT-CAPTURE-KIT.md` — 11-screenshot checklist + Day 28 metrics report email template
 - `LINKEDIN-COMPANY-PAGE-COPY.md` + `LINKEDIN-FIRST-100-OUTREACH.md` + `LINKEDIN-FIRST-POST-DRAFT.md` — LinkedIn launch materials
 - `COLD-EMAIL-V1-PROSPECTS.md` — 26 Sydney prospects + Apollo handoff for the remaining 24
-- `THERAPIST-LAWYER-SHORTLIST.md` — three Sydney HR lawyers vetted for the Eonia therapist hire that frees up Peter's clinical hours for Frontline pilots
+- `THERAPIST-LAWYER-SHORTLIST.md` — three Sydney HR lawyers vetted for the Eonia therapist hire that frees up Peter's clinical hours for Metis Cortex pilots
 - `STATUS.md` — canonical state file, updated each session

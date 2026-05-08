@@ -282,7 +282,7 @@ The guarantee gets restated here — and only here — in the onboarding sequenc
 
 # Onboarding Email 4 — Day 14 (go-live)
 
-> **Trigger:** Day 14 of the install, sent at 9:00 AEST the morning Frontline goes primary
+> **Trigger:** Day 14 of the install, sent at 9:00 AEST the morning Metis Cortex goes primary
 > **From:** peter@kritsotakis.com.au
 > **Reply-to:** peter@kritsotakis.com.au
 > **Author:** Cowork, executing Task 11 (4/4) of the 2026-05-06 brief
@@ -292,7 +292,7 @@ The guarantee gets restated here — and only here — in the onboarding sequenc
 ## Subject
 
 ```
-Frontline is live for {{business_name}}
+Metis Cortex is live for {{business_name}}
 ```
 
 (Variable; reads ~38 characters with a typical business name. The most important word is "live" — it lands in inbox preview as a status confirmation, not a question.)
@@ -310,7 +310,7 @@ Zoe is now answering. What to do in the first 24 hours, and when your report lan
 ```
 Hi {{first_name}},
 
-Frontline is live.
+Metis Cortex is live.
 
 As of 9am today, Zoe is answering every call to {{forwarded_number}}.
 You're now the human escalation, not the front line.
@@ -385,6 +385,6 @@ The onboarding sequence ends here. The next scheduled customer touchpoint is the
 ## Edge case
 
 **If Day 14 launches with major issues** (Zoe failing on real calls, integration broken, etc.):
-- Don't send this email automatically. The "Frontline is live" subject line lands as a lie if the system isn't working.
-- Hold the email. Fix the issue. Send it the day Frontline is genuinely stable, regardless of calendar day.
+- Don't send this email automatically. The "Metis Cortex is live" subject line lands as a lie if the system isn't working.
+- Hold the email. Fix the issue. Send it the day Metis Cortex is genuinely stable, regardless of calendar day.
 - The 14-day clock can flex — the customer would rather get a working system on Day 16 than a broken one on Day 14. Communicate the slip directly via phone, not via the template sequence.

@@ -114,7 +114,7 @@ Metis Cortex installs AI receptionists on Australian service businesses.
 
 We pick up every missed call within 60 seconds, qualify the lead, and book the appointment — so service businesses stop leaking enquiries to voicemail.
 
-Frontline, our flagship product, installs in 14 days. A$1,500 setup, A$600/month, month-to-month. If it doesn't book at least 5 extra appointments in month one, full refund.
+Metis Cortex, our flagship product, installs in 14 days. A$1,500 setup, A$600/month, month-to-month. If it doesn't book at least 5 extra appointments in month one, full refund.
 
 Built and proven on our own cleaning business (DSK Property Cleaning) before we ever sold it externally.
 
@@ -157,7 +157,7 @@ Book a 10-minute demo: [Calendly URL once Task 1 complete]
 |---|---|---|---|
 | 1 | **Hero background** (subtle, behind navy gradient) | Wide horizontal, 2400×1200 minimum, action shot of cleaner mid-job at a Sydney property exterior — ideally with DSK van visible | Recent jobs (last 6 months), Jobber attachments, Peter's iPhone Photos |
 | 2 | **DSK Case Study primary photo** | Square or 4:3, 1600×1200, the DSK team with a finished property in the background OR a striking before/after pair | Same |
-| 3 | **Frontline / "What's Included" decorative** | Anything showing real professional cleaning equipment, vans, or the team in uniform | Same |
+| 3 | **Metis Cortex / "What's Included" decorative** | Anything showing real professional cleaning equipment, vans, or the team in uniform | Same |
 | 4 | **About / Founder strip (Phase 2)** | Wide shot of Peter at a DSK job site, candid not posed | Personal photo library |
 | 5 | **Optional second case study slot** | 4:3, a different property type (strata building exterior or pre-sale completed home) | Same |
 
@@ -186,7 +186,7 @@ Book a 10-minute demo: [Calendly URL once Task 1 complete]
 
 ## Task 5 — Eonia CMS confirmation
 
-**Why:** The Eonia Frontline install pack (`eonia-frontline-pilot-pack.md`) specifies a webhook to Eonia's clinical management system. The webhook spec varies by system (Cliniko, Pabau, Halaxy each have different APIs). Without this confirmation, Day 1 of the Eonia install can't start.
+**Why:** The Eonia install pack (`eonia-pilot-pack.md`) specifies a webhook to Eonia's clinical management system. The webhook spec varies by system (Cliniko, Pabau, Halaxy each have different APIs). Without this confirmation, Day 1 of the Eonia install can't start.
 
 **Steps:**
 
@@ -195,8 +195,8 @@ Book a 10-minute demo: [Calendly URL once Task 1 complete]
 2. Peter sends, gets the answer
 3. Cowork captures the answer + asks the second question:
    > "Great. Who has admin access to generate an API key when we need one?"
-4. Cowork updates `eonia-frontline-pilot-pack.md` Phase 2/4 sections with the actual CMS name + sets a TODO for API key once therapist install Day 1 starts
-5. Cowork updates `~/.claude/memory/active-projects.md` Eonia Frontline install row to reflect CMS confirmed
+4. Cowork updates `eonia-pilot-pack.md` Phase 2/4 sections with the actual CMS name + sets a TODO for API key once therapist install Day 1 starts
+5. Cowork updates `~/.claude/memory/active-projects.md` Eonia install row to reflect CMS confirmed
 
 **Deliverable:** CMS name confirmed in writing in the pilot pack + active-projects.md.
 
@@ -289,7 +289,7 @@ Phase A (parallel):
 
 Phase B (after A):
   Task 4 (DSK photos) ──→ Site visual polish (post-launch ok)
-  Task 5 (Eonia CMS) ──→ Eonia Frontline install Day 1 unblocks
+  Task 5 (Eonia CMS) ──→ Eonia install Day 1 unblocks
   Task 6 (Lawyer)    ──→ Therapist hire unblocks
 ```
 

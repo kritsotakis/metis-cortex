@@ -18,11 +18,11 @@ export function DSKCaseStudy() {
           Case study — DSK Property Cleaning
         </p>
         <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-tight sm:text-5xl">
-          We installed Frontline on our own cleaning business first.
+          We installed Metis Cortex on our own cleaning business first.
         </h2>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-bone/70">
           DSK is a Sydney property cleaning company doing pre-sale and strata
-          work. We pointed Frontline at it before we ever sold it to anyone
+          work. We pointed Metis Cortex at it before we ever sold it to anyone
           else. The numbers below are from the 14-day pilot — final figures
           land week of completion.
         </p>

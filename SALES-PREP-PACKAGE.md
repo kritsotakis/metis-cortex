@@ -8,7 +8,7 @@
 
 ## Standing principles (internalise once, apply every demo)
 
-- **You're an operator, not a salesperson.** You run DSK. You built Frontline because you needed it. The prospect is a peer. Talk that way.
+- **You're an operator, not a salesperson.** You run DSK. You built Metis Cortex because you needed it. The prospect is a peer. Talk that way.
 - **Demo > deck.** They booked the call to hear Zoe answer a phone, not to watch slides. Don't open a slide deck. Ever.
 - **Your strongest move is silence.** When they go quiet after the demo, *let them*. Quiet means they're calculating. Filling silence reads as needy.
 - **Match their energy.** High-energy plumber — lean in, faster pace. Considered clinic owner — slower, more space between sentences. Don't push.
@@ -37,7 +37,7 @@ Wait for the yes. If they say something other than yes, address it before dialli
 
 ### Minute 1:00–4:00 — Live demo (no slides, no deck)
 
-Pull up your phone. Dial the Frontline test number. Put it on speaker. Run a realistic enquiry — pick a vertical that **mirrors their business**, not always pre-sale cleaning.
+Pull up your phone. Dial the Metis Cortex test number. Put it on speaker. Run a realistic enquiry — pick a vertical that **mirrors their business**, not always pre-sale cleaning.
 
 If they're a tradie:
 > *"Hi, I'm calling because I need a plumber out tomorrow morning, kitchen sink's blocked. North Bondi, three-bed unit, can you fit me in?"*
@@ -146,7 +146,7 @@ For each: the **underlying concern** Peter should hear (not the literal words), 
 **Response:**
 > *"Month-to-month after the 14-day install. Cancel anytime, 30-day notice. The $1,500 install is the only one-off."*
 
-**Bridge:** *"That's deliberate. If Frontline doesn't earn its keep month-to-month, I lose you. Keeps me honest."*
+**Bridge:** *"That's deliberate. If Metis Cortex doesn't earn its keep month-to-month, I lose you. Keeps me honest."*
 
 ### 5. *"My phone system is non-standard / VoIP / weird"*
 
@@ -170,7 +170,7 @@ For each: the **underlying concern** Peter should hear (not the literal words), 
 
 ### 7. *"My missed-call problem isn't that bad"*
 
-**Underlying concern:** prioritisation / urgency. Frontline isn't top of their pile right now.
+**Underlying concern:** prioritisation / urgency. Metis Cortex isn't top of their pile right now.
 
 **Response:**
 > *"Cool. Worth doing one thing — count missed calls in your phone log this week. If it's under 3, you're right, skip it. If it's over 5, the maths flips."*
@@ -219,7 +219,7 @@ Holding price discipline matters more than any single deal. Discounting before y
 > *"What I'll do is the refund guarantee — month one doesn't deliver, you get the $1,500 back. That's the discount, just paid out backward instead of forward."*
 
 **The walk-away if they push:**
-> *"If $1,500 is the blocker, Frontline isn't the right fit right now. There's a self-serve tool called TransferToAI doing $99/month — less polished, you set it up, but it'd get you in the door. Happy to point you at them."*
+> *"If $1,500 is the blocker, Metis Cortex isn't the right fit right now. There's a self-serve tool called TransferToAI doing $99/month — less polished, you set it up, but it'd get you in the door. Happy to point you at them."*
 
 > Pointing at a specific competitor (TransferToAI) when you walk away is counter-intuitive but it works. They remember you as the guy who told them the truth. Half come back in 6 months when self-serve hasn't worked. The other half were never your customer anyway.
 
@@ -236,7 +236,7 @@ Holding price discipline matters more than any single deal. Discounting before y
 ### 3. *"What about a 6-month commitment for a discount?"*
 
 **The rebuttal:**
-> *"Frontline's already month-to-month, no contract. If I gave you a discount for committing 6 months, I'm trading flexibility you already have for money I don't need to take."*
+> *"Metis Cortex's already month-to-month, no contract. If I gave you a discount for committing 6 months, I'm trading flexibility you already have for money I don't need to take."*
 
 **The reframe:**
 > *"What I'd rather give you is the founding-customer-rate hold — same $600/month, no annual increases, locked for 12 months. That's actually worth more long-term than a 6-month discount."*
@@ -254,13 +254,13 @@ Holding price discipline matters more than any single deal. Discounting before y
 ### 5. *"Can you give me 14 days free to test?"*
 
 **The rebuttal — equivalent to skipping payment entirely:**
-> *"The 14 days is the install — that's where the work happens. There's no Frontline to test before then; we're building it for your business in those 14 days."*
+> *"The 14 days is the install — that's where the work happens. There's no Metis Cortex to test before then; we're building it for your business in those 14 days."*
 
 **The reframe:**
 > *"What you actually want is risk reversal. That's the refund guarantee — you pay the install, and if it doesn't book 5 extra in month one, you're whole. Better than free trial because it puts skin in the game on both sides."*
 
 **The walk-away:**
-> *"If the only way you'd do this is free first, Frontline's probably not the right fit yet. Wait until missed calls are costing you visibly more than $1,500. Then it's an obvious yes."*
+> *"If the only way you'd do this is free first, Metis Cortex's probably not the right fit yet. Wait until missed calls are costing you visibly more than $1,500. Then it's an obvious yes."*
 
 ---
 

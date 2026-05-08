@@ -48,8 +48,8 @@ These ship deliverables you can produce in your current state. Each is timeboxed
 2. **Preview text** — 1 line, 90 chars max, gives the recipient a reason to open
 3. **Email body** — short (under 200 words). Structure:
    - Confirmation of booking + add-to-calendar link (Calendly auto-injects this)
-   - 2 sentences on what to expect from the 10-min call (Peter walks them through Frontline live, shows Zoe answering a real test call, talks pricing + guarantee)
-   - **One specific pre-call ask:** "Have your current weekly missed-call number roughly in mind — even a guess is fine. We'll work backward from that to whether Frontline makes sense for you."
+   - 2 sentences on what to expect from the 10-min call (Peter walks them through Metis Cortex live, shows Zoe answering a real test call, talks pricing + guarantee)
+   - **One specific pre-call ask:** "Have your current weekly missed-call number roughly in mind — even a guess is fine. We'll work backward from that to whether Metis Cortex makes sense for you."
    - Reschedule link (Calendly auto-injects)
    - Footer: Peter Kritsotakis / Metis Cortex / metiscortex.au
 4. **Tone:** Operator-to-operator. No salesy language. No "I'm so excited." Match the brand voice on the homepage.
@@ -57,7 +57,7 @@ These ship deliverables you can produce in your current state. Each is timeboxed
 **Plus a no-show follow-up template** (sends 24h after a missed demo, Calendly Notifications → Cancellation/no-show notification):
 
 - Subject: *"Missed you — happy to reschedule"*
-- Body: 4 lines. Acknowledge they didn't make it (no judgement), one-line reminder of what Frontline is, reschedule link, sign-off.
+- Body: 4 lines. Acknowledge they didn't make it (no judgement), one-line reminder of what Metis Cortex is, reschedule link, sign-off.
 
 **Save:** `~/Library/Application Support/Claude/...your-outputs.../metis-cortex-calendly-confirmation-email.md`. Code will sync into repo as `CALENDLY-CONFIRMATION-EMAIL.md`.
 
@@ -76,7 +76,7 @@ These ship deliverables you can produce in your current state. Each is timeboxed
 | 1 | Day 1 — instant after payment | *"Welcome to Metis Cortex — what happens next"* | Confirm payment, set expectation for the 14-day install, list what we'll need from them in week 1 (their existing phone number, business hours, top 3 service types, current CRM if any), introduce Peter as their point of contact |
 | 2 | Day 3 | *"Building Zoe for [their business]"* | Update on progress — Retell agent configured, Twilio number provisioned, voice prompt drafted. Include 1 specific item they need to action this week (review the voice prompt draft, send a sample call recording for tone, etc.) |
 | 3 | Day 7 — midpoint | *"Halfway there — test calls this week"* | Progress check, run them through what test calls will look like, what they should listen for, what's normal vs concerning. Reinforce the 5-extra-bookings refund guarantee |
-| 4 | Day 14 — go-live | *"Frontline is live for [their business]"* | Confirmation that Zoe is now answering their phone, what to do in the first 24h, how to escalate, when they'll receive the month-1 metrics report |
+| 4 | Day 14 — go-live | *"Metis Cortex is live for [their business]"* | Confirmation that Zoe is now answering their phone, what to do in the first 24h, how to escalate, when they'll receive the month-1 metrics report |
 
 **For each email:**
 

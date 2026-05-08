@@ -1,6 +1,6 @@
 # Metis Cortex — Launch Site
 
-One-page launch site for **Frontline**, the Speed-to-Lead AI receptionist.
+One-page launch site for **Metis Cortex**, the Speed-to-Lead AI receptionist.
 
 - Stack: Next.js 16 (App Router) · React 19 · Tailwind CSS v4 · TypeScript
 - Hosting target: Vercel free tier

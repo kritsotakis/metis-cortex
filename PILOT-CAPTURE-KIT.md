@@ -1,6 +1,6 @@
 # Metis Cortex — Pilot Data Capture Kit
 
-> **For:** Peter, on Day 28 of the DSK Frontline pilot (and every paying client thereafter)
+> **For:** Peter, on Day 28 of the DSK pilot (and every paying client thereafter)
 > **Author:** Cowork, executing Task 15 of the 2026-05-06 14:30 brief
 > **Eventual home:** `~/Desktop/metis-cortex/PILOT-CAPTURE-KIT.md`
 > **Trigger:** the morning of Day 28, before the metrics-report email goes out
@@ -127,7 +127,7 @@ The same template handles all three outcomes. Tone: confident. Numbers do the wo
 ### Subject
 
 ```
-Your month-one Frontline report — {{business_name}}
+Your month-one Metis Cortex report — {{business_name}}
 ```
 
 (Variable; ~50 chars with a typical business name. "Report" frames it as data not pitch.)
@@ -145,7 +145,7 @@ Your month-one Frontline report — {{business_name}}
 ```
 Hi {{first_name}},
 
-Day 28 of Frontline at {{business_name}}. The numbers below are the
+Day 28 of Metis Cortex at {{business_name}}. The numbers below are the
 real results from Zoe over the past 28 days.
 
 The headline:
@@ -171,7 +171,7 @@ Where this lands:
              when month one delivers.
 
   Option 2 — Add Reception or Handbook. Both are upsells we built
-             after Frontline that share the same Zoe install. Reply
+             after Metis Cortex that share the same Zoe install. Reply
              to this email with "tell me more" and I'll send a
              10-min walkthrough.
              {{ Only show this option block if booking_count >= 5 }}
@@ -213,7 +213,7 @@ metiscortex.au
 | `{{escalation_count}}` | GHL escalation log | Times Zoe handed off to Peter |
 | `{{baseline_metric}}` | DSK pre-install measurement | Captured during pilot Day -7 to Day 0 |
 | `{{surprise_moment}}` | Peter manually fills in | One specific example from the 28 days. E.g., *"the Mosman pre-sale that came in at 7:42pm on a Sunday — Zoe quoted A$2,500, qualified, booked Monday morning before I even saw the missed call."* |
-| `{{next_charge_amount}}` | Stripe subscription | Usually `A$600` for Frontline-only |
+| `{{next_charge_amount}}` | Stripe subscription | Usually `A$600` for Metis Cortex-only |
 
 ### Rendering rules
 
