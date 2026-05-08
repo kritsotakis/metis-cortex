@@ -18,22 +18,22 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="bg-bone-soft py-24 sm:py-32">
+    <section id="how-it-works" className="bg-bone-soft py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
-        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-gold">
+        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-bronze">
           How it works
         </p>
         <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
           Three steps. Two weeks. One number to watch.
         </h2>
 
-        <ol className="mt-16 grid gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-3">
+        <ol className="mt-16 grid gap-px overflow-hidden rounded-lg bg-ink/10 sm:grid-cols-3">
           {steps.map((step) => (
             <li
               key={step.n}
               className="flex flex-col gap-6 bg-bone-soft p-10"
             >
-              <span className="font-display text-5xl text-gold">{step.n}</span>
+              <span className="font-display text-5xl text-ink/50">{step.n}</span>
               <h3 className="font-display text-2xl text-ink">{step.title}</h3>
               <p className="text-base leading-relaxed text-ink-soft">
                 {step.body}

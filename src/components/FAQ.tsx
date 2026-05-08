@@ -51,7 +51,7 @@ export function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <div className="mx-auto max-w-4xl px-6 sm:px-10" id="faq">
-        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-gold">
+        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-bronze">
           Questions we get
         </p>
         <h2 className="font-display text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
@@ -68,7 +68,7 @@ export function FAQ() {
                 <span>{faq.q}</span>
                 <span
                   aria-hidden="true"
-                  className="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center text-gold transition-transform group-open:rotate-45"
+                  className="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center text-ink/40 transition-transform group-open:rotate-45"
                 >
                   +
                 </span>

@@ -20,14 +20,14 @@ export function CostOfMissedCalls() {
   return (
     <section className="bg-bone-soft py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
-        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-gold">
+        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-bronze">
           The cost of missed calls
         </p>
         <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
           Every call you miss is a booking your competitor takes.
         </h2>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-3">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-lg bg-ink/10 sm:grid-cols-3">
           {stats.map((s) => (
             <div key={s.label} className="bg-bone-soft p-8 sm:p-10">
               <p className="font-display text-6xl text-ink">{s.figure}</p>

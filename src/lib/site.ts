@@ -10,7 +10,11 @@ export const SITE = {
 
 export const CONTACT = {
   primaryEmail: "peter@kritsotakis.com.au",
+  /* brandEmailTarget is the desired info@ address; brandEmail flips to it when
+   * Cowork verifies the email-forwarding is live. Until then `contactEmail()`
+   * falls back to primaryEmail. */
   brandEmail: null as string | null,
+  brandEmailTarget: "info@metiscortex.au",
   phoneE164: "+61423668766",
   phoneDisplay: "0423 668 766",
 } as const;
@@ -32,7 +36,8 @@ export const LEGAL = {
   trusteeAcn: "153 844 136",
   trusteeAbn: "58 153 844 136",
   asicBusinessName: "Metis Cortex",
-  asicRegistrationNumber: null as string | null,
+  asicRegistrationDate: "9 May 2026" as string | null,
+  asicNextRenewalDate: "9 May 2027",
 } as const;
 
 export const PRICING = {
@@ -59,8 +64,8 @@ export function contactEmail(): string {
 }
 
 export function asicLine(): string {
-  if (LEGAL.asicRegistrationNumber) {
-    return `ASIC business name: ${LEGAL.asicBusinessName} (reg ${LEGAL.asicRegistrationNumber})`;
+  if (LEGAL.asicRegistrationDate) {
+    return `ASIC business name: ${LEGAL.asicBusinessName} (registered ${LEGAL.asicRegistrationDate})`;
   }
   return "ASIC business name registration pending";
 }

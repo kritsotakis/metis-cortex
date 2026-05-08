@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
 /* Metis Cortex design tokens — locked.
- * Three colours: ink #0e1e2e, bone #f5f1ea, bronze #b07843.
+ * Three colours: ink #0f203f, bone #f5f1ea, bronze #b07843.
  * Soft variants are layering tones, not new colours.
- * Source: metis-cortex-design-system/project/colors_and_type.css
+ * Source: metis-cortex-design-system handoff brief 2026-05-09.
+ *
+ * Ink Navy was repainted from #0e1e2e to #0f203f to match the navy baked
+ * into the official horizontal lockup PNGs — eliminates the visible plate
+ * around the logo on dark surfaces.
  */
 
 @theme inline {
-  --color-ink: #0e1e2e;
-  --color-ink-soft: #142840;
-  --color-ink-muted: #4a5b73;
+  --color-ink: #0f203f;
+  --color-ink-soft: rgb(15 32 63 / 0.85);
+  --color-ink-muted: rgb(15 32 63 / 0.62);
   --color-bone: #f5f1ea;
   --color-bone-soft: #efe9df;
-  --color-gold: #b07843;
-  --color-gold-soft: #d6a072;
+  --color-bronze: #b07843;
+  --color-bronze-soft: #d6a072;
+  /* Aliases — `gold` is being phased out in favour of `bronze`; keep these
+   * until every component reference is migrated. Same value, different name. */
+  --color-gold: var(--color-bronze);
+  --color-gold-soft: var(--color-bronze-soft);
   --color-charcoal: #1f2937;
-  --color-rule: #1f3553;
+  --color-rule: rgb(15 32 63 / 0.18);
 
   --font-display: var(--font-cormorant);
   --font-sans: var(--font-inter);
@@ -29,10 +37,10 @@
   --mc-fg-on-ink-2:    rgba(245, 241, 234, 0.72);
   --mc-fg-on-ink-3:    rgba(245, 241, 234, 0.48);
   --mc-fg-on-ink-rule: rgba(245, 241, 234, 0.12);
-  --mc-fg-on-bone-1:    #0e1e2e;
-  --mc-fg-on-bone-2:    rgba(14, 30, 46, 0.72);
-  --mc-fg-on-bone-3:    rgba(14, 30, 46, 0.48);
-  --mc-fg-on-bone-rule: rgba(14, 30, 46, 0.12);
+  --mc-fg-on-bone-1:    #0f203f;
+  --mc-fg-on-bone-2:    rgba(15, 32, 63, 0.72);
+  --mc-fg-on-bone-3:    rgba(15, 32, 63, 0.48);
+  --mc-fg-on-bone-rule: rgba(15, 32, 63, 0.12);
 
   /* Tracking (Cormorant +6 default, +12 on the "CORTEX" subline) */
   --mc-tracking-display: 0.06em;
@@ -50,15 +58,15 @@
   --mc-space-24: 96px;
   --mc-space-32: 128px;
 
-  /* Radii */
+  /* Radii — sm 4px (chips/inputs), md 8px (cards), lg 12px (large surfaces) */
   --mc-radius-sm: 4px;
   --mc-radius-md: 8px;
   --mc-radius-lg: 12px;
 
   /* Elevation — single recipe */
   --mc-shadow-card:
-    0 1px 2px rgba(14, 30, 46, 0.06),
-    0 8px 24px rgba(14, 30, 46, 0.04);
+    0 1px 2px rgba(15, 32, 63, 0.06),
+    0 8px 24px rgba(15, 32, 63, 0.04);
 
   /* Motion */
   --mc-ease: cubic-bezier(0.2, 0.6, 0.2, 1);
@@ -80,7 +88,9 @@ body {
 
 .font-display {
   font-family: var(--font-display), Georgia, serif;
-  font-feature-settings: "liga", "dlig";
+  /* lnum + tnum force lining tabular figures so "100%" renders as 1-0-0
+   * not Cormorant's default oldstyle figures (where 1 reads as a roman I). */
+  font-feature-settings: "liga", "dlig", "lnum", "tnum";
   letter-spacing: var(--mc-tracking-display);
 }
 
@@ -89,14 +99,14 @@ body {
  * because thickness control is browser-inconsistent on text-decoration.
  */
 .mc-bronze-underline {
-  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-image: linear-gradient(var(--color-bronze), var(--color-bronze));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 4px;
   padding-bottom: 6px;
 }
 .mc-bronze-underline-hero {
-  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-image: linear-gradient(var(--color-bronze), var(--color-bronze));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 8px;
@@ -104,7 +114,8 @@ body {
 }
 
 /* Display italic — italic + 600 weight (not the default italic 400).
- * Used for the italicised word inside Cormorant headlines.
+ * Used for the italicised word inside Cormorant headlines. Reserved for
+ * the hero anchor only — do not reuse elsewhere on the page.
  */
 .mc-italic-display {
   font-style: italic;
@@ -117,7 +128,7 @@ body {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(14, 30, 46, 0.15),
+    rgba(15, 32, 63, 0.15),
     transparent
   );
 }
@@ -129,7 +140,7 @@ body {
  * on screen — focus is a state, not a composition element.
  */
 :where(a, button, [role="button"], input, select, textarea):focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-bronze);
   outline-offset: 2px;
   border-radius: 2px;
 }

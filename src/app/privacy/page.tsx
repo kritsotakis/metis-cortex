@@ -22,21 +22,16 @@ export default function PrivacyPage() {
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-80"
         >
           <img
-            src="/brand/logo-mark-transparent-128.png"
-            alt=""
-            width={36}
-            height={36}
-            className="h-9 w-9"
+            src="/brand/metiscortex-horizontal-lockup-on-light.png"
+            alt={SITE.name}
+            className="h-9 w-auto"
           />
-          <span className="font-display text-xl font-medium tracking-tight text-ink">
-            Metis<span aria-hidden="true" className="mx-1 text-gold">·</span>Cortex
-          </span>
         </Link>
       </header>
 
       <article className="mx-auto max-w-3xl px-6 py-16 sm:px-10 sm:py-20">
-        <p className="mb-4 inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-          <span className="h-px w-8 bg-gold" />
+        <p className="mb-4 inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-bronze">
+          <span className="h-px w-8 bg-bronze" />
           Privacy policy
         </p>
         <h1 className="font-display text-[clamp(2.5rem,6vw,4rem)] font-semibold leading-[1.05] tracking-tight">
@@ -177,7 +172,7 @@ export default function PrivacyPage() {
                 example, the ATO, ASIC, or a valid court order).
               </li>
             </ul>
-            <div className="mt-6 rounded-md border-l-2 border-gold/60 bg-bone-soft px-5 py-4">
+            <div className="mt-6 rounded-md border-l-2 border-bronze/60 bg-bone-soft px-5 py-4">
               <p className="font-medium text-ink">
                 How we share your data — and how we don&rsquo;t.
               </p>
@@ -296,7 +291,7 @@ export default function PrivacyPage() {
             </ul>
             <p className="mt-4">
               Email{" "}
-              <a className="underline hover:text-gold" href={`mailto:${email}`}>
+              <a className="underline hover:text-bronze" href={`mailto:${email}`}>
                 {email}
               </a>{" "}
               and we&rsquo;ll respond within 30 days. We may need to verify
@@ -311,13 +306,13 @@ export default function PrivacyPage() {
             <p className="mt-3">
               If you&rsquo;re not happy with how we&rsquo;ve handled your
               information, please contact us first at{" "}
-              <a className="underline hover:text-gold" href={`mailto:${email}`}>
+              <a className="underline hover:text-bronze" href={`mailto:${email}`}>
                 {email}
               </a>
               . If the issue isn&rsquo;t resolved, you can complain to the
               Office of the Australian Information Commissioner at{" "}
               <a
-                className="underline hover:text-gold"
+                className="underline hover:text-bronze"
                 href="https://www.oaic.gov.au/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -349,7 +344,7 @@ export default function PrivacyPage() {
               ABN {LEGAL.abn}).
               <br />
               Email:{" "}
-              <a className="underline hover:text-gold" href={`mailto:${email}`}>
+              <a className="underline hover:text-bronze" href={`mailto:${email}`}>
                 {email}
               </a>
               <br />

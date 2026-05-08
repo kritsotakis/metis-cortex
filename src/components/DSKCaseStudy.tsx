@@ -14,7 +14,7 @@ export function DSKCaseStudy() {
   return (
     <section className="bg-ink text-bone py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
-        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-gold">
+        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-bronze">
           Case study — DSK Property Cleaning
         </p>
         <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-tight sm:text-5xl">
@@ -28,7 +28,7 @@ export function DSKCaseStudy() {
         </p>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-2xl border border-bone/15 p-10">
+          <div className="rounded-lg border border-bone/15 p-10">
             <p className="text-xs uppercase tracking-[0.18em] text-bone/50">
               Before
             </p>
@@ -47,8 +47,8 @@ export function DSKCaseStudy() {
             </dl>
           </div>
 
-          <div className="rounded-2xl bg-bone text-ink p-10">
-            <p className="text-xs uppercase tracking-[0.18em] text-gold">
+          <div className="rounded-lg bg-bone text-ink p-10">
+            <p className="text-xs uppercase tracking-[0.18em] text-bronze">
               After
             </p>
             <dl className="mt-6 space-y-5">

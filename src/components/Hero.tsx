@@ -8,30 +8,27 @@ export function Hero() {
         <a
           href="#"
           aria-label="Metis Cortex"
-          className="flex items-center gap-3 transition-opacity hover:opacity-80"
+          className="inline-flex items-center transition-opacity hover:opacity-85"
         >
           <img
-            src="/brand/logo-mark-128.png"
-            alt=""
-            width={40}
-            height={40}
-            className="h-10 w-10 rounded"
+            src="/brand/metiscortex-horizontal-lockup.png"
+            alt="Metis Cortex"
+            className="h-10 w-auto"
           />
-          <span className="font-display text-2xl font-medium tracking-tight text-bone">
-            Metis<span aria-hidden="true" className="mx-1 text-gold">·</span>Cortex
-          </span>
         </a>
-        <a
-          href="#guarantee"
-          className="hidden text-sm uppercase tracking-[0.18em] text-bone/70 hover:text-bone sm:block"
+        <nav
+          aria-label="Primary"
+          className="hidden items-center gap-7 text-sm uppercase tracking-[0.16em] text-bone/65 sm:flex"
         >
-          The guarantees
-        </a>
+          <a href="#how-it-works" className="hover:text-bone">How it works</a>
+          <a href="#pricing" className="hover:text-bone">Pricing</a>
+          <a href="#guarantee" className="hover:text-bone">The guarantees</a>
+        </nav>
       </header>
 
       <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-28 sm:px-10 sm:pt-28 sm:pb-36">
-        <p className="mb-6 inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-gold">
-          <span className="h-px w-8 bg-gold" />
+        <p className="mb-6 inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-bone/55">
+          <span className="h-px w-8 bg-bone/30" />
           {OFFER.name}
         </p>
 
@@ -90,7 +87,7 @@ export function Hero() {
             <span className="text-bone/85">
               Booked · Thu 7:30pm · table for 4, peanut allergy noted
             </span>
-            <span className="text-[11px] uppercase tracking-[0.16em] text-gold">
+            <span className="text-[11px] uppercase tracking-[0.16em] text-bone/55">
               Confirmed
             </span>
           </div>

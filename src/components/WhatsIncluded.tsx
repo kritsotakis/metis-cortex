@@ -47,11 +47,11 @@ const stack: { title: string; detail: string; value: string }[] = [
 
 export function WhatsIncluded() {
   return (
-    <section className="bg-bone py-24 sm:py-32">
+    <section id="pricing" className="bg-bone py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <div className="grid gap-16 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
           <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-gold">
+            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-bronze">
               What you get
             </p>
             <h2 className="font-display text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
@@ -70,7 +70,7 @@ export function WhatsIncluded() {
               {priceFormatAud(PRICING.setupAud)} setup +{" "}
               {priceFormatAud(PRICING.monthlyAud)}/mo
             </p>
-            <p className="mt-2 text-sm text-gold">
+            <p className="mt-2 text-sm font-medium text-ink">
               {priceFormatAud(PRICING.foundingMonthlyAud)}/mo founding rate for
               first {PRICING.foundingClientCap} case-study clients
             </p>
@@ -82,7 +82,7 @@ export function WhatsIncluded() {
                 key={item.title}
                 className="grid grid-cols-[auto_1fr] items-start gap-6 py-6"
               >
-                <span className="font-display text-2xl text-gold">
+                <span className="font-display text-2xl text-ink/50">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>

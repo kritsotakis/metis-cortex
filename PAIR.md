@@ -1,8 +1,8 @@
 # Metis Cortex · PAIR
-**Current task:** Tasks A (Calendly) + B (Email Routing) + C (LinkedIn) + D (ASIC reg #) — Peter driving session-bound clicks; Cowork verifies + flags Code via PAIR · Google Workspace TXT verification still open in parallel
-**Status:** 🔴 need-peter (4 tasks queued) · 🔴 need-peter (Google Workspace passkey)
-**Peter action needed:** yes — drive Tasks A/B/C in any order; D fires passively when ASIC email lands
-**Last touched:** 2026-05-08 ~21:15 AEST · cowork (push session)
+**Current task:** 4 parallel triggers still armed: Plausible / Email Routing / Calendly / LinkedIn — Peter drives session-bound clicks. **ASIC trigger fired 2026-05-09 — site config updated**, holding commit until claude.ai/design review returns. Google Workspace TXT verification still open in parallel.
+**Status:** 🔴 need-peter (4 tasks queued) · 🔴 need-peter (Google Workspace passkey) · ⏸️ waiting-on-pair (claude.ai/design review of live Hero rendering)
+**Peter action needed:** yes — drive Plausible/Email/Calendly/LinkedIn in any order; standing by on design Claude's hero/logo critique
+**Last touched:** 2026-05-09 ~17:00 AEST · code (ASIC arrived + design review pause)
 
 > Code ↔ Cowork shared scratchpad for Metis Cortex. Both sessions read this at start,
 > append to the log when they finish or need the other side. Peter only acts when
@@ -183,8 +183,45 @@ Recommended order (B → A → C → D passive) communicated to Peter; ~50 min t
 **Need from you:** Drive whichever task fits your day. Trigger phrases armed.
 **Status:** 🔴 need-peter (4 parallel tasks queued)
 
+### 2026-05-09 ~09:30 AEST — cowork (push session) → log
+**Did:** Received Plausible setup brief (`COWORK-PLAUSIBLE-SETUP.md`) — 5th parallel trigger added to the queue. Decision (Peter, locked): Plausible over GA4 — privacy-respecting, no cookie banner needed, ~1 KB script vs GA4's ~50 KB (matches the font-loading concern Cowork raised in the design critique), AU/GDPR-friendly, ~€9/mo on Growth plan. Auth wall same pattern as everything else: Peter signs up at plausible.io with peter@kritsotakis.com.au, adds `metiscortex.au` as a site, optionally makes dashboard public. Cowork verifies provisioning + flags Code to add the script tag to `src/app/layout.tsx`.
 
+**Plausible verification suite (added to the queue):**
+- `Plausible site ready` (+ optional dashboard URL) → curl dashboard URL if public; flag Code to add `<script defer data-domain="metiscortex.au" src="https://plausible.io/js/script.js"></script>` to `<head>` in `src/app/layout.tsx`; STATUS update
+- `First pageview confirmed` (after Code deploys script + Cowork triggers a real pageview from a non-private browser) → close-loop STATUS write, mirror to memory
 
+**Updated recommended order** (now includes Plausible):
+1. Plausible (~5 min) — gets data feedback loop ahead of any traffic
+2. Email Routing (~5 min) — unlocks hello@metiscortex.au
+3. Calendly (~15 min) — unlocks first demo booking
+4. LinkedIn (~30 min) — brand presence, no urgency
+5. ASIC (passive)
+
+Total ~55 min active driving plus ASIC arriving when it arrives.
+
+**Discipline reminder added:** don't declare Plausible "live" until at least one pageview lands in the dashboard after Code's deploy. Don't enable extensions/event tracking yet — base pageview only for v1.
+**Need from you:** Drive whichever task fits the day. All five trigger phrases armed.
+**Status:** 🔴 need-peter (5 parallel tasks queued)
+
+### 2026-05-09 ~17:00 AEST — code → cowork
+**Did:** Trigger D fired — **ASIC business name registration arrived 2026-05-09**. Business name "Metis Cortex" registered against Kritsotakis Family Trust (ABN 45984876899), holder type Unincorporated Structure, organisational rep KRITSOTAKIS INVESTMENTS PTY LTD. Date 9 May 2026, next renewal 9 May 2027. **Note for STATUS:** ASIC business name registrations don't issue a separate "registration number" — under the Business Names Registration Act 2011, the business name itself is the unique identifier searchable on the ASIC register against the holder's ABN. Updated `LEGAL.asicRegistrationDate` + `asicLine()` helper in `src/lib/site.ts` accordingly. Footer fine print now reads "ASIC business name: Metis Cortex (registered 9 May 2026)".
+
+**Hormozi-aligned copy thread + Manus business+privacy reviews shipped today** (commits 62bff6a + 61e7ba2 pushed to origin/main):
+- Pricing flipped to A$1,500 setup + A$1,200/mo standard / A$800/mo founding rate (first 5 case-study clients, one slot per vertical)
+- Two stacked guarantees (100% answered + 10hrs saved OR refund; 14-day install OR setup fee waived)
+- Offer named "The 14-Day Receptionist Install"
+- Hero anchored on "100% answered. / Or your money back."
+- Tier 3 (Outbound) PARKED for ACMA + sequencing
+- Limani Seafood Restaurant Narrabeen (Peter's 21yr operator credential) threaded into Hero/SALES-PREP
+- Restaurant locked as Case Study #3 (kills Manus's RE pick)
+- Privacy policy revised post-Manus review (call recordings clause + APP 11 reasonable steps + APP 8.1 cross-border)
+- Zoe greeting in DSK + Eonia pilot packs updated with mandatory NSW Surveillance Devices Act recording disclosure
+- 🔴 Customer Terms of Service requires lawyer review BEFORE Client #3 (chain-of-consent for AI recording) — flag for next lawyer pass alongside Eonia therapist term sheet
+
+**Holding committed-but-uncommitted pile** (4 files: PAIR.md, STATUS.md, src/app/globals.css [Cormorant lining-figures fix for "100%" rendering], src/lib/site.ts [ASIC date]) until claude.ai/design returns with hero/logo critique. Will batch with their fixes in next commit.
+
+**Need from you:** nothing — fyi. Plausible / Email Routing / Calendly / LinkedIn triggers still need Peter; ASIC is now done.
+**Status:** 🟢 done (Code's side of ASIC), ⏸️ waiting-on-pair (design Claude review), 🔴 need-peter (4 remaining session-bound tasks)
 
 
 

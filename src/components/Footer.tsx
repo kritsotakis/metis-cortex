@@ -9,18 +9,11 @@ export function Footer() {
     <footer className="bg-bone border-t border-ink/10 py-14">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 sm:px-10 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <div aria-label={SITE.name} className="flex items-center gap-3">
-            <img
-              src="/brand/logo-mark-transparent-128.png"
-              alt=""
-              width={40}
-              height={40}
-              className="h-10 w-10"
-            />
-            <p className="font-display text-2xl font-medium tracking-tight text-ink">
-              Metis<span aria-hidden="true" className="mx-1 text-gold">·</span>Cortex
-            </p>
-          </div>
+          <img
+            src="/brand/metiscortex-stacked-lockup-on-light.png"
+            alt={SITE.name}
+            className="h-24 w-auto"
+          />
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-muted">
             {SITE.name} is a registered business name of the {LEGAL.trustName}.
             Sydney, Australia.
@@ -41,14 +34,14 @@ export function Footer() {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-ink">
             <li>
-              <a href={`mailto:${email}`} className="hover:text-gold">
+              <a href={`mailto:${email}`} className="hover:text-bronze">
                 {email}
               </a>
             </li>
             <li>
               <a
                 href={`tel:${CONTACT.phoneE164}`}
-                className="hover:text-gold"
+                className="hover:text-bronze"
               >
                 {CONTACT.phoneDisplay}
               </a>
@@ -58,7 +51,7 @@ export function Footer() {
                 href={linkedinHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gold"
+                className="hover:text-bronze"
               >
                 {linkedinLabel}
               </a>
@@ -72,7 +65,7 @@ export function Footer() {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-ink">
             <li>
-              <a href="/privacy" className="hover:text-gold">
+              <a href="/privacy" className="hover:text-bronze">
                 Privacy policy
               </a>
             </li>
