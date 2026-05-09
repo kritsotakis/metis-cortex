@@ -8,17 +8,17 @@ export function Hero() {
         <a
           href="#"
           aria-label="Metis Cortex"
-          className="inline-flex items-center gap-4 text-bone transition-opacity hover:opacity-85"
+          className="inline-flex items-center gap-3 text-bone transition-opacity hover:opacity-85"
         >
           <img
-            src="/brand/metiscortex-mark-transparent.png"
+            src="/brand/metiscortex-mark.png"
             alt=""
             className="h-16 w-16"
           />
           <img
             src="/brand/metiscortex-wordmark-tight.svg"
             alt="Metis Cortex"
-            className="h-16 w-auto"
+            className="h-10 w-auto"
           />
         </a>
         <nav

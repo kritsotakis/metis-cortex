@@ -47,7 +47,22 @@ export function CostOfMissedCalls() {
           ))}
         </div>
 
-        <p className="mt-8 max-w-3xl text-xs leading-relaxed text-ink-muted">
+        <p className="mt-10 text-xs uppercase tracking-[0.18em] text-ink-muted">
+          The five mistakes Zoe is built to catch
+        </p>
+        <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-base text-ink">
+          <li>Wrong night</li>
+          <li className="text-ink-muted">·</li>
+          <li>Wrong table size</li>
+          <li className="text-ink-muted">·</li>
+          <li>Wrong service code</li>
+          <li className="text-ink-muted">·</li>
+          <li>Missed dietary or allergy note</li>
+          <li className="text-ink-muted">·</li>
+          <li>Mis-keyed phone number</li>
+        </ul>
+
+        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-ink-muted">
           Operator estimates from running Australian service businesses since
           2003. Real DSK Property Cleaning Zoe-pilot data publishes after our
           14-day install completes.
