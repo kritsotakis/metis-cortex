@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Why is the price so low?",
-    a: "Founding-rate clients (first 5, one per vertical) get A$800/mo for life because we want their case-study data. Standard rate is A$1,200/mo, which is still under the cost of a part-time human receptionist (A$2,500–4,000/mo) and well below a custom AI agency build (A$5,000+ setup + A$3,000+/mo).",
+    a: "A junior full-time receptionist costs A$4,000+/mo. A custom AI agency build costs A$5,000+ setup and A$3,000+/mo to run. Standard Metis Cortex is A$1,500 setup + A$1,200/mo and runs 24/7. Founding-rate clients (first 5, one per vertical) get A$800/mo for life — we want the case-study data.",
   },
   {
     q: "But my hostess / receptionist / front desk never makes mistakes.",

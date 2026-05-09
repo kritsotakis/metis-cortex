@@ -18,7 +18,7 @@ export function Hero() {
           <img
             src="/brand/metiscortex-wordmark-tight.svg"
             alt="Metis Cortex"
-            className="h-14 w-auto"
+            className="h-16 w-auto"
           />
         </a>
         <nav
@@ -37,7 +37,7 @@ export function Hero() {
           {OFFER.name}
         </p>
 
-        <h1 className="font-display text-[clamp(3.5rem,9vw,8.25rem)] font-semibold leading-[0.96] tracking-[0.02em] text-bone">
+        <h1 className="font-display text-[clamp(2.75rem,6.5vw,6rem)] font-semibold leading-[0.98] tracking-[0.02em] text-bone">
           <span className="mc-bronze-underline-hero">100%</span> answered.
           <br />
           <span className="mc-italic-display text-bone/85">
@@ -64,7 +64,7 @@ export function Hero() {
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-6">
-          <CTAButton>Book a 15-min demo</CTAButton>
+          <CTAButton accent="none">Book a 15-min demo</CTAButton>
           <a
             href="#guarantee"
             className="text-sm uppercase tracking-[0.18em] text-bone/70 hover:text-bone"

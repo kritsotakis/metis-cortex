@@ -5,7 +5,7 @@ export function Guarantee() {
   return (
     <section id="guarantee" className="bg-ink text-bone py-28 sm:py-36">
       <div className="mx-auto max-w-4xl px-6 text-center sm:px-10">
-        <p className="mb-6 text-xs uppercase tracking-[0.22em] text-bronze">
+        <p className="mb-6 text-xs uppercase tracking-[0.22em] text-bone/55">
           The guarantees
         </p>
 
@@ -16,7 +16,7 @@ export function Guarantee() {
           </span>{" "}
           and save your team at least {PRICING.guaranteeHoursSaved} hours of
           phone time in the first {PRICING.guaranteeWindowDays} days,{" "}
-          <span className="mc-italic-display text-bronze-soft">
+          <span className="mc-italic-display text-bone">
             full refund of the setup fee.
           </span>
         </p>
@@ -29,7 +29,7 @@ export function Guarantee() {
             {PRICING.installDays} days
           </span>
           ,{" "}
-          <span className="mc-italic-display text-bronze-soft">
+          <span className="mc-italic-display text-bone">
             we waive the {priceFormatAud(PRICING.setupAud)} setup fee.
           </span>
         </p>
