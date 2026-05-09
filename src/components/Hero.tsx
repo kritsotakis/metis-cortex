@@ -46,10 +46,13 @@ export function Hero() {
         </h1>
 
         <p className="mt-10 max-w-2xl text-lg leading-relaxed text-bone/80 sm:text-xl">
-          Stop missing calls. We install Zoe — your AI receptionist — on your
-          existing number in {PRICING.installDays} days. She picks up every
-          inbound within 60 seconds, qualifies the lead, books the appointment,
-          and writes it into your calendar and CRM.
+          Stop missing calls. Every other AI receptionist punts to{" "}
+          <em>&ldquo;let me get a human&rdquo;</em> the moment a real question
+          lands. We spend {PRICING.installDays} days training Zoe on{" "}
+          <em>your</em> menu, services, edge cases, and call scripts — so when
+          a customer asks something specific, she actually answers. Picks up
+          every inbound within 60 seconds, qualifies the lead, books the
+          appointment, writes it to your calendar and CRM.
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-bone/65">

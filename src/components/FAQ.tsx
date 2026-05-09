@@ -1,5 +1,9 @@
 const faqs = [
   {
+    q: "How is Zoe different from Sophiie / AiDial / Chime / generic AI receptionists?",
+    a: "Most AI receptionists are configurable software — same product, you fill in your business details, takes an hour to onboard. Within 30 seconds of a real customer question (a menu allergen, a price, a property feature, a treatment contraindication), the AI says 'let me get a human' — except there's no human, and the call drops or the customer hangs up. Founder ran four service businesses and tested every major AI receptionist himself. The pattern is identical: ask a specific question, AI has no idea, ask to speak to a human anyway. Zoe is the opposite: 14 days of training on your call recordings, menu, services, edge cases. When the question comes in, she actually answers. Same conversation flow your team would have — minus the missed calls. The 14 days is the value, not the friction.",
+  },
+  {
     q: "Will it sound robotic?",
     a: "No. Modern voice AI is indistinguishable from a human in normal conversation. Zoe introduces herself as an AI assistant for your business — no deception — but the voice is Australian, neutral, 30s. We'll send you a 30-second clip on request so you can hear it before the demo.",
   },

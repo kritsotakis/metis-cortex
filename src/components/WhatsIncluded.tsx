@@ -53,8 +53,10 @@ export function WhatsIncluded() {
             <p className="mt-6 text-base leading-relaxed text-ink-muted">
               Everything below installs in {PRICING.installDays} days for{" "}
               {priceFormatAud(PRICING.setupAud)} +{" "}
-              {priceFormatAud(PRICING.monthlyAud)}/mo. Built on Retell AI for
-              voice, GoHighLevel for CRM and workflow, Twilio for numbers.
+              {priceFormatAud(PRICING.monthlyAud)}/mo. The {PRICING.installDays}{" "}
+              days is the value — that&rsquo;s how long it takes to train Zoe
+              on your menu, services, and edge cases. Not configurable AI you
+              fill in yourself. Installed AI we configure for you.
             </p>
             <p className="mt-6 text-sm text-ink-muted">
               {priceFormatAud(PRICING.foundingMonthlyAud)}/mo founding rate for

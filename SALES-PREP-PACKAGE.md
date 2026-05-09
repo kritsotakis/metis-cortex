@@ -43,6 +43,12 @@ Sample opening, replace bracketed parts with their actual answers:
 
 Listen for 30–45 seconds. Don't pitch yet. They might add context, or they might say "no, that's it." Either is fine.
 
+**If they've already tried an AI receptionist (most have):** lean into it. Use this:
+
+> *"Yeah I tested every one I could find — Sophiie, AiDial, Chime, Smith.ai. Same pattern every time: I'd ask a real question, the AI had no idea, I'd end up asking for a human anyway. That failure mode is exactly why I built this differently. Zoe isn't configurable AI you fill in yourself in an afternoon — we spend 14 days training her on your menu, your services, your edge cases, your existing call recordings. So when a real question lands, she actually answers."*
+
+This line lands because it's true. You really did test them. The prospect almost certainly had the same experience. Validates their frustration AND positions us as the solution to it in one sentence.
+
 Then set the frame:
 
 > *"What I want to do is dial a real test number — Zoe, the AI receptionist, picks up. You'll hear her qualify a fake lead and book it. Takes about 3 minutes. Then we'll talk about whether it makes sense for your business or doesn't. Cool?"*
