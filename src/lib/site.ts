@@ -27,7 +27,6 @@ export const SOCIAL = {
 
 export const BOOKING = {
   calendlyUrl: null as string | null,
-  fallbackHref: "mailto:peter@kritsotakis.com.au?subject=Metis%20Cortex%20demo",
 } as const;
 
 export const LEGAL = {
@@ -57,7 +56,8 @@ export const OFFER = {
 } as const;
 
 export function bookingHref(): string {
-  return BOOKING.calendlyUrl ?? BOOKING.fallbackHref;
+  if (BOOKING.calendlyUrl) return BOOKING.calendlyUrl;
+  return `mailto:${contactEmail()}?subject=Metis%20Cortex%20demo`;
 }
 
 export function contactEmail(): string {
