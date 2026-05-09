@@ -51,15 +51,12 @@ export function WhatsIncluded() {
               {OFFER.name}.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-ink-muted">
-              Everything below is configured for you in {PRICING.installDays}{" "}
-              days. Built on Retell AI for voice, GoHighLevel for CRM and
-              workflow, Twilio for numbers.
+              Everything below installs in {PRICING.installDays} days for{" "}
+              {priceFormatAud(PRICING.setupAud)} +{" "}
+              {priceFormatAud(PRICING.monthlyAud)}/mo. Built on Retell AI for
+              voice, GoHighLevel for CRM and workflow, Twilio for numbers.
             </p>
-            <p className="mt-10 text-base text-ink">
-              {priceFormatAud(PRICING.setupAud)} installed,{" "}
-              {priceFormatAud(PRICING.monthlyAud)}/mo to run.
-            </p>
-            <p className="mt-2 text-sm text-ink-muted">
+            <p className="mt-6 text-sm text-ink-muted">
               {priceFormatAud(PRICING.foundingMonthlyAud)}/mo founding rate for
               the first {PRICING.foundingClientCap} case-study clients — one
               slot per vertical.

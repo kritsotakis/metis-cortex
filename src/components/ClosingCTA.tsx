@@ -16,10 +16,8 @@ export function ClosingCTA() {
         </p>
 
         <p className="mt-10 mx-auto max-w-2xl text-base leading-relaxed text-bone/75">
-          {priceFormatAud(PRICING.foundingMonthlyAud)}/mo for life if you&rsquo;re
-          one of the first {PRICING.foundingClientCap} case-study clients —
-          one slot per vertical (cleaning, restaurant, real estate, dental,
-          beauty). After that, {priceFormatAud(PRICING.monthlyAud)}/mo standard.
+          One slot per vertical — cleaning, restaurant, real estate, dental,
+          beauty. After the first {PRICING.foundingClientCap}, standard rate.
           15-minute demo, no pitch deck.
         </p>
 
