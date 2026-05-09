@@ -10,13 +10,14 @@ export const SITE = {
 
 export const CONTACT = {
   primaryEmail: "peter@kritsotakis.com.au",
-  /* brandEmailTarget is the desired info@ address; brandEmail flips to it when
-   * Cowork verifies the email-forwarding is live. Until then `contactEmail()`
-   * falls back to primaryEmail. */
-  brandEmail: null as string | null,
+  /* brandEmail flipped to info@metiscortex.au 2026-05-09 per Peter — email
+   * forwarding being set up via Cloudflare Email Routing imminently.
+   * Until forwarding is live, mail to info@ will bounce; that's an
+   * accepted short window. */
+  brandEmail: "info@metiscortex.au" as string | null,
   brandEmailTarget: "info@metiscortex.au",
-  phoneE164: "+61423668766",
-  phoneDisplay: "0423 668 766",
+  phoneE164: "+61414885366",
+  phoneDisplay: "0414 885 366",
 } as const;
 
 export const SOCIAL = {

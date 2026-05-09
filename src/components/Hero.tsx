@@ -1,5 +1,5 @@
 import { CTAButton } from "./CTAButton";
-import { OFFER, PRICING, priceFormatAud } from "@/lib/site";
+import { CONTACT, OFFER, PRICING, priceFormatAud } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -72,6 +72,15 @@ export function Hero() {
             See the guarantees
           </a>
         </div>
+
+        <p className="mt-6">
+          <a
+            href={`tel:${CONTACT.phoneE164}`}
+            className="inline-flex items-center gap-2 text-base text-bone/70 underline-offset-4 hover:text-bone hover:underline"
+          >
+            Or ring it now — {CONTACT.phoneDisplay}
+          </a>
+        </p>
 
         <aside className="mt-16 max-w-2xl rounded-lg bg-bone/[0.04] backdrop-blur-sm p-5 sm:p-6">
           <div className="grid grid-cols-[60px_1fr_auto] items-center gap-5 py-2 text-sm">
