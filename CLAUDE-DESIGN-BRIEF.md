@@ -28,7 +28,7 @@ You are designing collateral for **Metis Cortex**, an Australian-founded product
 
 | Tier | Product | Pricing | What it does |
 |---|---|---|---|
-| 1 | **Metis Cortex** | A$1,500 setup + A$600/mo | Inbound AI receptionist. Stops missed calls. |
+| 1 | **Metis Cortex** | A$1,500 setup + A$1,200/mo (A$800/mo founding rate, first 5 case-study clients) | Inbound AI receptionist. Stops missed calls. |
 | 2 | **Metis Cortex Knowledge** | +A$300/asset/mo | Per-asset Q&A — Zoe answers detailed questions about specific listings/customers. |
 | 3 | **Metis Cortex Outbound** | A$1,500–5,000/mo | AI database activation — Zoe makes outbound matching calls against the customer's existing CRM database. |
 
@@ -184,7 +184,7 @@ Once the brief above is in claude.ai/design, here are the priority artifacts to 
 3. The cost — A$380 per missed call, 87% of leads who don't reach you in 60 seconds book a competitor
 4. The product — Metis Cortex: AI receptionist, 14-day install
 5. How it works — three steps, screenshots of Zoe answering a call
-6. Pricing + guarantee — A$1,500 + A$600/mo, refund if doesn't book 5 extra
+6. Pricing + guarantee — A$1,500 + A$1,200/mo (founding A$800/mo). Two stacked guarantees: 100% missed calls handled + 10 hrs phone time saved or refund; 14-day install or setup fee waived
 7. Case study — DSK Property Cleaning (with placeholder for real numbers post-Day 28)
 8. Who it's for — service business verticals
 9. What's NOT in scope — what we don't do (sets boundaries, builds trust)

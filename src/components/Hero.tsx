@@ -1,5 +1,5 @@
 import { CTAButton } from "./CTAButton";
-import { CONTACT, OFFER, PRICING, priceFormatAud } from "@/lib/site";
+import { CONTACT } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -25,95 +25,65 @@ export function Hero() {
           aria-label="Primary"
           className="hidden items-center gap-7 text-sm uppercase tracking-[0.16em] text-bone/65 sm:flex"
         >
-          <a href="#how-it-works" className="hover:text-bone">How it works</a>
-          <a href="#pricing" className="hover:text-bone">Pricing</a>
-          <a href="#guarantee" className="hover:text-bone">The guarantees</a>
+          <a href="#how-it-works" className="hover:text-bone">How we work</a>
+          <a href="#services" className="hover:text-bone">What we build</a>
+          <a href="#about" className="hover:text-bone">About</a>
         </nav>
       </header>
 
       <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-28 sm:px-10 sm:pt-28 sm:pb-36">
         <p className="mb-6 inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-bone/55">
           <span className="h-px w-8 bg-bone/30" />
-          {OFFER.name}
+          Sydney AI agency — built by a 30-year operator
         </p>
 
         <h1 className="font-display text-[clamp(2.75rem,6.5vw,6rem)] font-semibold leading-[0.98] tracking-[0.02em] text-bone">
-          <span className="mc-bronze-underline-hero">100%</span> answered.
+          We&rsquo;re using this on{" "}
+          <span className="mc-bronze-underline-hero">our own</span> businesses
+          first.
           <br />
           <span className="mc-italic-display text-bone/85">
-            Or your money back.
+            Then we build it for yours.
           </span>
         </h1>
 
         <p className="mt-10 max-w-2xl text-lg leading-relaxed text-bone/80 sm:text-xl">
-          Stop missing calls. Every other AI receptionist punts to{" "}
-          <em>&ldquo;let me get a human&rdquo;</em> the moment a real question
-          lands. We spend {PRICING.installDays} days training Zoe on{" "}
-          <em>your</em> menu, services, edge cases, and call scripts — so when
-          a customer asks something specific, she actually answers. Picks up
-          every inbound within 60 seconds, qualifies the lead, books the
-          appointment, writes it to your calendar and CRM.
-        </p>
-
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-bone/65">
-          {priceFormatAud(PRICING.setupAud)} setup +{" "}
-          {priceFormatAud(PRICING.monthlyAud)}/mo standard.{" "}
+          I&rsquo;m Peter. Six years building enterprise IT (MCSE / Cisco /
+          Citrix), 21 years running Limani Seafood in Narrabeen, now building
+          four service businesses of my own. Every system we sell — AI
+          receptionists, workflow automation, operational audits — is running on
+          one of those four first.{" "}
           <span className="text-bone">
-            Founding rate {priceFormatAud(PRICING.foundingMonthlyAud)}/mo
-          </span>{" "}
-          for the first {PRICING.foundingClientCap} case-study clients
-          (cleaning, restaurant, real estate, dental, beauty — one slot per
-          vertical).
+            By the time it lands in yours, the bugs are out.
+          </span>
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-6">
-          <CTAButton accent="none">Book a 15-min demo</CTAButton>
+          <CTAButton accent="none">Book a 15-min operator call</CTAButton>
           <a
-            href="#guarantee"
+            href="#services"
             className="text-sm uppercase tracking-[0.18em] text-bone/70 hover:text-bone"
           >
-            See the guarantees
+            See what we build →
           </a>
         </div>
 
         <p className="mt-6">
           <a
-            href={`tel:${CONTACT.phoneE164}`}
+            href="/audit-checklist"
             className="inline-flex items-center gap-2 text-base text-bone/70 underline-offset-4 hover:text-bone hover:underline"
           >
-            Or ring it now — {CONTACT.phoneDisplay}
+            Or grab the 7-question operations audit checklist ↓
           </a>
         </p>
 
-        <aside className="mt-16 max-w-2xl rounded-lg bg-bone/[0.04] backdrop-blur-sm p-5 sm:p-6">
-          <div className="grid grid-cols-[60px_1fr_auto] items-center gap-5 py-2 text-sm">
-            <span className="font-mono text-xs tracking-wider text-bone/45">
-              19:04
-            </span>
-            <span className="text-bone/85">
-              Inbound · 0412 ••• 311
-            </span>
-            <span className="text-[11px] uppercase tracking-[0.16em] text-bone/65">
-              Answered · 4s
-            </span>
-          </div>
-          <div className="grid grid-cols-[60px_1fr_auto] items-center gap-5 border-t border-bone/10 py-2 text-sm">
-            <span className="font-mono text-xs tracking-wider text-bone/45">
-              19:04
-            </span>
-            <span className="text-bone/85">
-              Booked · Thu 7:30pm · table for 4, peanut allergy noted
-            </span>
-            <span className="text-[11px] uppercase tracking-[0.16em] text-bone/55">
-              Confirmed
-            </span>
-          </div>
-        </aside>
+        <p className="mt-10 text-sm italic leading-relaxed text-bone/60">
+          &ldquo;We build the AI we wish we&rsquo;d had at the
+          restaurant.&rdquo;
+        </p>
 
-        <p className="mt-10 text-sm text-bone/55">
-          Built and proven on DSK Property Cleaning — our own Sydney cleaning
-          business. Founder ran Limani Seafood Restaurant in Narrabeen for 21
-          years. Australian-owned.
+        <p className="mt-10 text-xs uppercase tracking-[0.16em] text-bone/45">
+          Or call directly · {CONTACT.phoneDisplay}
         </p>
       </div>
     </section>

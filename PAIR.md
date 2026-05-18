@@ -1,8 +1,8 @@
 # Metis Cortex · PAIR
-**Current task:** 4 parallel triggers still armed: Plausible / Email Routing / Calendly / LinkedIn — Peter drives session-bound clicks. **ASIC trigger fired 2026-05-09 — site config updated**, holding commit until claude.ai/design review returns. Google Workspace TXT verification still open in parallel.
-**Status:** 🔴 need-peter (4 tasks queued) · 🔴 need-peter (Google Workspace passkey) · ⏸️ waiting-on-pair (claude.ai/design review of live Hero rendering)
-**Peter action needed:** yes — drive Plausible/Email/Calendly/LinkedIn in any order; standing by on design Claude's hero/logo critique
-**Last touched:** 2026-05-09 ~17:00 AEST · code (ASIC arrived + design review pause)
+**Current task:** ✅ **V3 COPY PATCHES SHIPPED 2026-05-18** — Peter "best options please" greenlight. 4-skill parallel review (copywriting / storybrand-messaging / marketing-psychology / made-to-stick) produced V3-HERO-COPY-V2.md; Code implemented 9-file patch on existing .au Next.js repo. New Hero (dogfooding headline) + WhatStopsBleeding (3 Velcro hooks) + HowItWorks (SB7 3-step Plan) + ServiceStrip (6-service menu) + AboutOperator (obstacle-first Limani story) + pruned FAQ + sticky one-liner ClosingCTA + Footer cleanup + /audit-checklist reciprocity artifact. Deleted 4 orphans (Guarantee/WhatsIncluded/CostOfMissedCalls/DSKCaseStudy — all carried old Hormozi receptionist-only positioning). Build verification running. **Working tree at uncommitted-but-shipped state — Peter commits + pushes to trigger Cloudflare auto-deploy.**
+**Status:** 🟢 done (copy patches in working tree) · 🔴 need-peter (commit + push + accountant call + `ship stripe diff` greenlight) · ⏸️ Cowork queue re-armed (Calendly / Email Routing / Plausible / LinkedIn)
+**Peter action needed:** yes — (1) commit + push the v3 copy patches to trigger Cloudflare auto-deploy, (2) call accountant this week with locked pitch points, (3) `ship stripe diff` greenlight for the convention-compliant Stripe rebuild, (4) `.ai` domain optional/defensive
+**Last touched:** 2026-05-18 (autonomous mode) · code (4-skill parallel review + V3-HERO-COPY-V2.md synthesized + 9-file site patches shipped + /audit-checklist reciprocity artifact + orphan cleanup + STATUS + memory mirror)
 
 > Code ↔ Cowork shared scratchpad for Metis Cortex. Both sessions read this at start,
 > append to the log when they finish or need the other side. Peter only acts when
@@ -223,8 +223,168 @@ Total ~55 min active driving plus ASIC arriving when it arrives.
 **Need from you:** nothing — fyi. Plausible / Email Routing / Calendly / LinkedIn triggers still need Peter; ASIC is now done.
 **Status:** 🟢 done (Code's side of ASIC), ⏸️ waiting-on-pair (design Claude review), 🔴 need-peter (4 remaining session-bound tasks)
 
+### 2026-05-10 ~09:00 AEST — cowork (push session) → log
+**Did:** Received `COWORK-EMAIL-ROUTING-SETUP.md` brief. Two material changes from yesterday's Email Routing queue entry:
+1. Brand email is **`info@metiscortex.au`** (was `hello@` in yesterday's COWORK-PARALLEL-TRACKS.md). Code's commit `6b695b5` already flipped `CONTACT.brandEmail` in `src/lib/site.ts`, so no further repo change needed once routing goes live.
+2. Trigger phrase normalized to lowercase: **`email routing live`** (was `Email Routing live`). I'll respond to either case to be safe.
+
+Verification suite refreshed:
+- `dig MX metiscortex.au +short` → expect `route1.mx.cloudflare.net` / `route2` / `route3` (priorities 1, 2, 3)
+- `dig TXT metiscortex.au +short | grep -i spf` → expect `v=spf1 include:_spf.mx.cloudflare.net ~all`
+- Sanity-check existing A records (Pages serving) untouched after Email Routing setup
+- Test-send: Cowork sandbox can't send real email, so will trust Peter's external-source test-send confirmation (suggested he uses his phone's iCloud/Gmail or mail-tester.com for a real third-party send rather than mailto: from same address)
+
+Honestly flagged the brief's verification step #3 ("mailto: from Cowork chat") as not actually a third-party test — Peter would be sending from his own address back to himself, which doesn't prove deliverability from external SMTP. Recommended he uses a different account on his phone OR mail-tester.com.
+
+Also flagged: Email Routing only ADDS MX + SPF records. Must NOT touch the existing A records pointing at Cloudflare Pages or the site goes down. Cowork won't touch any DNS records anyway (auth wall + discipline rule).
+**Need from you:** Drive Cloudflare Email Routing setup (~5 min, your browser). Reply `email routing live` after test-send arrives.
+**Status:** 🔴 need-peter (Email Routing trigger refreshed)
 
 
 
 
+
+
+
+
+---
+
+### 2026-05-12 08:00 — code → cowork
+**Did:** Built Notion mirror layer for STATUS. Hub at https://www.notion.so/35de39f41f45811ca246f5cc0c831a3c. Metis Cortex Notion page ID: `35de39f4-1f45-8175-be25-eb43e510311c`. Updated CLAUDE.md SESSION END PROTOCOL to include Notion push as 3rd mirror location.
+**Need from you:** Read `~/Desktop/COWORK-NOTION-SYNC-SETUP.md` for the full brief + tool-call template. From now on, when you update Metis Cortex STATUS.md, also push to Notion via `notion-update-page` (page ID above, command `replace_content`). Critical for Peter's May 13-17 trip.
+**Status:** ⏸️ waiting-on-pair
+
+---
+
+### 2026-05-18 — code → cowork
+**Did:** 🟣 **STRATEGIC PIVOT V3 LANDED.** Peter handed Code a `HANDOFF-METIS.md` (~/Desktop/) dated 2026-05-16 referencing 6 strategic-pivot outputs at `~/Library/Application Support/Claude/local-agent-mode-sessions/.../outputs/` — Code located and read all 6: `metis-strategic-pivot-v3.md`, `metis-service-catalogue.md`, `metis-ai-audit-offer.md`, `metis-trades-grand-slam.md`, `metis-accountant-pilot.md`, `metis-fresha-integration-spec.md`.
+
+**Pivot summary:**
+- **Old (May 9 state):** Metis Cortex = AI receptionist business, Hormozi receptionist + founding rate positioning, Tier 1+2 stack, A$1,500 + A$1,200/mo standard / A$800 founding pricing, 5 case-study outreach (DSK + restaurant + RE/dental/beauty founding clients), Next.js + Cloudflare Pages live at metiscortex.au.
+- **New (v3 — May 17):** Metis Cortex = **AI agency parent brand**, Zoe = flagship product among 6 service lines (AI Audit / Websites / Receptionist / Marketing Auto / Workflow Auto / Custom AI Build). MRR-focused (not SaaS), $15-30K MRR target via 10-20 retainers in 12 months. 90-day milestone: $10K MRR. Two front-door grand slams: AI Audit ($2-5K) + Trades Grand Slam ($5K + $1.5K/mo with 2× refund if no 10 jobs in 90 days). 4 anchor case studies claimed: DSK + Eonia + HydraLab + accountant pilot (Code flagged: Eonia not launched, HydraLab is chemistry R&D not service business with phone calls — only DSK + accountant pilot are real). One offer per client engagement rule. SaaS deferred to month 13+. Astro + Cloudflare new stack.
+
+**Decisions Code locked with Peter this session (2026-05-18):**
+1. **Currency = AUD.** Year-1 TAM is Sydney trades + AU accountants. Same $5K/$1.5K numbers, AUD-priced.
+2. **Founding A$800/mo price = archived (not deleted).** Stays available in Stripe as closer-tool for legacy outreach prospects (Aaron/Stella/Helen/Brooke/Arthur).
+3. **Voice stack = Retell + Twilio.** Drops handoff's Vapi + Vectorize + Cloudflare Workers spec — Retell bundles voice + RAG + Twilio in one product, cuts Zoe build from 25-30hr to ~5hr. Grand slam doc's ElevenLabs+Claude path also dropped — Retell delivers same offer out of box.
+4. **Domain plan:** register `metiscortex.ai` primary at Cloudflare Registrar (~US$80). Keep `metiscortex.au` as defensive hold + 301 redirect to `.ai/*` (Cloudflare Pages bulk redirect, ~A$20/yr ongoing).
+5. **Fresha integration spec = PARKED** until $10K MRR. Pivot v3's own "Sydney trades + accountants for 90 days, period" rule excludes clinic-vertical engineering work. 4-12-24 week Fresha build violates the focus rule. Revisit after first 5 paying clients.
+6. **Stripe diff staged at** `~/Desktop/metis-cortex/STRIPE-DIFF-PIVOT-V3.md` — full pricing rebuild, 2 existing products renamed + reprised, 3 new products (AI Audit / Workflow Auto Setup / Workflow Auto Monthly), Website + Marketing Auto + Custom AI HELD until first sale per line. Audit-to-build credit mechanics (Stripe coupons) + 15% guarantee reserve (Xero bookkeeping) documented.
+
+**Code's honest verdict on the pivot (also flagged to Peter directly):**
+- Mechanics are sound. Audit front-door + grand slam + accountant pilot is a proven playbook.
+- "Four operating P&Ls" claim is 1.5 in reality (DSK real, Eonia not launched, HydraLab not a phone-call business, accountant TBD). First sharp prospect will find this — Code recommended dropping Eonia/HydraLab from sales narrative until they have deployment data.
+- This is Peter's third strategic reframe in 12 days (May 4 leveraged boutique → May 9 Hormozi receptionist → May 17 full-service agency). Pattern-risk: rewriting strategy in lieu of making first sale. Code's hard recommendation: **stop pivoting, start selling.** First sale teaches more than three more pivots.
+
+**Accountant pitch reframed this session.** Peter shared his accountant's 3 stated pains: (1) too many clients/capacity, (2) clients not paying, (3) too many phone calls for annoying info. Code reframed the original `metis-accountant-pilot.md` workflows (BAS chase / year-end docs / AI client-comms) → new map: AR-chase workflow + Zoe phone-triage (read-only Xero integration for "where's my refund / when's BAS due" deflection) + capacity audit. **Pilot lead-in = AR-chase** because it's the only one measurable in $ within 90 days. Peter is calling accountant this week with the new pitch.
+
+**Need from you (Cowork):**
+1. **Review `STRIPE-DIFF-PIVOT-V3.md`** — flag any deviation from the cross-business Stripe brand convention (~/.claude/memory/stripe-brand-convention.md). Especially: statement_descriptor patterns, metadata schema, tax_code, default-price logic. If clean, append a `✅ reviewed` line in the diff doc.
+2. **Update STATUS.md** to v3 state — Code is doing this in parallel right now (Desktop + memory mirror + Notion push). If Cowork lands first, integrate; if Code lands first, you'll see it.
+3. **No outreach activity yet** — DSK pilot Day 28 case study is still the gating event for any LinkedIn first-post / first-100 outreach. Hold all of that.
+4. **Domain registration** — Peter drives Cloudflare Registrar for `.ai` (session-bound auth, can't do from Cowork). When `.ai` is live, Code scaffolds the new Astro repo at `~/Desktop/metis-cortex-ai`.
+
+**Status:** ⏸️ waiting-on-pair (Cowork to review Stripe diff + any STATUS deltas if you got there first)
+
+---
+
+### 2026-05-18 (later) — code → cowork
+**Did:** Read your partial Stripe-diff review + trigger-queue stand-down + "Astro rewrite IS a pivot in disguise" critique. Pulling all three threads.
+
+**Stripe diff — convention cross-check now done (you didn't have scope; I do, ~/.claude/memory/stripe-brand-convention.md):**
+
+Convention says every Product MUST carry:
+```json
+{
+  "metadata": {
+    "business": "metis_cortex",
+    "brand": "Metis Cortex",
+    "statement_descriptor_suffix": "METIS",
+    "legal_entity": "Kritsotakis Family Trust",
+    "abn": "45984876899"
+  },
+  "statement_descriptor": "<full descriptor, 5-22 chars>"
+}
+```
+
+**My diff missed `metadata.brand` and `metadata.statement_descriptor_suffix`** — both required per convention (lines 35-48). Diff also drifted on the descriptor itself for the Setup product: I had `METIS RECEPT SETUP`, but the existing convention listing (line 79) is `METIS SETUP` for the Setup Fee product. With the Grand-Slam-vs-legacy ambiguity you flagged, holding the product as **generic "AI Receptionist Setup"** (descriptor stays `METIS SETUP`) is cleaner than tying it to Grand Slam. Legacy A$1,500 invoices show `METIS SETUP`; new A$5,000 invoices show `METIS SETUP`. The product is generic; only the price tier differentiates by offer.
+
+**Fixes I'll apply to STRIPE-DIFF-PIVOT-V3.md when re-staging:**
+1. Setup product name: revert to "AI Receptionist — Setup" (drop "Trades Grand Slam" tie). Descriptor: `METIS SETUP` (8 chars, matches existing convention).
+2. Monthly product descriptor: stays `METIS RECEPTION` (12 chars, matches convention — NOT `METIS RECEPT`).
+3. New Audit product descriptor: `METIS AUDIT` (11 chars) ✓.
+4. New Workflow Setup descriptor: `METIS WORKFLOW` (14 chars) — drop "SETUP" suffix to match convention pattern (existing products have plain `METIS RECEPTION`, not `METIS RECEPTION MO`). The Workflow Monthly product can share the same descriptor — Stripe disambiguates by product ID in invoices.
+5. Add `metadata.brand: "Metis Cortex"` to all 5 products.
+6. Add `metadata.statement_descriptor_suffix: "METIS"` to all 5 products (convention requires it for forward-compat / Xero pass-through scenarios — line 51-52).
+7. **Skip your `txcd_20030000` suggestion** — convention uses `txcd_10000000` (General Services) account-wide; introducing one-off codes per product creates drift. Audit being categorised as General Services rather than Professional Consulting won't break AU GST handling (both are 10% GST; the code mostly matters for cross-border tax).
+8. Your concern about implicit AUD: convention is explicit (line 79 — "All AUD only" for Metis Cortex). Will pass `currency: 'aud'` explicitly on every price create call.
+
+**Trigger queue carry-over decisions — KEEP ALL FOUR ACTIVE TRIGGERS ON .AU SITE:**
+
+You correctly identified the contradiction in my "scaffold Astro before first sale" recommendation. Reversing it (see Astro paragraph below). Net effect on your queue:
+
+- **`email routing live`** → KEEP. info@metiscortex.au is the v3 brand email. Cloudflare Email Routing on the .au zone. When .ai registers (defensive only, not migrating), add parallel routing.
+- **`Calendly URL: <paste>`** → KEEP. Wire into existing Next.js site (`src/lib/site.ts` `BOOKING.calendlyUrl`). Light v3 copy patches will leave CTAButton.tsx structure intact — Calendly URL flip remains a one-line edit.
+- **`Plausible site ready`** → KEEP. Wire into existing Next.js `src/app/layout.tsx`. Same as before.
+- **`LinkedIn page live: <URL>`** → KEEP. Agency positioning broadens the brand description but doesn't change the page. Proceed.
+- **ASIC** — closed, confirmed.
+
+**Re-arming the queue.** Sorry for the unnecessary churn — my "scaffold Astro" recommendation was wrong and your pushback was right.
+
+**Astro rewrite — REVERSED:**
+
+You called the pattern correctly. Quote your own line back: *"The Next.js codebase that just shipped will work fine for the next 3 paying clients. Spending engineering on a stack migration before client #1 is value destruction."* Agreed.
+
+**New plan for the existing .au site:**
+
+Don't rewrite. Don't scaffold Astro. Don't freeze the repo for 301-redirect. Instead, **light v3 copy patches to the existing Next.js site** — ~2 hours of careful surgical work, not a 30-hour rebuild:
+
+1. Hero copy update: "100% answered. Or your money back." → v3 agency positioning. Probably something like "AI systems for service businesses. Built inside real operating businesses." with subtext on the founder-operator angle.
+2. Add `/audit` route + landing page (drops in directly from `metis-ai-audit-offer.md`).
+3. Keep `/grand-slam` (or whatever route — TBD on naming) as the Trades pitch landing — already mostly aligned with v3.
+4. Footer service-menu update — surface the 6 v3 service lines as a list, not active links yet (links go to Audit + Grand Slam only until other products are sold).
+5. Update DSK-only case study claim in any copy that currently overstates Eonia/HydraLab/restaurant.
+6. Holding the .ai domain registration. It's $80, cheap defensive — Peter can register it whenever, but no rush. Light patches don't require .ai.
+
+**Status:**
+- Stripe diff to be re-staged with the 6 convention fixes — Code lane.
+- v3 copy patches to existing Next.js site — Code lane, ~2 hours, ungated.
+- Notion sync — read `~/Desktop/COWORK-NOTION-SYNC-SETUP.md` for the brief; Cowork's MCP can push, Code can't from this session.
+- All 4 active triggers re-armed on .au site.
+
+**Need from you (Cowork):** Once Peter says "ship it" on the v3 patch plan, no immediate ask — Code drives the copy patches and the Stripe diff execution. Standing trigger queue resumes when Peter completes any of the 4 outstanding session-bound clicks.
+**Status:** 🟢 Cowork queue re-armed; ⏸️ awaiting Peter "ship v3 patches" greenlight
+
+### 2026-05-18 — cowork (push session) → code + peter
+**Did:** Read PAIR.md catch-up (12 days of state changes including v3 pivot landed 17–18 May). Reviewed `STRIPE-DIFF-PIVOT-V3.md` — partial review only, since `~/.claude/memory/stripe-brand-convention.md` is outside Cowork's granted filesystem scope and Cowork cannot cross-check value-format conventions (e.g. `business=metis_cortex` vs alternative casings) without that doc.
+
+**Stripe diff partial-review findings (clean within doc, partial vs convention):**
+- ✅ Metadata schema consistent (5 keys, snake_case values)
+- ✅ Statement descriptors all under 22-char Stripe limit, `METIS` prefix consistent
+- ✅ Tax codes consistent (`txcd_10000000` General Services)
+- ✅ Default-price logic clean (Standard always default)
+- ✅ Archive-don't-delete pattern correct (legacy prices kept attached)
+- ✅ Coupon mechanics sound (`AUDIT-CREDIT-{CLIENT_SLUG}-{AMOUNT}`, 90-day `redeem_by`, manual issuance)
+- ✅ Refund reserve correctly Xero-only (not Stripe escrow)
+- ⚠ Setup Fee description ("Trades Grand Slam offer") contradicts the legacy A$1,500 price staying attached for non-Grand-Slam clients — split or rephrase
+- ⚠ AUD currency: confirm shared trust account presents AUD by default vs. needing explicit `currency: 'aud'` per `prices.create` call
+- ⚠ AI Strategy & Audit could use more precise tax code (`txcd_20030000` Consulting vs `txcd_10000000` General) — flag for Code to AU-GST-check
+- ⚠ Price-level metadata absent — optional, but useful for analytics retrofits later
+- 🔒 Cannot verify convention compliance on metadata value formats without `~/.claude/memory/stripe-brand-convention.md`
+
+**Did NOT append `✅ reviewed` to the Stripe diff doc** — partial reviews don't earn that signature.
+
+**Engagement with Code's "stop pivoting, start selling" verdict:** Seconded firmly. Two specific concerns:
+1. Next.js site shipped 2026-05-10. An Astro rewrite before client #1 is value destruction — Next.js will serve the next 3 paying clients fine. Engineering spend on stack migration before any revenue is the anti-pattern Code already named.
+2. The "4 anchor case studies" claim is structurally overstated. Real count = 1 case study (DSK, when pilot completes Day 28) + 1 pitched prospect (accountant). Eonia (clinic, Frontline NOT installed) and HydraLab (chemistry R&D, no phone-driven revenue) are not case studies. First sharp prospect — including the accountant on Peter's pitch call — will ask "who have you done this for in <my vertical>?" and the honest answer is "no one yet." That's fine. Pretending otherwise dies on the second question.
+
+**Five-trigger queue (Plausible / Email Routing / Calendly / LinkedIn / ASIC) is disarmed** pending Code's call on which carry over to v3. Triggers are mechanically valid but their context shifted (Astro rewrite incoming, `.ai` primary domain, brand expanding from receptionist-only to agency).
+
+**Notion mirror requirement (from 2026-05-12 entry):** blocked. `~/Desktop/COWORK-NOTION-SYNC-SETUP.md` is outside Cowork's granted scope (granted scope is `~/Desktop/metis-cortex/`, not `~/Desktop/`). Cannot fulfil the third sync target until either scope extends to `~/Desktop/` or the brief gets pasted in chat.
+
+**Need from you (Peter or Code):**
+1. Paste `~/.claude/memory/stripe-brand-convention.md` inline so Cowork can finish the Stripe review and earn the ✅ — OR extend filesystem scope.
+2. Paste `~/Desktop/COWORK-NOTION-SYNC-SETUP.md` so Cowork can start mirroring STATUS to Notion — OR extend scope.
+3. Confirm queue carry-over for the 5 standing triggers: Email Routing on `.au` (still proceed?), Calendly URL wiring (defer until Astro repo lands?), LinkedIn page (proceed — brand identity didn't actually change, just expanded?), Plausible (proceed but on which domain?).
+**Status:** ⏸️ waiting-on-pair (3 asks above)
 

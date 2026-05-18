@@ -1,39 +1,19 @@
 const faqs = [
   {
-    q: "How is Zoe different from Sophiie / AiDial / Chime / generic AI receptionists?",
-    a: "Most AI receptionists are configurable software — same product, you fill in your business details, takes an hour to onboard. Within 30 seconds of a real customer question (a menu allergen, a price, a property feature, a treatment contraindication), the AI says 'let me get a human' — except there's no human, and the call drops or the customer hangs up. Founder ran four service businesses and tested every major AI receptionist himself. The pattern is identical: ask a specific question, AI has no idea, ask to speak to a human anyway. Zoe is the opposite: 14 days of training on your call recordings, menu, services, edge cases. When the question comes in, she actually answers. Same conversation flow your team would have — minus the missed calls. The 14 days is the value, not the friction.",
+    q: "Why should I trust you — you're not a household name?",
+    a: "Fair. I'm not. I'm an operator who's run things for 30 years and decided to build AI for service businesses because nobody was building it the way I'd want it sold to me. Six years of enterprise IT (MCSE, Cisco, Citrix) before the restaurant. 21 years running Limani Seafood in Narrabeen. Currently building four service businesses of my own. Every system I sell, I install on one of my four first. That's the entire pitch. If 'someone who's been in your seat building real systems for 30 years' isn't enough — there are agencies with bigger logos. They charge more and use the same tools.",
   },
   {
-    q: "Will it sound robotic?",
-    a: "No. Modern voice AI is indistinguishable from a human in normal conversation. Zoe introduces herself as an AI assistant for your business — no deception — but the voice is Australian, neutral, 30s. We'll send you a 30-second clip on request so you can hear it before the demo.",
+    q: "How do you actually price this?",
+    a: "AI Audit from A$2,000 (the front door — a 2-week paid engagement that produces a 90-day roadmap with ROI per opportunity). Builds priced individually depending on scope — AI Receptionist starts at A$5,000 setup + A$1,500/mo, Workflow Automation at A$3,000 setup + A$500/mo retainer, full Custom AI at A$10,000+. We earn the right to the next offer. No bundling, no 18-month minimums, no 'platform fees'.",
   },
   {
-    q: "What if Zoe messes up a booking or quote?",
-    a: "Every call records, every transcription tags. Weekly review with you for the first 30 days to tune the script. If a customer ever complains about Zoe in the first month, we fix the underlying script + workflow within 24 hours or refund that month — written into the agreement.",
+    q: "Will Zoe (the AI receptionist) sound robotic to my customers?",
+    a: "No. Modern voice AI is indistinguishable from a human in normal conversation. Zoe introduces herself as an AI assistant for your business — no deception — and the voice is Australian, neutral, calm. We'll send a 30-second sample on request so you can hear it before booking. Every call is recorded and transcribed; we tune weekly for the first 30 days post-install.",
   },
   {
-    q: "What does it integrate with?",
-    a: "Out of the box: Jobber, ServiceM8, GoHighLevel, Cliniko, SevenRooms, NowBookIt, and Google Calendar. Most other CRMs via Zapier. If you have something exotic — legacy POS, custom-built — we'll tell you straight on the scoping call and quote a one-off integration if it's needed.",
-  },
-  {
-    q: "Am I locked into a contract?",
-    a: "No. Month-to-month after the 14-day install. Cancel anytime, full data export included. Founding-rate clients keep their A$800/mo rate for life regardless.",
-  },
-  {
-    q: "What if my phone system isn't standard?",
-    a: "We bring our own Twilio number and forward your existing one to it. That works with any phone setup — VoIP, mobile, landline, switchboard, or a hostess station with a multi-line handset.",
-  },
-  {
-    q: "Why is the price so low?",
-    a: "A junior full-time receptionist costs A$4,000+/mo. A custom AI agency build costs A$5,000+ setup and A$3,000+/mo to run. Standard Metis Cortex is A$1,500 setup + A$1,200/mo and runs 24/7. Founding-rate clients (first 5, one per vertical) get A$800/mo for life — we want the case-study data.",
-  },
-  {
-    q: "But my hostess / receptionist / front desk never makes mistakes.",
-    a: "We hear this most often from restaurants and clinics. Every operator we've installed has found at least 5 booking mistakes per month their team didn't know about — wrong night, wrong table size, missed dietary, wrong service code. We pull the data on Day 14 and show you. If you don't want it, refund.",
-  },
-  {
-    q: "We already use SevenRooms / NowBookIt / Cliniko / Jobber. Why do I need this?",
-    a: "Those handle web bookings — they don't pick up the phone. ~40% of bookings still come in by phone in service businesses. Zoe sits in front of your existing platform, handles the phone bookings, and writes them straight into your existing system. We integrate; we don't replace.",
+    q: "What if it doesn't work?",
+    a: "The AI Audit has a mini-guarantee — if at the walkthrough call you don't see at least one opportunity worth A$10,000/year to your business, we refund the difference between what you paid and A$500 (to cover our work). Build engagements: month-to-month after install, no lock-in, full data export if you exit. We're not playing the 'lock you into a 24-month contract and hope you forget to cancel' game. If something we install doesn't earn its keep, you walk.",
   },
 ];
 

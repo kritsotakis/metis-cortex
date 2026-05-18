@@ -1,4 +1,4 @@
-import { CONTACT, LEGAL, PRICING, SITE, SOCIAL, asicLine, contactEmail, priceFormatAud } from "@/lib/site";
+import { CONTACT, LEGAL, SITE, SOCIAL, asicLine, contactEmail } from "@/lib/site";
 
 export function Footer() {
   const email = contactEmail();
@@ -16,15 +16,10 @@ export function Footer() {
           />
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-muted">
             {SITE.name} is a registered business name of the {LEGAL.trustName}.
-            Sydney, Australia.
+            Sydney AI agency for service businesses.
           </p>
           <p className="mt-2 text-xs text-ink-muted">
             ABN {LEGAL.abn} · Trustee: {LEGAL.trusteeName} (ACN {LEGAL.trusteeAcn}) · {asicLine()}.
-          </p>
-          <p className="mt-3 text-xs text-ink-muted">
-            Founding rate {priceFormatAud(PRICING.foundingMonthlyAud)}/mo for first{" "}
-            {PRICING.foundingClientCap} case-study clients; {priceFormatAud(PRICING.monthlyAud)}/mo
-            standard thereafter.
           </p>
         </div>
 
@@ -67,6 +62,11 @@ export function Footer() {
             <li>
               <a href="/privacy" className="hover:text-bronze">
                 Privacy policy
+              </a>
+            </li>
+            <li>
+              <a href="/audit-checklist" className="hover:text-bronze">
+                Audit checklist
               </a>
             </li>
           </ul>

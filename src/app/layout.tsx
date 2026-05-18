@@ -58,7 +58,7 @@ const localBusinessJsonLd = {
   url: SITE.url,
   email: contactEmail(),
   telephone: CONTACT.phoneE164,
-  priceRange: `A$${PRICING.setupAud.toLocaleString()} setup + A$${PRICING.monthlyAud}/month`,
+  priceRange: `A$${PRICING.auditLiteAud.toLocaleString()}–A$10,000+`,
   areaServed: { "@type": "City", name: "Sydney" },
   address: {
     "@type": "PostalAddress",
@@ -73,16 +73,38 @@ const localBusinessJsonLd = {
     taxID: LEGAL.abn,
     legalName: `${LEGAL.trustName} (Trustee: ${LEGAL.trusteeName}, ACN ${LEGAL.trusteeAcn})`,
   },
-  makesOffer: {
-    "@type": "Offer",
-    name: "Metis Cortex Receptionist",
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      price: String(PRICING.setupAud),
-      priceCurrency: "AUD",
-      unitText: "setup",
+  makesOffer: [
+    {
+      "@type": "Offer",
+      name: "AI Strategy & Audit",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: String(PRICING.auditStandardAud),
+        priceCurrency: "AUD",
+        unitText: "one-time",
+      },
     },
-  },
+    {
+      "@type": "Offer",
+      name: "AI Receptionist (Zoe)",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: String(PRICING.setupAud),
+        priceCurrency: "AUD",
+        unitText: "setup",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "Workflow Automation",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: String(PRICING.workflowSetupAud),
+        priceCurrency: "AUD",
+        unitText: "setup",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({

@@ -1,18 +1,18 @@
 const steps = [
   {
     n: "01",
-    title: "30-minute scoping call",
-    body: "Book this week. We learn your business, your call patterns, and the one thing you most need answered after hours.",
+    title: "Book a 15-min operator call",
+    body: "No SDR. You're talking to the person who'll build it. We'll find out where you're bleeding time and tell you, straight, whether we can help.",
   },
   {
     n: "02",
-    title: "14-day install",
-    body: "We configure the voice agent, the CRM, the calendar, the number, and the scripts. You approve. You do nothing else.",
+    title: "2-week paid audit + 90-day roadmap",
+    body: "Business shadowing, opportunity register, ROI per opportunity. From A$2,000. 50% of the audit fee credits to any build over A$5,000 booked within 90 days.",
   },
   {
     n: "03",
-    title: "Month-one report",
-    body: "You see the lift in answered calls, booked appointments, and recovered revenue — or we refund the setup fee.",
+    title: "Install one system. Prove ROI. Expand.",
+    body: "One offer per engagement until we've earned the right to expand. No 18-month 'platform' promises. You keep ownership of every system we build.",
   },
 ];
 
@@ -21,10 +21,10 @@ export function HowItWorks() {
     <section id="how-it-works" className="bg-bone-soft py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <p className="mb-4 text-xs uppercase tracking-[0.22em] text-bronze">
-          How it works
+          How we work
         </p>
         <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-          Three steps. Two weeks. One number to watch.
+          Three steps. One offer at a time. No platform lock-in.
         </h2>
 
         <ol className="mt-16 grid gap-px overflow-hidden rounded-lg bg-ink/10 sm:grid-cols-3">
