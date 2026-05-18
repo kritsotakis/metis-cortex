@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
-import { CONTACT, LEGAL, PRICING, SITE, SOCIAL, contactEmail } from "@/lib/site";
+import { CONTACT, LEGAL, SITE, contactEmail } from "@/lib/site";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -43,68 +43,31 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: ["/og.png"],
   },
-  robots: { index: true, follow: true },
+  /* Coming-soon mode: discourage search indexing while strategic direction
+   * is being locked. Flip back to index:true,follow:true when the real site
+   * relaunches. */
+  robots: { index: false, follow: false },
 };
 
-const sameAs = [SOCIAL.linkedinCompany, SOCIAL.linkedinPersonal].filter(
-  (v): v is string => Boolean(v),
-);
-
-const localBusinessJsonLd = {
+const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   name: SITE.name,
-  description: SITE.description,
   url: SITE.url,
   email: contactEmail(),
   telephone: CONTACT.phoneE164,
-  priceRange: `A$${PRICING.auditLiteAud.toLocaleString()}–A$10,000+`,
-  areaServed: { "@type": "City", name: "Sydney" },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Sydney",
     addressRegion: "NSW",
     addressCountry: "AU",
   },
-  ...(sameAs.length > 0 ? { sameAs } : {}),
   parentOrganization: {
     "@type": "Organization",
     name: LEGAL.trustName,
     taxID: LEGAL.abn,
     legalName: `${LEGAL.trustName} (Trustee: ${LEGAL.trusteeName}, ACN ${LEGAL.trusteeAcn})`,
   },
-  makesOffer: [
-    {
-      "@type": "Offer",
-      name: "AI Strategy & Audit",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: String(PRICING.auditStandardAud),
-        priceCurrency: "AUD",
-        unitText: "one-time",
-      },
-    },
-    {
-      "@type": "Offer",
-      name: "AI Receptionist (Zoe)",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: String(PRICING.setupAud),
-        priceCurrency: "AUD",
-        unitText: "setup",
-      },
-    },
-    {
-      "@type": "Offer",
-      name: "Workflow Automation",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: String(PRICING.workflowSetupAud),
-        priceCurrency: "AUD",
-        unitText: "setup",
-      },
-    },
-  ],
 };
 
 export default function RootLayout({
@@ -116,7 +79,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd),
+            __html: JSON.stringify(organizationJsonLd),
           }}
         />
         {children}

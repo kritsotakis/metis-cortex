@@ -1,184 +1,290 @@
-# LinkedIn First Post — Metis Cortex (DSK Case Study)
+# LinkedIn First Post — Metis Cortex (v3 — Operator Credibility)
 
-> **For:** Peter to post on the Metis Cortex Company Page the moment Day 28 of the DSK pilot data lands
-> **Author:** Cowork, executing Task 12 of the 2026-05-06 brief
-> **Critical:** DO NOT POST until DSK pilot Day 28 numbers are real. The hook depends on a specific number. An empty `[N]` defeats the post.
+> **For:** Peter to post on the Metis Cortex Company Page after the first accountant pilot's Day 30 numbers land
+> **Author:** Cowork, rewritten 2026-05-19 from v1 (DSK case study) → v3 (operator credibility + accountant pilot)
+> **Source positioning:** `V3-HERO-COPY-V2.md` (Hero locked 2026-05-18 after 4-agent parallel review)
+> **Critical:** DO NOT POST until the accountant pilot completes Day 30 with measurable AR-chase numbers OR Peter explicitly approves Variant A (story-only) for a no-numbers launch. v1's DSK Day 28 gate is dead — DSK has no operational data.
 > **Eventual home:** `~/Desktop/metis-cortex/LINKEDIN-FIRST-POST-DRAFT.md`
 
 ---
 
-## The post (paste-ready, fill placeholders)
+## What changed v1 → v3
+
+| v1 (May 6 — Hormozi receptionist era) | v3 (May 19 — operator-credibility agency) |
+|---|---|
+| Post = DSK pilot case study with specific missed-call numbers | Story-led OR accountant-pilot-led; no Eonia/HydraLab/restaurant claims |
+| Single product framing ("AI receptionist install") | Agency framing (6 service lines, one offer per engagement) |
+| Gate: DSK Day 28 data | Gate: accountant pilot Day 30 OR Variant A approval |
+| Sticky one-liner: none | "We build the AI we wish we'd had at the restaurant" |
+| Refund guarantee in body | Removed — saved for `/grand-slam` page; LinkedIn doesn't need it |
+| "Demo link in comments" CTA | "15-min operator call" CTA — matches Hero |
+
+---
+
+## Three variants — pick based on what's ready when you decide to post
+
+### Variant A — Story-led (can post NOW without pilot data)
+
+Lowest information bar. Hook is pure operator credibility. Use this if you want to launch the page before the accountant pilot data lands.
 
 ```
-14 days ago I installed an AI receptionist on my own cleaning business.
-Here's what happened to the missed calls.
+In my last year running Limani Seafood, we missed 40+ calls a week.
+I'd spent six years before that building enterprise phone systems for banks.
 
-DSK Property Cleaning, before:
-→ [N] missed calls per week
-→ Average response time: [X] minutes
-→ [Y]% of inbound enquiries became booked jobs
+And I couldn't fix my own restaurant's phone.
 
-After:
-→ [N] missed calls per week
-→ Average response time: 45 seconds
-→ [Y]% of inbound enquiries became booked jobs
+That gap — "I know how to build this, but the tools haven't existed at a
+price service businesses can pay" — is why Metis Cortex exists.
 
-Recovered revenue in 14 days: A$[Z,ZZZ].
+I'm building four service businesses of my own right now: a cleaning
+company, an aesthetic clinic, a chemical manufacturing line, and a
+trading-discipline software venture. All four are early-stage. Every
+system Metis Cortex sells — AI receptionists, workflow automation,
+operational audits — I'm installing on those four first.
 
-The one that surprised me: [SURPRISE MOMENT — e.g., "a Mosman pre-sale clean
-worth A$1,800 came in at 7:42pm on a Sunday — Zoe quoted, qualified, booked
-Monday morning. I would have seen the missed call on Monday at 8am."]
+By the time it lands in yours, the bugs are out.
 
-That's why I'm building Metis Cortex — done-for-you AI receptionists for
-Australian service businesses. A$1,500 install in 14 days. Refund if it
-doesn't book 5 extra jobs in your first month.
+We build the AI we wish we'd had at the restaurant.
 
-If you run a service business and missed calls are a real number for you,
-demo link in the comments.
+Sydney service business owners — if missed calls, overdue invoices, or
+the same FAQ answered nine times a week are real numbers in your week:
+15-min operator call in the comments.
 
 #smallbiz #australia #ai
 ```
 
-**Character count check (with placeholders filled in normally):** ~1,150 chars. Well within LinkedIn's 1,300-char truncate-without-"see more" budget.
+**Character count:** ~1,070. Within LinkedIn's 1,300-char no-truncate window.
+
+### Variant B — Accountant-pilot-led (post after Day 30 with real numbers)
+
+Lead with the one pilot. Use this if the accountant pilot delivers a clean number worth leading on.
+
+```
+30 days ago I installed [WORKFLOW NAME — e.g., "an AI-driven AR-chase
+workflow"] on a Sydney accountant's practice. Here's what happened to her
+overdue invoice list.
+
+Before:
+→ [N] invoices ≥60 days overdue
+→ A$[X,XXX] sitting in 90+ days
+→ [Y] hours/week of partner time on chase calls
+
+After 30 days:
+→ [N] invoices ≥60 days overdue
+→ A$[X,XXX] recovered
+→ [Y] hours/week of partner time on chase calls
+
+[ONE SPECIFIC MOMENT — e.g., "an A$4,200 invoice from January, sent
+politely-but-persistently by the workflow, paid on the 6th touch — she'd
+have written it off."]
+
+This is Metis Cortex. AI agency for Sydney service businesses, built by an
+operator who's installing every system on his own businesses first.
+
+Six years building enterprise IT (MCSE / Cisco / Citrix). Twenty-one years
+running Limani Seafood Restaurant in Narrabeen. Four service businesses
+I'm building now. One external pilot in flight — the one above. We're
+not pretending otherwise.
+
+If overdue invoices, missed calls, or the same FAQ answered nine times a
+week are real numbers in your week — 15-min operator call in comments.
+
+We build the AI we wish we'd had at the restaurant.
+
+#smallbiz #australia #ai
+```
+
+**Character count:** ~1,250 with placeholders filled normally. Tight against the no-truncate window — trim "one specific moment" if needed.
+
+### Variant C — Sticky-one-liner-led
+
+Punchiest opener. Use only if the accountant pilot data isn't extraordinary and Variant A feels too long.
+
+```
+We build the AI we wish we'd had at the restaurant.
+
+In my last year running Limani Seafood, we missed 40+ calls a week. I'd
+spent six years before that building enterprise phone systems for banks
+and couldn't fix my own restaurant's phone.
+
+That's why Metis Cortex exists. AI agency for Sydney service businesses
+— AI receptionists, workflow automation, operational audits — installed
+on my own four businesses first. By the time it lands in yours, the bugs
+are out.
+
+First month of operating. One external pilot in flight. Founding-cohort
+terms available for the first five clients per vertical.
+
+If you run a service business and any of these are real numbers in your
+week — 15-min operator call in comments:
+→ The 7pm call you'll miss tonight
+→ The A$4,200 invoice that's 60 days overdue
+→ The same FAQ you've answered nine times this week
+
+Sydney + AU only. Remote-friendly.
+
+#smallbiz #australia #ai
+```
+
+**Character count:** ~970. Punchiest, shortest, leads with the sticky line.
 
 ---
 
-## Hook variants — pick whichever sounds most like you
+## Hook subject-line variants (first 2 lines = 80% of reach)
 
-The first two lines are 80% of the post's reach. LinkedIn truncates after roughly 200 characters with a "see more" — readers on mobile only see the first ~140 chars. The hook lives or dies in that window.
+LinkedIn truncates ~200 chars on mobile. First 2 lines decide whether anyone reads on.
 
-### Variant A — process narrative (default in main post)
-
-```
-14 days ago I installed an AI receptionist on my own cleaning business.
-Here's what happened to the missed calls.
-```
-
-Why this works: specific timeframe, concrete subject (cleaning business), direct setup of the payoff. No mystery, no clickbait.
-
-### Variant B — number-led tension
+### Hook A1 — for Variant A
 
 ```
-DSK was leaking [N] calls a week. Most of them after 6pm.
-So I built something to catch them. Here's what 14 days later looks like.
+In my last year running Limani Seafood, we missed 40+ calls a week.
+I'd spent six years before that building enterprise phone systems for banks.
 ```
 
-Why this works: opens on the problem with a number, frames you as builder not consultant, sets up the case study with specificity. Slightly punchier than Variant A.
+**Why this works:** Concrete number (40+) + tension (you built it for banks, couldn't fix your own restaurant). Pre-empts the skeptic's first thought.
 
-### Variant C — outcome-first
+### Hook B1 — for Variant B (accountant pilot)
 
 ```
-A$[Z,ZZZ] in recovered revenue. 14 days. One AI receptionist installed
-on my own cleaning business. Here's the breakdown.
+30 days ago I installed an AI-driven AR-chase workflow on a Sydney accountant's practice.
+Here's what happened to her overdue invoice list.
 ```
 
-Why this works: leads with the most newsworthy data point (the dollar number). Best for high-engagement reach if the recovered revenue is substantial. Slightly riskier — if the number isn't impressive, the hook deflates.
+**Why this works:** Specific timeframe + concrete subject + named outcome (overdue invoices). The numbers in line 3 land hard because the setup is already locked.
+
+### Hook C1 — for Variant C
+
+```
+We build the AI we wish we'd had at the restaurant.
+```
+
+**Why this works:** Single line, complete thought, coffee-repeat-passes. Risky on first post (no number to anchor reach), but maximally sticky.
 
 ### How to pick
 
-- **Variant A** if Z is solid but not extraordinary (A$2K–4K range) — let the story carry it
-- **Variant B** if N is striking (15+ missed calls/week) — let the problem stat carry it
-- **Variant C** if Z is genuinely big (A$5K+) — let the outcome carry it
+- **A1** if launching pre-pilot. Story carries the post.
+- **B1** if accountant pilot landed strong numbers (A$5K+ recovered, or visible time-saved). Numbers carry the post.
+- **C1** if the sticky line itself is the test — you want to know if it lands before committing to it everywhere else.
 
-When in doubt, use **A**. It's the most consistent performer for first-post-from-a-new-account because LinkedIn's algorithm hasn't decided what your account is yet.
-
----
-
-## First comment — drop immediately after the post lands
-
-LinkedIn algorithm down-weights posts with external links in the body. The workaround: external link in the *first comment*, posted within 30 seconds of the main post by the same author. The algorithm reads first-comment links as engagement context, not promotion.
-
-**Paste this as the first comment within 30 seconds of posting:**
-
-```
-For anyone curious — 10-min demo here:
-[Calendly URL]
-
-I'll walk you through the install on a real call (Zoe answers a test number,
-you can hear her qualify a lead). Pricing's on the site too — metiscortex.au.
-No deck, no slide pitch. Just the actual product.
-```
-
-Why this works: makes the link feel useful, not salesy. "No deck, no slide pitch" subtly differentiates from typical agency demos. Mentions the product persona (Zoe) without explaining the Greek etymology — fits the brand-discipline rule of keeping mythology off public surfaces.
+When in doubt, use **A1**. It works without any data and reads as honest first-week-of-launching.
 
 ---
 
-## Engagement-prompt messages (DM script for first 5–10 comments)
+## First comment — drop within 30 seconds of the main post
 
-LinkedIn's algorithm rewards substantive comments more than likes — by ~6× in current 2026 reach math. The algorithm reads "post receives 10 multi-sentence comments in the first 60 minutes" as a strong signal and pushes the post into broader feeds.
+LinkedIn down-weights external links in the post body. Workaround: first comment from the same author within 30 seconds = high-signal engagement context, not promotion.
 
-The play: within 5 minutes of posting, DM 5–10 people from your Tier-C-closest contacts (per `LINKEDIN-FIRST-100-OUTREACH.md`) and ask them to drop a real comment. **Real, not "great post!" — that doesn't move the algorithm.**
-
-### DM template for close contacts
+**Paste this as the first comment:**
 
 ```
-Just posted the DSK case study on the Metis Cortex page — first real
-post for the brand. Algorithm-wise, the next 60 minutes shape what the
-page reaches forever.
+For anyone curious — 15-min operator call here:
+[CALENDLY URL — pending Task A from earlier queue]
 
-If you've got 30 seconds, would mean a lot if you'd drop a real
-comment — anything genuine. Even a question works.
+You'll talk to me, not an SDR. I'll ask what's costing you the most time
+right now and tell you honestly whether we can help or not.
+
+Site: metiscortex.au
+The 7-question operations audit checklist (free, no email gate): metiscortex.au/audit-checklist
+```
+
+**Note:** Calendly URL is still pending Peter's setup (Task A from the earlier queue, currently disarmed pending v3 carry-over confirmation). Until Calendly is live, replace the Calendly line with `info@metiscortex.au` or a Cal.com placeholder.
+
+---
+
+## DM script for engagement prompts (first 5–10 substantive comments)
+
+LinkedIn's algorithm weights substantive comments ~6× more than likes. The play: within 5 minutes of posting, DM 5–10 closest contacts and ask for a real comment (not "great post!").
+
+### DM template — close contacts
+
+```
+Just posted the first thing on the Metis Cortex page (the AI agency I've
+been building). Algorithm-wise, the next 60 minutes shape what the page
+reaches forever.
+
+If you've got 30 seconds, would mean a lot if you'd drop a real comment
+— anything honest. Questions count.
 
 Link: [post URL]
 
 I'll reciprocate on yours whenever you ask.
 ```
 
-### DM template for peers / loose acquaintances
+### DM template — peers / loose acquaintances
 
 ```
-First post for my new business landed today — DSK Property Cleaning's
-14-day AI receptionist case study.
+First post for Metis Cortex landed today — AI agency for Sydney service
+businesses, built by an operator. Story is in the post.
 
-Open to your feedback if it lands or doesn't. Comment whatever's honest.
+Open to your honest feedback if it lands or doesn't. Comment whatever's
+real.
 
 Link: [post URL]
 ```
 
-### Hard rules for engagement prompts
+### Hard rules
 
-- ❌ **Don't ask for likes** — likes barely move the algorithm in 2026; comments are the unit of currency
-- ❌ **Don't suggest what to write** — algorithm detects coordinated patterns when 5 comments say similar things
-- ❌ **Don't ask everyone at once** — stagger over 60 min, not all in 5 min, to avoid coordinated-spike patterns
-- ✅ **Do ask only people you'd actually message about anything else** — if your prompt is the first message you've sent them in 6 months, the favour bank is empty
-- ✅ **Do reciprocate genuinely on their content within 7 days** — keeps the favour bank live for next time
+- ❌ Don't ask for likes — likes barely move the algorithm in 2026; comments do
+- ❌ Don't suggest what to write — algorithm detects coordinated patterns
+- ❌ Don't ask everyone in 5 min — stagger over an hour, no coordinated spikes
+- ✅ Do ask only people you'd message about anything else
+- ✅ Do reciprocate within 7 days
 
 ---
 
-## What to do with replies on the post itself
-
-Three reply categories you'll see in the first 24 hours:
+## What to do with replies in the first 24 hours
 
 | Reply type | Response |
 |---|---|
-| **Genuine question about the product** ("how does it integrate with Jobber?") | Answer in the thread, full sentence, no jargon. These reply chains are the highest-value algorithm signal. Don't move them to DM. |
-| **"Interested, can you DM me"** from a service-business owner | Reply in-thread first ("happy to — quick demo via the link is the fastest path") then DM them with the Calendly link. Don't skip the in-thread reply — the algorithm watches who you respond to and where. |
-| **Spam / agency pitch** ("I help businesses like yours scale to 7-figures") | Don't engage. Don't even react. The algorithm tracks who responds to whom — engaging with low-quality accounts pulls your content toward their audience. Just delete the comment if it's egregious. |
+| **Genuine question** ("how does the audit work?") | Answer in-thread, full sentence, no jargon. Highest-signal algorithm move. |
+| **"Sounds interesting, DM me"** | Reply in-thread first ("happy to — quick 15-min call is the fastest path, link in the first comment") then DM with the Calendly link. |
+| **Spam / pitch from agency** | Don't engage. Don't even react. Algorithm tracks who you respond to and pulls your content toward their audience. |
+| **Old contact / colleague congrats** | Quick personal reply ("thanks mate — first month of operating, plenty to share if you're curious") — keeps the post warm without diluting algorithm signal. |
 
 ---
 
 ## What NOT to put in the post
 
-- ❌ Greek mythology / Metis etymology / "AI brain layer" — brand discipline rule, mythology stays off public surfaces
-- ❌ "Excited to announce" / "stoked to share" — corporate tone kills operator credibility
-- ❌ Long preamble about your founder journey — readers scroll past anything before the numbers
-- ❌ Big hashtag clusters — 3 max. #smallbiz #australia #ai is the cap.
-- ❌ Multiple CTAs — one demo link in the first comment, that's it
-- ❌ Tagging random people for visibility — algorithm flags it
+- ❌ Greek mythology / Metis story / "AI brain layer" — brand-discipline rule, mythology stays off public surfaces
+- ❌ Eonia / HydraLab / restaurant as "case studies" — they're operating businesses, not Frontline deployments. Calling them case studies is the kind of overstatement that dies on the second question.
+- ❌ "5 case-study clients across cleaning/restaurant/RE/dental/beauty" — this was v1 positioning. Dead.
+- ❌ Refund guarantee — save for `/grand-slam` page and direct-sales context, not LinkedIn first post
+- ❌ "100% answered" / founding-rate scarcity language — v3 positioning explicitly drops these
+- ❌ Multiple hashtag clusters — 3 max, all small-business / Australia / AI relevant
+- ❌ Tagging strangers for visibility
 
 ---
 
-## After the post lands
+## Posting timing
+
+When the gate clears, post:
+
+- **09:00–10:00 AEST Tuesday or Wednesday** (highest AU B2B engagement window)
+- Not Monday (admin catch-up day)
+- Not Friday (winding down)
+- Not weekend (B2B algorithm dead zone)
+
+After posting, the first 60 minutes set the reach ceiling. Run the engagement DM playbook above immediately.
+
+---
+
+## After this post lands
 
 - **Hour 1:** drop first comment with link, send 5–10 engagement DMs, monitor replies
-- **Hour 2–24:** reply to every substantive comment within 30 min of it landing (algorithm watches reply latency)
-- **Day 2:** don't post again — let the first post breathe
-- **Day 3:** light follow-up post (a single quote from a customer reaction, an FAQ that came up in the comments, etc.)
-- **Day 4–7:** quiet. The first post's reach is still compounding.
-- **Week 2:** second case study (Eonia) if that pilot's also live by then
+- **Hour 2–24:** reply to every substantive comment within 30 min
+- **Day 2:** silent — let the post breathe
+- **Day 3:** light follow-up post (a single quote from a reply, an FAQ that came up, etc.)
+- **Week 2:** second post when next milestone lands (first paid build, second pilot starts, etc.)
 
 ---
 
 ## Done criteria
 
-When the DSK pilot completes Day 28 and Peter has the four real numbers — N (missed calls/week before), N (missed calls/week after), Y (booking conversion %), Z (recovered revenue) — plus one specific surprise moment, this template requires a 5-minute find-and-replace and the post is ready to ship.
+This draft is paste-ready in three variants. Peter picks one, fills any placeholders ([N], [X,XXX], etc. for Variant B; nothing for A or C), posts at the right window.
+
+**Gate is no longer DSK Day 28** — DSK has no operational pilot data per v3 audit.
+**New gate is one of:**
+- (a) Accountant pilot Day 30 with measurable numbers → post Variant B
+- (b) Peter approves Variant A or C for a no-numbers operator-credibility launch → post without waiting
+
+Either way, the draft is ready.

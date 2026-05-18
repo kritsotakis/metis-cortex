@@ -2,11 +2,10 @@ export const SITE = {
   url: "https://metiscortex.au",
   name: "Metis Cortex",
   shortName: "Metis",
-  title:
-    "Metis Cortex — AI systems for Sydney service businesses, built by an operator",
+  title: "Metis Cortex",
   description:
-    "We build AI receptionists, workflow automation, and operational audits for service businesses — and we're running them on our own four businesses first. Six years enterprise IT (MCSE / Cisco / Citrix). 21 years running a restaurant. Sydney, AUD. Honest pricing, no lock-in, one offer per engagement.",
-  tagline: "We build the AI we wish we'd had at the restaurant.",
+    "Metis Cortex — Sydney, Australia. Something's coming.",
+  tagline: "Something's coming.",
   locale: "en_AU",
 } as const;
 
@@ -38,9 +37,7 @@ export const LEGAL = {
   asicNextRenewalDate: "9 May 2027",
 } as const;
 
-/* PRICING — v3 (2026-05-18). Setup A$5,000 + Monthly A$1,500 reflects the
- * pivot pricing per STRIPE-DIFF-PIVOT-V3.md. Founding A$800 archived (kept
- * accessible in Stripe as legacy closer-tool for original outreach prospects). */
+/* PRICING kept for any future page; not surfaced on coming-soon homepage. */
 export const PRICING = {
   setupAud: 5000,
   monthlyAud: 1500,
@@ -49,7 +46,6 @@ export const PRICING = {
   auditDeepAud: 5000,
   workflowSetupAud: 3000,
   workflowMonthlyAud: 500,
-  /* Legacy — superseded by v3 pivot but archived for grandfathering */
   legacySetupAud: 1500,
   legacyStandardMonthlyAud: 1200,
   legacyFoundingMonthlyAud: 800,
@@ -57,7 +53,7 @@ export const PRICING = {
 
 export function bookingHref(): string {
   if (BOOKING.calendlyUrl) return BOOKING.calendlyUrl;
-  return `mailto:${contactEmail()}?subject=Metis%20Cortex%20demo`;
+  return `mailto:${contactEmail()}?subject=Metis%20Cortex`;
 }
 
 export function contactEmail(): string {

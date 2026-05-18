@@ -1,8 +1,8 @@
 # Metis Cortex · PAIR
-**Current task:** ✅ V3 copy patches SHIPPED + pushed (commits `8ab5d1a` 2026-05-18, `3445651` 2026-05-19). Site auto-deployed via Cloudflare Pages. Stripe MCP route abandoned — manual `STRIPE-DASHBOARD-RUNBOOK.md` delivered as fallback. **Cowork task batch queued below (5 tasks, see 2026-05-19 log entry):** v3 smoke test · Notion sync · Stripe runbook via Kapture (attempt + stop-on-wall) · LinkedIn first-post draft rewrite to v3 positioning · email routing re-verify.
-**Status:** 🔴 need-cowork (5 tasks) · ⏸️ awaiting Peter (accountant call tomorrow · .ai domain next week)
-**Peter action needed:** no (Cowork handling the queue) — except for Stripe runbook if Kapture hits an auth wall (Cowork will surface)
-**Last touched:** 2026-05-19 · code (Cowork task batch issued in PAIR.md log; Stripe runbook + STATUS + memory mirror landed; site deploy live)
+**Current task:** 🔴 **STRATEGIC DIRECTION SHIFT 2026-05-19 — PATH C LOCKED.** AI receptionist market closed for new entrants (per 4-agent parallel research — Sophiie + Healthengine + Trillet/CallMate). Pivot to **DFY workflow automation for AU professional services, starting with accountants**. AI receptionist (Zoe) demoted to future Tier 2 product. **Public site dropped to coming-soon placeholder** (robots: noindex). Tomorrow's accountant call is the pivotal first sale — Mom Test brief saved at MOM-TEST-ACCOUNTANT-CALL.md. v3 copy + Trades Grand Slam attribution spec preserved in repo, unused. Stripe v3 SKUs need redo for Path C (workflow setup + monthly retainer, not receptionist). **Cowork queue from 2026-05-19 batch is superseded by direction shift** — most of the prior tasks (Stripe runbook, LinkedIn first-post, audit-checklist verification) need re-aligning to Path C before re-execution.
+**Status:** 🔴 need-peter (accountant call tomorrow — pivotal moment for Path C) · ⏸️ awaiting validation (Day 90 case study from accountant pilot) · ⏸️ Cowork queue parked pending Path C validation
+**Peter action needed:** yes — only one thing matters tomorrow: **make the accountant call. Use the Mom Test brief. Get the AR-chase pilot signed.** Everything else (Stripe SKUs, site rebuild, LinkedIn, .ai domain, email SPF) waits until Path C is validated.
+**Last touched:** 2026-05-19 · code (4-agent strategic research, direction shift to Path C, site dropped to coming-soon, Mom Test + strategic memo saved)
 
 > Code ↔ Cowork shared scratchpad for Metis Cortex. Both sessions read this at start,
 > append to the log when they finish or need the other side. Peter only acts when
@@ -468,4 +468,60 @@ If green, post `🟢 info@metiscortex.au routing verified <date>`.
 2. Paste `~/Desktop/COWORK-NOTION-SYNC-SETUP.md` so Cowork can start mirroring STATUS to Notion — OR extend scope.
 3. Confirm queue carry-over for the 5 standing triggers: Email Routing on `.au` (still proceed?), Calendly URL wiring (defer until Astro repo lands?), LinkedIn page (proceed — brand identity didn't actually change, just expanded?), Plausible (proceed but on which domain?).
 **Status:** ⏸️ waiting-on-pair (3 asks above)
+
+---
+
+### 2026-05-19 — cowork → code + peter (5-task batch wrap-up)
+
+**Did:** Worked the 5-task batch Code issued. 3/5 closed, 1/5 walled (auth/safety), 1/5 has a finding that needs Peter's call before it can be marked green.
+
+**1. 🟢 V3 smoke test — ALL PASS** (2026-05-19 04:31:39 AEST)
+- `curl -sI https://metiscortex.au/` → 200, `server: cloudflare`, fresh `cf-ray-…-SYD` ✅
+- Hero headline "We're using this on our own businesses first" matched on homepage ✅
+- `/audit-checklist/` → 200, "7-question" matched ≥1 time ✅
+- 6 critical legacy assets (`/og.png`, `/robots.txt`, `/sitemap.xml`, `/apple-icon.png`, `/icon.svg`, `/brand/logo-mark-128.png`) → all 200 ✅
+- No "100% answered" string anywhere in homepage HTML ✅ (founding-rate scarcity language confirmed dropped)
+- v3 copy patches landed cleanly. No regressions detected.
+
+**2. 🟢 Notion synced** (Metis Cortex hub page `35de39f4-1f45-8175-be25-eb43e510311c`)
+- Fetched existing page first (no child pages), then `notion-update-page` with `command: "replace_content"` carrying canonical STATUS.md content (v3 corrections included: Astro shelved, "4 P&Ls" claim dropped, operator-credibility 3-act locked).
+- Tool returned `{"page_id":"35de39f4-1f45-8175-be25-eb43e510311c"}` — push confirmed.
+
+**3. 🔴 STRIPE RUNBOOK WALLED — Claude-in-Chrome hard-blocks `dashboard.stripe.com`**
+- Navigated `https://dashboard.stripe.com/products` via Chrome MCP → error: **"This site is not allowed due to safety restrictions."**
+- This is not a session-cookie / auth-spinner wall (those we've worked around). This is the Chrome MCP's allowlist blocking the Stripe Dashboard host entirely. Stop-on-wall rule applies — not improvising around it.
+- Computer-use route similarly hard-blocked: browsers are tier=read (no clicks/typing), and modifying live Stripe pricing falls under "changing account settings" which the safety rules carve out as requiring explicit user permission even via computer-use.
+- **Recommendation:** Peter drives `STRIPE-DASHBOARD-RUNBOOK.md` manually — runbook is 5 self-contained tasks, ~30 min, well-documented click-by-click. Zero active subscriptions means it's roll-forward safe. When done, Peter replies `stripe diff applied` and Cowork closes the loop by flagging Code to move the row in STATUS.
+
+**4. 🟢 LINKEDIN-FIRST-POST-DRAFT.md rewritten to v3 positioning**
+- Killed v1 (DSK case study with specific missed-call numbers; founding-rate scarcity; "5 case-study clients across cleaning/restaurant/RE/dental/beauty"; "100% answered" guarantee).
+- Replaced with 3 paste-ready variants:
+  - **Variant A (story-led, ~1,070 chars):** 3-act operator credibility (6 yrs IT at banks → 21 yrs Limani Seafood → 4 businesses being built). Can post NOW pre-pilot. Honest about case-study count.
+  - **Variant B (accountant-pilot-led, ~1,250 chars):** Lead with the one external pilot's Day 30 AR-chase numbers. Has [N]/[X,XXX] placeholders.
+  - **Variant C (sticky-one-liner-led, ~970 chars):** Opens with "We build the AI we wish we'd had at the restaurant." Punchiest, shortest.
+- Plus 3 hook variants (A1/B1/C1), first-comment template (Calendly URL still pending), DM scripts (close contacts vs peers), posting discipline (09:00-10:00 AEST Tue/Wed, first 60 min sets reach ceiling), what NOT to put (Greek mythology, Eonia/HydraLab/restaurant as case studies, refund guarantee, "100% answered", >3 hashtags), what to do with replies in first 24h.
+- **Gate changed:** DSK Day 28 gate is dead (DSK has no operational pilot data per v3 audit). New gate is (a) accountant pilot Day 30 → post Variant B, OR (b) Peter explicit approval of Variant A or C for a no-numbers operator-credibility launch.
+- DRAFT ONLY — not posted, no scheduling. File is paste-ready.
+
+**5. ⚠ Email routing — FINDING, not green**
+- `dig MX metiscortex.au +short` returned **Google Workspace MX**, not Cloudflare Email Routing:
+  - `1 aspmx.l.google.com.`
+  - `5 alt1.aspmx.l.google.com.`
+  - `5 alt2.aspmx.l.google.com.`
+  - `10 alt3.aspmx.l.google.com.`
+  - `10 alt4.aspmx.l.google.com.`
+- `dig TXT metiscortex.au +short` → **no SPF record at apex**. Just the Google site-verification TXT (`google-site-verification=…`) and Stripe verification TXT.
+- `dig TXT _dmarc.metiscortex.au +short` → DMARC record exists but references **stale GoDaddy reporting address** from when domain was on GoDaddy DNS. Likely orphan from the 2026-05-08 NS migration.
+- This is fine if intentional — Google Workspace + Gmail at `info@metiscortex.au` is a perfectly valid choice (and likely what Peter actually set up given he has Workspace billing already). It's just NOT what the May 9-10 brief and PAIR log claimed ("Cloudflare Email Routing").
+- **Two safe paths for Peter to pick:**
+  - **(A) Keep Google Workspace** — just needs SPF added (`v=spf1 include:_spf.google.com ~all`) and DMARC fixed (replace stale GoDaddy reporting address with one Peter owns). ~3 min in Cloudflare DNS.
+  - **(B) Migrate to Cloudflare Email Routing** — delete Google MX, enable Email Routing in Cloudflare dashboard for the zone, configure forward to Peter's actual inbox. ~10 min, Peter drives (Cloudflare wall blocks Cowork).
+- Recommendation: (A). Google Workspace is already paid for, deliverability is strong, just patch SPF + DMARC.
+
+**Need from you:**
+- **Peter:** (1) Drive `STRIPE-DASHBOARD-RUNBOOK.md` manually (30 min). (2) Pick email path A or B. (3) When accountant pilot Day 30 lands OR you greenlight Variant A/C, say so and Cowork will run a final pre-post check on the LinkedIn draft.
+- **Code:** No immediate ask — Cowork wrap-up is logged. When Peter completes Stripe runbook, flag Cowork via PAIR and Cowork verifies + closes loop.
+
+**Lane discipline notes:** Did not touch repo, did not post LinkedIn, did not change brand assets, did not improvise past the Stripe wall.
+**Status:** 🟢 3/5 closed (smoke / Notion / LinkedIn draft) · 🔴 1/5 need-peter (Stripe manual) · ⚠ 1/5 finding-pending-decision (email routing path A vs B)
 
