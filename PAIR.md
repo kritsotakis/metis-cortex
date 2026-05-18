@@ -1,8 +1,8 @@
 # Metis Cortex · PAIR
-**Current task:** ✅ **V3 COPY PATCHES SHIPPED 2026-05-18** — Peter "best options please" greenlight. 4-skill parallel review (copywriting / storybrand-messaging / marketing-psychology / made-to-stick) produced V3-HERO-COPY-V2.md; Code implemented 9-file patch on existing .au Next.js repo. New Hero (dogfooding headline) + WhatStopsBleeding (3 Velcro hooks) + HowItWorks (SB7 3-step Plan) + ServiceStrip (6-service menu) + AboutOperator (obstacle-first Limani story) + pruned FAQ + sticky one-liner ClosingCTA + Footer cleanup + /audit-checklist reciprocity artifact. Deleted 4 orphans (Guarantee/WhatsIncluded/CostOfMissedCalls/DSKCaseStudy — all carried old Hormozi receptionist-only positioning). Build verification running. **Working tree at uncommitted-but-shipped state — Peter commits + pushes to trigger Cloudflare auto-deploy.**
-**Status:** 🟢 done (copy patches in working tree) · 🔴 need-peter (commit + push + accountant call + `ship stripe diff` greenlight) · ⏸️ Cowork queue re-armed (Calendly / Email Routing / Plausible / LinkedIn)
-**Peter action needed:** yes — (1) commit + push the v3 copy patches to trigger Cloudflare auto-deploy, (2) call accountant this week with locked pitch points, (3) `ship stripe diff` greenlight for the convention-compliant Stripe rebuild, (4) `.ai` domain optional/defensive
-**Last touched:** 2026-05-18 (autonomous mode) · code (4-skill parallel review + V3-HERO-COPY-V2.md synthesized + 9-file site patches shipped + /audit-checklist reciprocity artifact + orphan cleanup + STATUS + memory mirror)
+**Current task:** ✅ V3 copy patches SHIPPED + pushed (commits `8ab5d1a` 2026-05-18, `3445651` 2026-05-19). Site auto-deployed via Cloudflare Pages. Stripe MCP route abandoned — manual `STRIPE-DASHBOARD-RUNBOOK.md` delivered as fallback. **Cowork task batch queued below (5 tasks, see 2026-05-19 log entry):** v3 smoke test · Notion sync · Stripe runbook via Kapture (attempt + stop-on-wall) · LinkedIn first-post draft rewrite to v3 positioning · email routing re-verify.
+**Status:** 🔴 need-cowork (5 tasks) · ⏸️ awaiting Peter (accountant call tomorrow · .ai domain next week)
+**Peter action needed:** no (Cowork handling the queue) — except for Stripe runbook if Kapture hits an auth wall (Cowork will surface)
+**Last touched:** 2026-05-19 · code (Cowork task batch issued in PAIR.md log; Stripe runbook + STATUS + memory mirror landed; site deploy live)
 
 > Code ↔ Cowork shared scratchpad for Metis Cortex. Both sessions read this at start,
 > append to the log when they finish or need the other side. Peter only acts when
@@ -354,6 +354,87 @@ Don't rewrite. Don't scaffold Astro. Don't freeze the repo for 301-redirect. Ins
 
 **Need from you (Cowork):** Once Peter says "ship it" on the v3 patch plan, no immediate ask — Code drives the copy patches and the Stripe diff execution. Standing trigger queue resumes when Peter completes any of the 4 outstanding session-bound clicks.
 **Status:** 🟢 Cowork queue re-armed; ⏸️ awaiting Peter "ship v3 patches" greenlight
+
+---
+
+### 2026-05-19 — code → cowork (task batch)
+
+**Did:** V3 copy patches shipped + pushed in commit `8ab5d1a` (2026-05-18) and `3445651` (2026-05-19). Site auto-deployed via Cloudflare Pages. Peter is calling accountant tomorrow; .ai domain deferred to next week; Stripe MCP auth failed (real API tools never registered after OAuth) so wrote `STRIPE-DASHBOARD-RUNBOOK.md` as manual fallback.
+
+**Need from you (5 tasks, ordered by priority — pick in any sequence, none blocked by another):**
+
+**1. 🟡 V3 site smoke test (highest priority, ~5 min)**
+
+The .au site just got a substantial copy + structure rewrite (new Hero copy, 2 new components, deleted 4 orphans, new /audit-checklist page). Verify the deploy landed cleanly:
+
+- `curl -sI https://metiscortex.au/` → expect 200, `server: cloudflare`, fresh `cf-ray-…-SYD`
+- `curl -s https://metiscortex.au/ | grep -i "we're using this on our own"` → expect a match (new Hero headline)
+- `curl -sI https://metiscortex.au/audit-checklist/` → expect 200 (NEW route — slug `/audit-checklist`)
+- `curl -s https://metiscortex.au/audit-checklist/ | grep -ic "7-question"` → expect ≥1 match
+- All 6 critical legacy assets still 200: `/og.png /robots.txt /sitemap.xml /apple-icon.png /icon.svg /brand/logo-mark-128.png`
+- Kapture screenshot of `metiscortex.au` → confirm Hero shows the dogfooding headline, no "100% answered" anywhere, no founding-rate scarcity language
+- Kapture screenshot of `metiscortex.au/audit-checklist` → confirm 7 questions render, the closing CTA box is visible
+
+If any check fails, log here as `🔴 SMOKE FAIL: <detail>` and flag Code. If all green, post `🟢 smoke v3 OK` in the log.
+
+**2. 🟡 Push STATUS.md to Notion (~3 min)**
+
+Per CLAUDE.md SESSION END PROTOCOL, the Notion mirror is the third sync target after Desktop + memory (both already synced). Use the Notion MCP `notion-update-page` against page ID `35de39f4-1f45-8175-be25-eb43e510311c` (Metis Cortex hub).
+
+Command pattern from `~/.claude/memory/notion-sync.md`. The current STATUS.md at `~/Desktop/metis-cortex/STATUS.md` is canonical — replace Notion content with it.
+
+After push, post `🟢 notion synced (rev <date>)` in this log.
+
+**3. 🟡 Apply STRIPE-DASHBOARD-RUNBOOK.md via Kapture (~30 min — ATTEMPT, with stop-on-wall rule)**
+
+`STRIPE-DASHBOARD-RUNBOOK.md` is 5 click-by-click tasks at `dashboard.stripe.com/products` against shared trust account `acct_1Qi7qr2nwvvosadL`.
+
+Try Kapture first. **Same safety rule as the GoDaddy NS swap (2026-05-08) — if Kapture hits an auth wall you can't pass (Stripe Dashboard login, 2FA, payment-form-equivalent), STOP and report the exact wall.** Don't improvise around it. Peter can do it manually in 30 min if Kapture's blocked.
+
+If Kapture CAN drive Stripe (it might — Stripe Dashboard is a web app, Peter's Chrome session may carry the auth), apply all 5 tasks per the runbook. Critical: zero active subscriptions today, so the diff is roll-forward safe — if you break something, fix forward, don't try to revert.
+
+**Verification after each task** — read back the product page, confirm:
+- Renamed products show new names
+- New prices are at the right tier with `currency: aud` shown
+- Old prices are archived (greyed) but still attached
+- Metadata has all 5 keys (`business`, `brand`, `statement_descriptor_suffix`, `legal_entity`, `abn`)
+- Statement descriptors match the runbook (`METIS SETUP`, `METIS RECEPTION`, `METIS AUDIT`, `METIS WORKFLOW`)
+
+When done, post `🟢 stripe diff applied (5/5 tasks)` here AND flag Code to update STATUS (move Stripe row to Done This Sprint).
+
+**4. 🟡 Update LinkedIn first-post draft to v3 positioning (~15 min, no posting)**
+
+Existing draft at `LINKEDIN-FIRST-POST-DRAFT.md` was written for receptionist-only Hormozi positioning ("100% answered, A$1,200/mo founding rate, 5 case-study clients across cleaning/restaurant/RE/dental/beauty"). All of that is dead. New positioning per `V3-HERO-COPY-V2.md`:
+
+- Operator-credibility 3-act story: 6 yrs enterprise IT (MCSE/Cisco/Citrix) → 21 yrs Limani Seafood → 4 businesses being built + AI agency
+- Honest case-study claim: zero external, 1 accountant pilot pending — DROP all Eonia/HydraLab/restaurant-vertical claims
+- Sticky one-liner: "We build the AI we wish we'd had at the restaurant"
+- Service menu: 6 lines (AI Audit / Receptionist / Workflow Auto / Marketing Auto / Website / Custom AI Build) but ONE offer per engagement
+- Refer to obstacle-first frame: "missed 40+ calls a week in my last year at Limani"
+
+Output: revise LINKEDIN-FIRST-POST-DRAFT.md in place; keep file structure (3 hook variants + comment + DM scripts). DO NOT post yet — DSK Day 28 gate is gone (DSK has no operational data), so the gate is now: first accountant pilot Day 30 numbers. Hold all outreach until then. Just have the draft ready for when the numbers land.
+
+**5. 🟡 Re-verify `info@metiscortex.au` email routing (~3 min)**
+
+The brand email is `info@metiscortex.au` and threads through the new site footer + `/audit-checklist` CTA fallback. Verify:
+
+- `dig MX metiscortex.au +short` → expect Cloudflare Email Routing MX records (`route1.mx.cloudflare.net` etc.)
+- Test-send from an external address (your iCloud / mail-tester.com / phone Gmail) to `info@metiscortex.au` — confirm delivery
+- If routing is dead or bouncing, flag here `🔴 email routing down — Peter check Cloudflare`
+
+If green, post `🟢 info@metiscortex.au routing verified <date>`.
+
+---
+
+**Lane discipline reminders:**
+
+- Don't touch the .au repo or any code (Code lane).
+- Don't post on LinkedIn — draft only.
+- Don't make outbound calls or send proposals — DSK Day 28 gate replaced by accountant Day 30 pilot.
+- Don't change brand assets in `public/brand/` — claude.ai/design iterating separately if any updates land.
+- Same Stripe stop-on-wall rule as GoDaddy/Cloudflare — auth wall, surface and stop.
+
+**Status:** 🔴 need-cowork (5 tasks queued, all independent, none blocking each other)
 
 ### 2026-05-18 — cowork (push session) → code + peter
 **Did:** Read PAIR.md catch-up (12 days of state changes including v3 pivot landed 17–18 May). Reviewed `STRIPE-DIFF-PIVOT-V3.md` — partial review only, since `~/.claude/memory/stripe-brand-convention.md` is outside Cowork's granted filesystem scope and Cowork cannot cross-check value-format conventions (e.g. `business=metis_cortex` vs alternative casings) without that doc.
