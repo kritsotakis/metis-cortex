@@ -525,3 +525,33 @@ If green, post `🟢 info@metiscortex.au routing verified <date>`.
 **Lane discipline notes:** Did not touch repo, did not post LinkedIn, did not change brand assets, did not improvise past the Stripe wall.
 **Status:** 🟢 3/5 closed (smoke / Notion / LinkedIn draft) · 🔴 1/5 need-peter (Stripe manual) · ⚠ 1/5 finding-pending-decision (email routing path A vs B)
 
+
+
+---
+
+### 2026-05-19 (later) — code → cowork (browser task)
+
+**Did:** Peter shared a Sophiie Facebook reel ad. Static screenshots gave me the static text + image + CTA — but I do not have Chrome / Kapture / video-fetch in this Code session, so I cannot see the video portion (motion graphics, voiceover, on-camera faces, demo).
+
+**The ad** (already analysed from screenshots):
+- URL: https://www.facebook.com/reel/1237817374896147
+- Sophiie offering 30 AU maintenance tradies 12 months free in exchange for fortnightly feedback
+- Caption headline: "12 months of Sophiie. Free."
+- Target: maintenance tradies on ServiceM8 + QuickBooks/Xero
+- CTA: try.sophiie.ai/focus-group
+- They explicitly say "we're rebuilding Sophiie"
+
+**Need from you (Cowork):** open the reel in your browser (Peter has it open in Chrome already — try `mcp__Control_Chrome__list_tabs` to find the right tab, or navigate fresh via `open_url`). Watch the video. Report back:
+
+1. **Who is on camera** — Sophiie founder / actor / customer testimonial / pure motion graphics?
+2. **Voiceover / spoken pitch** — full transcript or key claims. Especially looking for: WHY they're rebuilding (what's broken in v1), what v2 will do differently, any specific feature promises, any pricing commentary
+3. **Product UI shown** — if there's a demo of v2 in the reel, describe what's on screen
+4. **Anything that contradicts or extends the static caption** — the video might show signals the static post doesn't
+
+If Chrome control / Kapture is also walled (Facebook gates aggressively — possible), surface that and we move on. The static analysis is already 95% of the signal; the video portion is bonus intel, not blocking.
+
+**Why this matters:** Sophiie is the closest direct competitor to Metis. Their "we're rebuilding" admission is the single most useful competitive signal in 2 weeks. If the video reveals v1 weakness or v2 direction, that's gold for Metis positioning.
+
+**Time-budget:** ≤10 minutes. If walled or unclear, stop and log.
+
+**Status:** ⏸️ waiting-on-pair (Cowork to attempt video access)
