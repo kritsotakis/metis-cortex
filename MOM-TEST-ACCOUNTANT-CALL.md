@@ -1,8 +1,26 @@
 # Mom Test Brief — Accountant Call
 
-**Call date:** 2026-05-20 (tomorrow)
+**Meeting date:** 2026-05-20 (tomorrow) — **in-person visit, not phone call**
 **Goal:** Validate real demand for AR-chase workflow pilot (the pain she actually has) without polite-friend bias contaminating the signal.
-**Pilot terms reminder:** 90 days · $0 or $500 token · AR-chase workflow built and installed in her practice · in exchange: written case study, 5-min video testimonial at day 90, 2 warm referrals.
+
+**In-person dynamics (different from phone):**
+- Silence is even more powerful. After her answer, COUNT TO 4 silently before asking next question. She will fill the gap with the real answer.
+- Body language reads. Watch when she gets uncomfortable / leans in / glances away. Note which question topic triggers each.
+- Bring a notebook. Write down dollar figures + client names she mentions. Trying to remember without notes = signal lost by lunch.
+- You can show her things — open the AR-Recovery Pilot Proposal on your phone if useful. Don't lead with it; bring it out only after she's named her pain and you've reflected it back.
+- Leave-behind: print the one-pager proposal (`AR-RECOVERY-PILOT-PROPOSAL.md`) OR email it to her before you leave so she has it for partners.
+- Scope-discovery checklist (`SCOPE-DISCOVERY-IF-YES.md`) lives on your phone — pull it up if she says yes.
+**Pilot terms reminder (UPDATED 2026-05-19 — micro-SaaS reframe):** 90 days · $0 or $500 token · AR-chase workflow built and installed in her practice · in exchange: written case study, 5-min video testimonial at day 90, 2 warm referrals.
+
+**Reframed pitch script** (use after Mom Test Q1-5, when you pitch):
+> *"I'm building a subscription product for accountants — automated AR recovery, around A$199-299/mo when it launches. I'll install it manually for you first, free for 90 days, in exchange for case study rights + 2 referrals. After 90 days, if it's working, you keep using it at the subscription rate. What I learn from your install becomes the productised version other accountants can use without my help. You'd be the first."*
+
+She's not a retainer client; she's the first subscriber + product prototype. That framing makes the "free 90 days" more legible (you're building the product) AND makes the "$199-299/mo after" easier to swallow (it's a software subscription, not a consulting fee).
+
+**Also ask her before hanging up (ChatGPT's add):**
+> *"Can you name 5 other accountants I should talk to — not for referrals yet, just for market understanding? Names, not introductions."*
+
+5 names in your phone = 5 conversations queued = real exposure to market reality (which Round 2 reviewers both said is your highest-leverage activity right now).
 
 **Rule: do NOT pitch the pilot until question 5.**
 
