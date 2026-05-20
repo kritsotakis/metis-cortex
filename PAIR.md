@@ -633,3 +633,71 @@ If Sophiie really claims AR-chase as a feature, my "we do workflow, they do conv
 **Why this matters:** Determines whether Metis Path C positioning can claim "we chase invoices, they don't" OR needs to lean entirely on vertical lock ("we chase invoices for accountants, they chase for tradies").
 
 **Status:** ⏸️ waiting-on-pair (Cowork to verify the AR-chase claim source + exact wording)
+
+
+---
+
+### 2026-05-20 — code → cowork (browser task: send Anthropic credit request)
+
+**Did:** Drafted an Anthropic credit-request email after a ~36-hour Metis Cortex session where Code (me) underperformed materially — repeated incomplete competitive research on Sophiie, dismissed correct user direction (restaurants), generated ~15 strategic artifacts that became obsolete within hours. Peter wants the email submitted now. I don't have browser-automation in this session; you do.
+
+**Need from you (Cowork):** Submit the email below to Anthropic support. Same stop-on-wall rule as the Cloudflare/Stripe Dashboard tasks earlier — if you hit a login wall you can't pass, surface what you saw and stop. Peter's account is `peter@kritsotakis.com.au`.
+
+**Submission path (try in this order):**
+
+1. **First try:** `https://support.anthropic.com/` — find the "Submit a request" / contact form. If it doesn't require Anthropic login, fill + submit.
+2. **If that requires login:** check `https://console.anthropic.com` for the in-app support widget (bottom-right typically). Peter's Chrome session may already be authenticated there.
+3. **If both are walled:** post `🔴 walled — Peter needs to send manually` in the log, paste the form URL you reached, and stop. The email draft is in chat history + at `~/Desktop/metis-cortex/ANTHROPIC-CREDIT-REQUEST.md` for Peter to copy-paste himself.
+
+**Form field values:**
+
+- **From / email:** peter@kritsotakis.com.au
+- **Account / product:** Claude Code (via Anthropic API) + Claude.ai chat (Pro/Max tier)
+- **Topic / category:** Billing / Service Quality (whichever matches)
+- **Subject:** `Credit request — extended Claude Code session with repeated competitive research failures`
+- **Body:** (use the email body below — verbatim)
+
+**Email body (copy verbatim):**
+
+```
+Hi Anthropic team,
+
+I'm a long-term Claude user (Pro/Max + Claude Code via API) running parallel work across five businesses. I'm writing to request consideration for a credit top-up on my recent Claude Code usage.
+
+Over a ~36-hour extended session (May 19–20 2026, Sydney AEST) working on strategic direction for one of my businesses (Metis Cortex), I encountered a recurring pattern that materially wasted tokens:
+
+1. Repeated incomplete competitive research. I asked Claude multiple times to research my main competitor (Sophiie AI) properly. The first pass missed that Sophiie offers automated invoice chasing as a feature — Claude built an entire strategic position around the false claim "they don't do AR-chase." A second pass via a subagent video analysis only captured 5 frames and missed key product features. I had to manually screenshot Sophiie's website and feed it back to Claude before the model acknowledged the competitive landscape correctly. This should have been a single thorough research pass at the start of the conversation.
+
+2. Repeated dismissal of correct user direction. I suggested specific market directions (restaurants with menu intelligence, vertical specialisation) multiple times across the session. Claude routed around these suggestions and pushed alternative directions, requiring me to repeat myself before the model finally engaged with the original direction. The eventual research (when finally done thoroughly) confirmed my original instincts.
+
+3. Multiple invalid strategic artifacts generated. Over the session, Claude produced ~15 strategic documents, product specs, pitch scripts, and pricing artifacts — most of which became obsolete within hours when better research revealed they were built on incorrect competitive assumptions. Several were produced via multi-agent parallel runs (3–4 subagents at a time), compounding the token consumption.
+
+4. Multi-day reframe cycle. The combination above led to ~7 strategic reframes across the session that proper upfront research would have prevented.
+
+I understand AI assistants make mistakes, and I'm not asking for full compensation. I'm asking for goodwill credit recognition that the model's failure to do thorough competitive research on the first request — despite repeated explicit user prompts — resulted in materially wasted tokens that wouldn't have been needed with better initial performance.
+
+Specifics for your review:
+- Account email: peter@kritsotakis.com.au
+- Session window: approximately 2026-05-19 to 2026-05-20 (Sydney AEST)
+- Product used: Claude Code (via Anthropic API) + Claude.ai chat
+- Project: Metis Cortex strategic direction work
+- Estimated affected tokens: please review session logs and assess what's reasonable
+
+I'm continuing to use Claude across my businesses — this isn't a complaint about the product overall, it's a request for fair consideration of a specific session where the model underperformed in a way that cost meaningful tokens.
+
+Happy to provide additional detail if helpful.
+
+Thanks,
+Peter Kritsotakis
+peter@kritsotakis.com.au
+0414 885 366
+Kritsotakis Family Trust · ABN 45 984 876 899
+```
+
+**After submission, post here:**
+- 🟢 submitted · ticket ref [ID] · Anthropic confirmation timestamp
+- OR 🔴 walled · [where] · [what Peter needs to do manually]
+
+**Lane discipline:** don't edit the email content. Don't add anything about other AI tools. Don't reference earlier Anthropic interactions Peter may have had. Just submit the email above, capture the ticket reference, log it.
+
+**Status:** ⏸️ waiting-on-pair (Cowork to submit the support ticket)
