@@ -787,3 +787,54 @@ Kritsotakis Family Trust · ABN 45 984 876 899
 Report ticket reference here when submitted: `🟢 submitted · ticket ref [ID] · timestamp` OR `🔴 walled · [where] · [what Peter needs to do manually]`.
 
 **Status:** ⏸️ waiting-on-pair (Cowork to submit + report ticket ref)
+
+---
+
+### 2026-05-20 (later) — cowork → code + peter (Anthropic credit submission: 🔴 walled)
+
+**Did:** Took Peter's "send it" green-light. Attempted both submission paths from the brief; hit walls on both that need Peter's call. Detailed findings:
+
+**Path 1 attempted — `support.anthropic.com` (redirects to `support.claude.com/en/`):**
+- Site has no public contact form. Search-articles + category-cards interface only.
+- Bottom-right Intercom widget opens to "Fin AI Agent" chatbot.
+- Initial Fin response: **"Need help? Please login to your account first before submitting a request."** Hard-routes Claude.ai users to "click your initials → Get Help in-app", and API Console users to console.anthropic.com or platform.claude.com → "Get Help" in-app.
+- Clicked "I can't login" to test the no-auth path. Fin replies: *"That's okay, I can still help!"* then surfaces a data-retention consent gate:
+  > *"By continuing in a logged out state, your use of this chatbot and chat data will be monitored, retained, and used by Anthropic, and our third-party chatbot provider (Intercom)... Please indicate whether you agree to these conditions of use."*
+- Two buttons: **Accept** / **Decline**. **This is the wall.** Per Cowork safety rules, "accepting terms, conditions, or agreements" requires its own explicit chat-channel confirmation. Peter's "send the email" greenlight authorised the submission — it didn't separately authorise accepting Intercom's data-retention terms on his behalf.
+- Worth flagging even past this gate: the path is **interactive chatbot conversation**, not a clean form submit. Fin will likely ask for name + email, deflect with FAQ articles, then offer to escalate to human. Pasting a 700-word credit-request body into a chatbot is unusual and may not route cleanly — chunking / summarisation / follow-up Q&A risk.
+
+**Path 2 attempted — `console.anthropic.com`:**
+- Redirects to `platform.claude.com/login`. Logged-out state.
+- Two auth options: **Continue with Google** (OAuth — requires explicit per-session permission AND would log me into Peter's full account, much bigger access than ticket submission) or **Continue with email** (password form — hard-blocked by safety rules).
+- Chrome MCP cookie jar is separate from Peter's main browser (confirmed pattern since 2026-05-07 Cloudflare wall). Peter's existing login session does NOT carry into this MCP tab.
+- Hard wall. Cannot proceed without auth I'm not permitted to perform.
+
+**Three options for Peter:**
+
+**(a) Peter authorises me to accept the Intercom data-retention terms AND tolerate chatbot Q&A.** Path 3, ~5–10 more min. Reply something like "accept the terms and proceed" — I'll click Accept on Intercom, paste opener with credit-request body, navigate whatever Q&A Fin throws.
+
+**(b) Peter drives it himself in main browser** (~5 min, my honest recommendation). Already logged in to claude.ai/console.anthropic.com; "click initials → Get Help" is the prescribed flow. Body ready to paste at `~/Desktop/metis-cortex/ANTHROPIC-CREDIT-REQUEST.md`. Cleanest provenance — request goes in tied to Peter's authenticated account, not anonymous Intercom session.
+
+**(c) Peter emails Anthropic directly** from his own mail client to support@anthropic.com (if that's a working address) or whatever email surface Anthropic accepts. No Intercom involved.
+
+**URLs reached for the record:**
+- `https://support.claude.com/en/` (no public form, Intercom widget only)
+- Intercom data-retention consent gate (iframe-internal, no addressable URL)
+- `https://platform.claude.com/login?returnTo=%2F%3F` (console login wall)
+
+**Time on attempt:** ~6 min (well within Code's stop-on-wall envelope).
+
+**Status:** 🔴 walled · Intercom consent gate + console login · Peter picks (a)/(b)/(c)
+
+
+---
+
+### 2026-05-20 (later) — code → cowork (Anthropic credit task CLOSED)
+
+**Did:** Peter chose option (c) from the three forks — email Anthropic directly from his own mail client. Code opened a `mailto:support@anthropic.com` compose window with subject pre-filled; Peter pastes the body from `~/Desktop/metis-cortex/ANTHROPIC-CREDIT-REQUEST.md` and sends from his authenticated Mail account.
+
+**Decision rationale:** (a) would have required accepting Intercom data-retention terms on Peter's behalf — not authorised. (b) was the cleanest path inside the support portal but Peter chose direct email. (c) bypasses the chatbot + login walls entirely; Anthropic's standard support inbox accepts emailed tickets.
+
+**Status:** 🟢 Anthropic credit task closed from Code/Cowork side. Peter drives final send. If `support@anthropic.com` bounces or auto-replies with "use the portal instead", Peter can fall back to option (b) (in-app support widget while logged into claude.ai).
+
+**No further Cowork action required on this thread.**
