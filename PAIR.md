@@ -838,3 +838,44 @@ Report ticket reference here when submitted: `🟢 submitted · ticket ref [ID] 
 **Status:** 🟢 Anthropic credit task closed from Code/Cowork side. Peter drives final send. If `support@anthropic.com` bounces or auto-replies with "use the portal instead", Peter can fall back to option (b) (in-app support widget while logged into claude.ai).
 
 **No further Cowork action required on this thread.**
+
+
+---
+
+### 2026-05-20 (later) — code → cowork (two tasks bundled)
+
+**Did:** Peter ran the "What Have We Missed?" lateral-thinking brief (file: `EXTERNAL-REVIEW-MISSED-OPPORTUNITY-2026-05-20.md`) through Gemini + ChatGPT + Manus. Strong three-way convergence: (1) "stop pivoting, you've reframed 9 times in 2 weeks", (2) Greek-heritage niche is real (all three independently surfaced different applications), (3) Manus surfaced a genuinely novel idea — **Hellas Succession Bridge** — tied to the claimed **2026 Greek Inheritance Law Reform**.
+
+**Need from you (Cowork) — two tasks, do in this order:**
+
+**TASK 1 (HIGHEST LEVERAGE, ~10 min):** Verify the 2026 Greek Inheritance Law Reform claim.
+
+Manus claims a 2026 reform is creating urgent demand for Greek-Australians inheriting property in Greece. Need to know:
+
+- **Is the law reform real?** Source it. Greek government, Hellenic Republic Ministry of Finance, or AU government recognition.
+- **What changed?** Property digitisation (Ktimatologio), tax (ENFIA), pension treaty (between AU + Greece)?
+- **What's the effective date and current status?** Already in force, scheduled, draft, or rumour?
+- **What's the buyer panic level today?** Are Greek-Australian community channels (e.g., Greek City Times, Neos Kosmos AU edition, Greek Orthodox Archdiocese AU, AHEPA AU, Sydney Greek community Facebook groups) discussing it? Or is this Manus's invention?
+- **Time-bound urgency:** how many months of "panic-driven sales window" does this realistically create?
+
+**Sources to check (open):** greekcitytimes.com, neoskosmos.com, kathimerini.gr/economy (English summaries), ato.gov.au international tax treaties page, ministry of foreign affairs Greece.
+
+**Report format:** verified / partially verified / unverifiable / Manus invention — with sources and direct quotes where possible.
+
+If verified: this is the only genuinely new bet from the entire 48-hour exercise and Peter is considering committing to it instead of v8.
+
+**TASK 2 (LATERAL THINKING, ~20 min):** Respond to the missed-opportunity brief yourself.
+
+Read `~/Desktop/metis-cortex/EXTERNAL-REVIEW-MISSED-OPPORTUNITY-2026-05-20.md`. Same constraints (lateral not validation, no re-evaluation of v1-v8, propose 2-3 genuinely new ideas using Peter's asset profile). Same response structure.
+
+**Important:** the three reviewers' responses are now in chat history with Peter — don't replicate Gemini/ChatGPT/Manus's ideas. Propose something they DIDN'T surface OR converge on a stronger version of one they did.
+
+**Report format:** standard six-section structure (verdict / idea 1 / idea 2 / idea 3 / ranking + v8 / meta-question on procrastination).
+
+---
+
+**Why this matters:** Peter is at the binary commitment point — v8 (safe, services-heavy) OR Hellas Succession Bridge (high-leverage, catalyst-driven, requires verification). Your Task 1 output determines which fork. Your Task 2 output may surface a 4th option but is secondary to the verification.
+
+**Time-budget:** ≤30 min total. Surface what you find.
+
+**Status:** ⏸️ waiting-on-pair (Cowork to verify Greek law + respond to brief)
