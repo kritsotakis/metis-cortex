@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root { --navy:#0f1e3d; --gold:#c9a84c; --cream:#f5f0e8; --muted:#54607a; }
+    body {
+      width: 340px; margin: 0; padding: 14px;
+      font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--navy); background: var(--cream);
+    }
+    h1 { margin: 0 0 2px; font-size: 15px; }
+    .sub { margin: 0 0 12px; color: var(--muted); font-size: 12px; }
+    label { display: block; font-weight: 600; margin: 10px 0 4px; }
+    select, button {
+      width: 100%; padding: 8px; border-radius: 6px;
+      border: 1px solid rgba(15,30,61,.2); background: #fff; font-size: 13px; color: var(--navy);
+    }
+    button {
+      margin-top: 12px; background: var(--navy); color: #fff; font-weight: 600;
+      border: none; cursor: pointer;
+    }
+    button:disabled { opacity: .5; cursor: default; }
+    button.secondary { background: #fff; color: var(--navy); border: 1px solid rgba(15,30,61,.2); margin-top: 6px; }
+    .status { margin-top: 12px; padding: 8px; border-radius: 6px; font-size: 12px; }
+    .ok { background: #e8f5ee; color: #1a5c3f; }
+    .err { background: #fdeaea; color: #8c1d18; }
+    .armed { background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.5); }
+    .hint { margin-top: 10px; font-size: 11px; color: var(--muted); }
+    .serverline {
+      margin: 0 0 10px; padding: 6px 8px; border-radius: 6px;
+      background: rgba(15,30,61,.05); font-size: 11px; color: var(--muted);
+    }
+    a { color: #9a7d2e; }
+  </style>
+</head>
+<body>
+  <h1>Save to Metis</h1>
+  <p class="sub">Pick where this document belongs, then download it as you normally would.</p>
+
+  <div id="server" class="serverline">Looking for Metis…</div>
+
+  <div id="signedOut" style="display:none">
+    <div id="signedOutMsg" class="status err">You're not signed in to Metis.</div>
+    <button id="openMetis" class="secondary">Open Metis to sign in</button>
+  </div>
+
+  <div id="main" style="display:none">
+    <label for="matter">Matter</label>
+    <select id="matter"></select>
+
+    <label for="item">File it against (optional)</label>
+    <select id="item"></select>
+
+    <button id="arm">Arm — save my next download</button>
+    <button id="capturePage" class="secondary">Save the page I'm on now</button>
+
+    <div id="armedNote" class="status armed" style="display:none">
+      Armed. Download the document and it'll go straight into your matter.
+    </div>
+    <div id="status"></div>
+
+    <p class="hint">
+      Metis only sees files you choose to save. It never signs in for you and never
+      browses on its own.
+    </p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

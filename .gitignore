@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# The app is its own repository: github.com/kritsotakis/metis-cortex-app
+# It lives here as a working directory but is versioned separately, so it must
+# not show up as untracked noise in this repo's status.
+app/
+
+# Secrets and local state — never commit.
+# A broad `git add -A` swept .cf-token (a live Cloudflare API token) into a
+# commit on 2026-07-28; GitHub push protection caught it before it left the
+# machine. Ignoring it so that can't recur.
+.cf-token
+*.token
+.metis-state/
+.playwright-mcp/
+.claude/

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Metis Companion",
+  "version": "0.1.0",
+  "description": "Save a document you're looking at straight into a Metis matter, against the right checklist item.",
+
+  "permissions": [
+    "downloads",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "https://metis-cortex.fly.dev/*",
+    "http://localhost:3000/*"
+  ],
+
+  "optional_host_permissions": [
+    "https://*/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Save to Metis"
+  }
+}
