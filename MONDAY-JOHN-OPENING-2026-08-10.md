@@ -16,22 +16,49 @@ behind and go back to pitching features.
 
 ---
 
-## Open with the liability, not the software
+## Open with why you actually built it
 
-Don't start with what Metis does. Start with the thing he lives with:
+Not with the software, and not with a liability argument. With the truth:
 
-> "The reason I built it is the 'you never told me that' conversation. That's
-> the one that ends up in a complaint, and it turns on whether the file note
-> recorded the risk you warned about and what the client said back."
+> "I built this because of my own matter. The divorce, then the custody stuff,
+> then the property settlement. It wasn't the law that broke me — it was the
+> disorganisation. Emails, phone calls, back and forth, and at no point could I
+> tell you where I was actually up to, what was happening next, or what I was
+> supposed to be doing. It was overwhelming, and it was the most emotionally
+> taxing part of the whole thing."
 
-That's *Sewell v Zelden* territory and he'll know it immediately. You're opening
-on his risk, not your product. Then:
+Then:
 
-> "So the software won't produce a file note at all unless both of those are in
-> it. And if they weren't said in the conference, it writes that they weren't —
-> it doesn't fill the gap."
+> "So I built the thing I needed. It tells you what your matter needs, what
+> you've already got, and what's still outstanding — so you walk into your
+> solicitor's office organised instead of drowning."
 
-**Stop there and let him react.** That single behaviour is the whole pitch.
+**Stop there.** That is the founding story, it is true, and it needs no
+embellishment.
+
+**John may have acted for you on that matter — he saw what state you were in.**
+If so, you don't have to describe it. *"You saw what I was like."* Nothing you
+could construct beats that.
+
+### Why this opening beats the one you'd expect
+
+He told you he hates AI for legal work. A founder story he can verify — about a
+problem he watched you have — is the opposite of a pitch. And it explains the
+whole product in one move: the client side exists because a self-represented
+person was drowning; the solicitor side came *after*, because the same mess was
+landing on the desk on his side of the table.
+
+### THEN the liability point, second
+
+Once the story has landed, the *Sewell v Zelden* framing is what makes the
+solicitor side credible — but as the reason it's built the way it is, not as
+the reason it exists:
+
+> "When I started showing it to solicitors, the same thing kept coming up from
+> your side of the desk — the 'you never told me that' conversation. So the
+> software won't produce a file note at all unless it records the risks you
+> warned about and what the client said back. And if they weren't said in the
+> conference, it writes that they weren't. It doesn't fill the gap."
 
 ---
 
