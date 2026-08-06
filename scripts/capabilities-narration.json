@@ -1,0 +1,88 @@
+{
+  "title": "Metis Cortex — what it does",
+  "note": "Narration for the capabilities video. Every claim here must stay true. The integration line is deliberately 'registration in progress' — nothing is built, and Smokeball was never applied for.",
+  "voice": "Mike - AU male (V55PLkF0YuZYdHsom49R)",
+  "sections": [
+    {
+      "id": "n00",
+      "cue": "homepage",
+      "text": "Metis Cortex is an Australian legal product with two halves. One for the person with the legal problem, and one for the solicitor they eventually sit down with."
+    },
+    {
+      "id": "n01",
+      "cue": "homepage scroll — 11 practice areas",
+      "text": "The client half is live today. Family law, wills and estates, tenancy, employment, civil disputes, fines, workers compensation, aged care, Centrelink, bankruptcy and immigration."
+    },
+    {
+      "id": "n02",
+      "cue": "guides index",
+      "text": "Forty free guides sit in front of it, grouped by legal matter. They exist to be genuinely useful on their own, and to be found on Google."
+    },
+    {
+      "id": "n03",
+      "cue": "matter checklist top",
+      "text": "Inside a matter, this is the core of it. Not a generic list. Seventeen items specific to a parenting matter, and for each one: why it matters, and exactly which office or website it comes from."
+    },
+    {
+      "id": "n04",
+      "cue": "checklist — s60I item with lawyer flag",
+      "text": "Where an item turns on a legal judgement, Metis says so and points the person to a solicitor or a duty lawyer, rather than letting them decide it alone."
+    },
+    {
+      "id": "n05",
+      "cue": "checklist scroll — process gates",
+      "text": "And below the documents sit the process gates. Family violence screening, the disclosure duty, the time limits. Things that change how a matter is handled, whether or not anyone thought to ask."
+    },
+    {
+      "id": "n06",
+      "cue": "Ask Metis / Documents tabs",
+      "text": "The client can ask questions against their own file, upload documents from a phone camera, and export the whole thing as one pack. That pack is what walks into the solicitor's office."
+    },
+    {
+      "id": "n07",
+      "cue": "transition — solicitor dashboard",
+      "text": "Which brings us to the other half. This is the solicitor side, and this is where a firm actually gets its time back."
+    },
+    {
+      "id": "n08",
+      "cue": "conference audio plays",
+      "text": "A client conference. Ordinary, and about seventy seconds of it."
+    },
+    {
+      "id": "n09",
+      "cue": "case brief — Sewell fields",
+      "text": "These two fields are the reason this exists. Sewell versus Zelden: the risks the solicitor warned of, and how the client responded. Those two decide negligence and complaint outcomes. Metis cannot produce a brief without them — and where the conversation did not contain them, it says so, rather than inventing something."
+    },
+    {
+      "id": "n10",
+      "cue": "legal issues list",
+      "text": "Six issues identified from that conversation, against current law — note the post May twenty twenty four parenting framework, not the old one."
+    },
+    {
+      "id": "n11",
+      "cue": "research tab",
+      "text": "And seventeen authorities pulled from Austlee while the client was still in the room."
+    },
+    {
+      "id": "n12",
+      "cue": "compliance tab",
+      "text": "Conflict check and client identification, dated and retained. The costs disclosure computes its own tier from the estimate the solicitor enters. The four section one seven four rights statements are deliberately left blank — we will not invent statutory wording."
+    },
+    {
+      "id": "n13",
+      "cue": "client portal",
+      "text": "And the client portal. Nothing reaches the client until the solicitor approves it. The draft stays invisible to them until a human signs off."
+    },
+    {
+      "id": "n14",
+      "cue": "close",
+      "text": "Where it fits with what a firm already runs: our LEAP developer registration is in progress. The intention is narrow — push the finished file note and brief into the right LEAP matter, so nobody re-keys it. That integration is not built yet, and I would rather say so."
+    },
+    {
+      "id": "n15",
+      "cue": "close",
+      "text": "The solicitor side is built and running, but it is not open to firms. It stays closed until a practising solicitor has reviewed the costs disclosure wording, indemnity cover is in force, and the privacy and data residency pass is done. Metis Cortex, hosted in Sydney."
+    }
+  ],
+  "pronunciation": "Metis is MET-iss (short first vowel, as in metal + hiss). NOT 'meaty'. TTS engines get this wrong by default — spell it 'Mettiss' in the text sent to the engine, then correct it back in any on-screen caption. Affects n00, n04, n09, n15."
+}

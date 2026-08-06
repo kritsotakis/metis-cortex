@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metis — Child Support Stay Order Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0; background: #f5f0e8; color: #1a2438;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px; line-height: 1.55;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: #0f1e3d; margin: 0; }
+    h1 { font-size: 2.2rem; line-height: 1.1; }
+    h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+    h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+    .gold-rule { display: block; width: 3rem; height: 2px; background: #c9a84c; margin: 0 0 1rem; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 0.18em; color: #9a7d2e; font-weight: 600; font-size: 0.7rem; margin-bottom: 0.5rem; }
+
+    /* Top bar */
+    .topbar {
+      background: #0f1e3d; color: #f5f0e8;
+      padding: 1.5rem 0;
+    }
+    .topbar h1 { color: #f5f0e8; }
+    .topbar .container { padding-top: 0; padding-bottom: 0; }
+    .topbar-meta { color: rgba(245,240,232,0.7); font-size: 0.85rem; margin-top: 0.3rem; }
+
+    /* Status snapshot */
+    .status-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: white; border: 1px solid rgba(15,30,61,0.08);
+      border-radius: 8px; padding: 0.9rem 1rem;
+      box-shadow: 0 1px 2px rgba(15,30,61,0.04);
+    }
+    .stat-card .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #9a7d2e; font-weight: 600; }
+    .stat-card .value { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #0f1e3d; margin-top: 0.2rem; }
+    .stat-card.alert { border-left: 3px solid #d73a49; }
+    .stat-card.alert .value { color: #d73a49; }
+
+    /* Action queue */
+    .action-queue { list-style: none; padding: 0; margin: 0; }
+    .action-queue li {
+      background: white; border: 1px solid rgba(15,30,61,0.08);
+      border-left: 3px solid #c9a84c;
+      padding: 0.7rem 1rem; margin-bottom: 0.4rem; border-radius: 6px;
+      font-size: 0.92rem;
+    }
+    .action-empty { color: #1a243899; font-style: italic; }
+
+    /* Streams */
+    .stream {
+      background: white; border: 1px solid rgba(15,30,61,0.08);
+      border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+      box-shadow: 0 1px 2px rgba(15,30,61,0.04);
+    }
+    .stream-head { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.5rem; }
+    .stream-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #0f1e3d; font-weight: 600; }
+    .stream-meta { font-size: 0.82rem; color: #1a2438cc; }
+    .meta-label { color: #9a7d2e; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; font-weight: 600; margin-right: 0.3rem; }
+    .meta-sep { margin: 0 0.5rem; color: rgba(26,36,56,0.3); }
+    .days-flag { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-left: 0.4rem; }
+    .days-flag.overdue { background: #d73a49; color: white; }
+    .days-flag.soon { background: rgba(255,170,40,0.18); color: #b67500; }
+    .days-flag.normal { background: rgba(15,30,61,0.06); color: #0f1e3d; }
+    .deadline-soon { color: #b67500; font-weight: 600; }
+    .stream-status { font-size: 0.92rem; color: #1a2438; margin-bottom: 0.5rem; }
+    .drafts-list { list-style: none; padding: 0; margin: 0; }
+    .drafts-list li { display: inline-block; margin: 0.15rem 0.4rem 0.15rem 0; font-size: 0.78rem; }
+    .drafts-list code { background: rgba(15,30,61,0.05); padding: 0.15rem 0.45rem; border-radius: 4px; color: #0f1e3d; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    /* Redline table */
+    .redline-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(15,30,61,0.04); border: 1px solid rgba(15,30,61,0.08); }
+    .redline-table th { text-align: left; padding: 0.7rem 0.9rem; background: #0f1e3d; color: #f5f0e8; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+    .redline-table td { padding: 0.7rem 0.9rem; vertical-align: top; font-size: 0.88rem; border-top: 1px solid rgba(15,30,61,0.06); }
+    .redline-id { font-weight: 600; color: #0f1e3d; white-space: nowrap; }
+    .gating-flag { display: inline-block; background: rgba(215,58,73,0.12); color: #d73a49; padding: 0.05rem 0.4rem; border-radius: 3px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; margin-left: 0.3rem; }
+    .sev-badge { display: inline-block; padding: 0.05rem 0.4rem; border-radius: 3px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; margin-left: 0.3rem; }
+    .sev-badge-critical { background: rgba(215,58,73,0.15); color: #d73a49; }
+    .sev-badge-high { background: rgba(201,168,76,0.18); color: #9a7d2e; }
+    .sev-badge-done { background: rgba(40,167,69,0.15); color: #1e7a32; }
+    .sev-badge-unblocked { background: rgba(40,167,69,0.15); color: #1e7a32; }
+    .sev-badge-low { background: rgba(15,30,61,0.08); color: #0f1e3d; }
+    .sev-critical td:first-child { border-left: 3px solid #d73a49; }
+    .sev-high td:first-child { border-left: 3px solid #c9a84c; }
+    .sev-done td:first-child { border-left: 3px solid #1e7a32; }
+    .sev-unblocked td:first-child { border-left: 3px solid #1e7a32; }
+    .sev-done td, .sev-unblocked td { color: #1a2438cc; }
+
+    /* Drafts table */
+    .drafts-table { width: 100%; border-collapse: collapse; background: white; border: 1px solid rgba(15,30,61,0.08); border-radius: 8px; overflow: hidden; }
+    .drafts-table th { background: rgba(15,30,61,0.04); padding: 0.6rem 0.9rem; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: #9a7d2e; font-weight: 600; }
+    .drafts-table td { padding: 0.55rem 0.9rem; font-size: 0.85rem; border-top: 1px solid rgba(15,30,61,0.06); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .d-name { color: #0f1e3d; font-weight: 500; }
+    .d-size, .d-mtime { color: #1a2438cc; }
+
+    /* Recent activity */
+    .entry {
+      background: white; border: 1px solid rgba(15,30,61,0.08); border-radius: 6px;
+      padding: 0.8rem 1rem; margin-bottom: 0.4rem;
+    }
+    .entry-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .entry-when { font-weight: 600; color: #0f1e3d; font-size: 0.85rem; }
+    .entry-status { font-size: 0.78rem; color: #9a7d2e; }
+    .entry-did { color: #1a2438cc; font-size: 0.85rem; margin-top: 0.3rem; }
+
+    /* Folder stats */
+    .folder-stats { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+    .stat-item { background: white; border: 1px solid rgba(15,30,61,0.08); border-radius: 6px; padding: 0.5rem 0.8rem; font-size: 0.85rem; }
+    .stat-label { color: #1a2438cc; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin-right: 0.4rem; }
+    .stat-val { font-weight: 600; color: #0f1e3d; }
+
+    /* Footer */
+    footer { background: #0b1730; color: rgba(245,240,232,0.6); padding: 1.5rem 0; font-size: 0.78rem; margin-top: 3rem; }
+    footer a { color: #c9a84c; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <h1>Metis · Child Support Stay Order</h1>
+    <div class="topbar-meta">Generated Mon 01 Jun 2026 · 20:20 · <code style="color:rgba(245,240,232,0.6);">/Users/kritsotakis/Desktop/child-support-stay-order</code></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- STATUS SNAPSHOT -->
+  <span class="gold-rule"></span>
+  <p class="eyebrow">Status snapshot · from PAIR.md auto-header</p>
+  <h2>Where the matter is right now</h2>
+  <div class="status-grid">
+    <div class="stat-card"><div class="label">Owner now</div><div class="value">peter</div></div>
+    <div class="stat-card alert"><div class="label">🔴 Peter blocked</div><div class="value">1 · oldest 5d</div></div>
+    <div class="stat-card"><div class="label">⏸️ Waiting cowork</div><div class="value">none</div></div>
+    <div class="stat-card"><div class="label">⏸️ Waiting code</div><div class="value">none</div></div>
+    <div class="stat-card alert"><div class="label">Stale (&gt;SLA)</div><div class="value">1</div></div>
+    <div class="stat-card"><div class="label">Total entries</div><div class="value">25</div></div>
+  </div>
+  <p style="color:#1a243899; font-size:0.85rem; margin-top:0;">Last touched: 2026-06-01 16:56 (file mtime; auto-header is stale: 2026-06-01 00:00 AEST · code)</p>
+
+  <h3>Action queue (oldest first)</h3>
+  <ul class="action-queue"><li>⏸️ peter — code → peter (Path A rework: REDLINE-DPO-2026-05-27.md ready for review) · code→peter · 2026-05-27 11:15 · 5d ago · STALE</li></ul>
+
+  <!-- STREAMS -->
+  <span class="gold-rule"></span>
+  <p class="eyebrow">Four parallel streams</p>
+  <h2>What's running in parallel</h2>
+  
+        <div class="stream">
+          <div class="stream-head">
+            <div class="stream-name">FCFCOA stay + s.112 leave</div>
+            <div class="stream-meta">
+              <span class="meta-label">Decided by</span> Federal Circuit and Family Court (Sydney Registry)
+              <span class="meta-sep">·</span>
+              <span class="meta-label">Deadline</span> <span class="">Self-imposed ASAP (DPO blocking overseas travel)</span>
+              
+            </div>
+          </div>
+          <div class="stream-status">Drafts current; 6 REDLINE items gating witnessing</div>
+          <ul class="drafts-list"><li><code>drafts/01_initiating_application_CONTENT.md</code></li><li><code>drafts/02_affidavit.md</code></li><li><code>drafts/04_cover_letter_urgency.md</code></li></ul>
+        </div>
+        
+        <div class="stream">
+          <div class="stream-head">
+            <div class="stream-name">Response to Sarah&#x27;s Reason 8B Change of Assessment</div>
+            <div class="stream-meta">
+              <span class="meta-label">Decided by</span> Services Australia (Child Support)
+              <span class="meta-sep">·</span>
+              <span class="meta-label">Deadline</span> <span class="deadline-soon">15 June 2026 (hard)</span>
+              <span class="days-flag soon">14 days</span>
+            </div>
+          </div>
+          <div class="stream-status">Sarah filed 1 June 2026 (Reason 8B — earning capacity). Response due 15 Jun (14 days). Disclosure must be consistent across 4 docs (this response + FCFCOA affidavit + FCFCOA Financial Statement + bankruptcy SoA). Requires 6mo bank statements + Workcover + P&amp;L/BS/depn for current + last 2 FY.</div>
+          <ul class="drafts-list"><li><code>drafts/06_sa_response_to_sarah_coa_2026-06-15.md</code></li><li><code>prior-application/sa_sarah_coa_application_2026-06-01.md</code></li></ul>
+        </div>
+        
+        <div class="stream">
+          <div class="stream-head">
+            <div class="stream-name">Bankruptcy petition (debtor&#x27;s)</div>
+            <div class="stream-meta">
+              <span class="meta-label">Decided by</span> AFSA
+              <span class="meta-sep">·</span>
+              <span class="meta-label">Deadline</span> <span class="">A couple of months away</span>
+              
+            </div>
+          </div>
+          <div class="stream-status">Statement of Affairs in preparation by Alice Russell (Wesley)</div>
+          <ul class="drafts-list"><li><code>drafts/05_email_alice_russell_bankruptcy_transfer.md</code></li></ul>
+        </div>
+        
+        <div class="stream">
+          <div class="stream-head">
+            <div class="stream-name">DPO admin — copy request + revocation</div>
+            <div class="stream-meta">
+              <span class="meta-label">Decided by</span> Services Australia (Child Support Registrar)
+              <span class="meta-sep">·</span>
+              <span class="meta-label">Deadline</span> <span class="">Concurrent with FCFCOA filing</span>
+              
+            </div>
+          </div>
+          <div class="stream-status">Admin request letter ready; FOI fallback ready if SA non-responsive in 14 days</div>
+          <ul class="drafts-list"><li><code>drafts/06_sa_dpo_copy_request.md</code></li><li><code>drafts/07_sa_foi_dpo_request.md</code></li></ul>
+        </div>
+        
+
+  <!-- REDLINE -->
+  <span class="gold-rule"></span>
+  <p class="eyebrow">Outstanding REDLINE rework — gating the FCFCOA filing</p>
+  <h2>Six items between current drafts and witnessing</h2>
+  <table class="redline-table">
+    <thead>
+      <tr><th>Item</th><th>Para</th><th>Summary</th><th>Status</th><th>Input from</th></tr>
+    </thead>
+    <tbody>
+      
+        <tr class="sev-done">
+          <td class="redline-id">F4 <span class="sev-badge sev-badge-done">✅ DONE</span> </td>
+          <td class="redline-para">Initiating App — Order 3</td>
+          <td class="redline-summary">$50/week floor reads as contempt</td>
+          <td class="redline-status">DONE — $50 floor removed; Orders 1–7 restructured per s.112 reframe</td>
+          <td class="redline-input">—</td>
+        </tr>
+        
+        <tr class="sev-unblocked">
+          <td class="redline-id">F14 <span class="sev-badge sev-badge-unblocked">✅ UNBLOCKED</span> </td>
+          <td class="redline-para">Affidavit Para 16</td>
+          <td class="redline-summary">Jurisdictional premise — Option A applies</td>
+          <td class="redline-status">UNBLOCKED — 1 July 2025 SA rejection letter received 29 May 2026; Para 16 cites the real letter</td>
+          <td class="redline-input">—</td>
+        </tr>
+        
+        <tr class="sev-unblocked">
+          <td class="redline-id">F15 <span class="sev-badge sev-badge-unblocked">✅ UNBLOCKED</span> </td>
+          <td class="redline-para">Affidavit Para 17</td>
+          <td class="redline-summary">DPO referenced and now sighted</td>
+          <td class="redline-status">UNBLOCKED — 23 Dec 2024 DPO notice received 29 May 2026; Para 17 cites the real letter</td>
+          <td class="redline-input">—</td>
+        </tr>
+        
+        <tr class="sev-critical">
+          <td class="redline-id">F16 <span class="sev-badge sev-badge-critical">🔴 CRITICAL</span> <span class="gating-flag">GATING</span></td>
+          <td class="redline-para">Affidavit Paras 19 + 24(a)</td>
+          <td class="redline-summary">DSK income compliance statement (self-incrimination risk)</td>
+          <td class="redline-status">GATING — needs ATO lodgement BEFORE swearing</td>
+          <td class="redline-input">Peter lodges DSK with ATO (BAS or income disclosure) → date + confirmation PDF for Annexure K</td>
+        </tr>
+        
+        <tr class="sev-critical">
+          <td class="redline-id">E7 <span class="sev-badge sev-badge-critical">🔴 CRITICAL</span> <span class="gating-flag">GATING</span></td>
+          <td class="redline-para">Affidavit Para 23C (NEW)</td>
+          <td class="redline-summary">Kritsotakis Family Trust + Pty Ltd disclosure</td>
+          <td class="redline-status">GATING — framing locked; ASIC extract needed for Annexure L</td>
+          <td class="redline-input">Peter does paid ASIC Connect extract for Kritsotakis Investments Pty Ltd</td>
+        </tr>
+        
+        <tr class="sev-high">
+          <td class="redline-id">F8 <span class="sev-badge sev-badge-high">🟠 HIGH</span> <span class="gating-flag">GATING</span></td>
+          <td class="redline-para">Affidavit Para 23B v3</td>
+          <td class="redline-summary">Tempe net proceeds dollar breakdown (~$1.28M sale)</td>
+          <td class="redline-status">GATING — Wesley email ready (draft 08, needs DPO-side review); template populates from his reply</td>
+          <td class="redline-input">Wesley (accountant) reply with mortgage + commission + Sarah + FTX + FX + residual figures</td>
+        </tr>
+        
+    </tbody>
+  </table>
+
+  <!-- DRAFTS -->
+  <span class="gold-rule"></span>
+  <p class="eyebrow">Drafts folder · markdown source-of-truth</p>
+  <h2>Current drafts (10)</h2>
+  <table class="drafts-table">
+    <thead>
+      <tr><th>File</th><th>Size</th><th>Modified</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="d-name">00_FILL_IN_CHECKLIST.md</td><td class="d-size">6.7 KB</td><td class="d-mtime">2026-05-18 16:04</td></tr><tr><td class="d-name">01_initiating_application_CONTENT.md</td><td class="d-size">7.8 KB</td><td class="d-mtime">2026-05-29 13:09</td></tr><tr><td class="d-name">02_affidavit.md</td><td class="d-size">22.9 KB</td><td class="d-mtime">2026-05-29 12:59</td></tr><tr><td class="d-name">03_covering_letter_services_australia.md</td><td class="d-size">7.3 KB</td><td class="d-mtime">2026-05-18 15:55</td></tr><tr><td class="d-name">04_cover_letter_urgency.md</td><td class="d-size">7.9 KB</td><td class="d-mtime">2026-05-19 11:26</td></tr><tr><td class="d-name">05_email_alice_russell_bankruptcy_transfer.md</td><td class="d-size">2.5 KB</td><td class="d-mtime">2026-05-29 13:16</td></tr><tr><td class="d-name">06_sa_dpo_copy_request.md</td><td class="d-size">5.2 KB</td><td class="d-mtime">2026-06-01 16:55</td></tr><tr><td class="d-name">07_sa_foi_dpo_request.md</td><td class="d-size">5.1 KB</td><td class="d-mtime">2026-06-01 16:55</td></tr><tr><td class="d-name">08_wesley_tempe_proceeds_request.md</td><td class="d-size">6.1 KB</td><td class="d-mtime">2026-06-01 16:55</td></tr><tr><td class="d-name">09_affidavit_paras_prestaged_2026-06-01.md</td><td class="d-size">17.4 KB</td><td class="d-mtime">2026-06-01 16:56</td></tr>
+    </tbody>
+  </table>
+
+  <!-- FOLDER STATS -->
+  <h3>Folder counts</h3>
+  <div class="folder-stats"><div class="stat-item"><span class="stat-label">drafts/</span><span class="stat-val">10</span></div><div class="stat-item"><span class="stat-label">prior-application/</span><span class="stat-val">20</span></div><div class="stat-item"><span class="stat-label">annexures/</span><span class="stat-val">0</span></div><div class="stat-item"><span class="stat-label">filing/</span><span class="stat-val">6</span></div><div class="stat-item"><span class="stat-label">filled/</span><span class="stat-val">3</span></div><div class="stat-item"><span class="stat-label">forms/</span><span class="stat-val">6</span></div><div class="stat-item"><span class="stat-label">reference/</span><span class="stat-val">6</span></div><div class="stat-item"><span class="stat-label">factsheets/</span><span class="stat-val">0</span></div></div>
+
+  <!-- RECENT ACTIVITY -->
+  <span class="gold-rule"></span>
+  <p class="eyebrow">Recent activity · last 5 entries from PAIR.md</p>
+  <h2>Latest log entries</h2>
+  
+        <div class="entry">
+          <div class="entry-head"><span class="entry-when">2026-06-01 (later) — metis-cortex (Code chat) → child-support-stay (Code chat)</span><span class="entry-status">🟢 done (acknowledgment + banners + dashboard fixes in flight)</span></div>
+          <div class="entry-did">Acknowledging the boundary correction from your earlier feedback. Three things to log clearly so this is a 5-min read not a hunt:</div>
+        </div>
+        
+        <div class="entry">
+          <div class="entry-head"><span class="entry-when">2026-06-01 — metis-cortex (Code chat) → child-support-stay (Code chat) + peter</span><span class="entry-status">🟢 done (4 drafts landed) · 🟡 working (Metis-side consistency-checker prototype builds next)</span></div>
+          <div class="entry-did">Cross-session drop from the Metis Cortex Code chat. Peter merged the two threads tonight — using the live DPO matter as the first test case for Metis client-side. Four artefacts landed in `drafts/`:</div>
+        </div>
+        
+        <div class="entry">
+          <div class="entry-head"><span class="entry-when">2026-05-27 11:15 — code → peter (Path A rework: REDLINE-DPO-2026-05-27.md ready for review)</span><span class="entry-status">⏸️ waiting-on-pair</span></div>
+          <div class="entry-did">Per Path A from 2026-05-26 22:25, produced full redline of the 5 critical fixes (F4 / F14 / F16 / E7 / F8) plus F15 (DPO copy action). Read in full: 320-line adversarial critique + current 226-line affidavit + current 119-line initiating application + global trust identity contex</div>
+        </div>
+        
+        <div class="entry">
+          <div class="entry-head"><span class="entry-when">2026-05-26 22:25 — code → peter (🔴 RE-OPENED: adversarial critique still requires Peter&#x27;s call before any witnessing)</span><span class="entry-status">🔴 need-peter</span></div>
+          <div class="entry-did">Surfacing the original 2026-05-19 05:30 &quot;DO NOT WITNESS / FILE YET&quot; 🔴 as a fresh entry so it shows in the auto-header (the earlier close was reconciliation noise, not an actual resolution of the 5 critique items). The 5 material weaknesses identified by the adversarial-critique a</div>
+        </div>
+        
+        <div class="entry">
+          <div class="entry-head"><span class="entry-when">2026-05-26 22:21 — code → cowork (close 2026-05-19 11:30 cowork QA-fixes entry)</span><span class="entry-status">🟢 done</span></div>
+          <div class="entry-did">Closing the 2026-05-19 11:30 cowork &quot;QA fixes applied&quot; 🟡 — those 4 QA fixes (bankruptcy paras, Track B retention, exhibit numbering, JP signature page) ARE done per file timestamps (drafts/02_affidavit.md updated 2026-05-19 11:22, drafts/03_covering_letter regenerated). The 🟡 jus</div>
+        </div>
+        
+
+</div>
+
+<footer>
+  <div class="container">
+    Generated by Metis matter-dashboard · re-run any time at <code>python3 ~/Desktop/metis-cortex/prototypes/matter_dashboard.py</code> · pattern-based, deterministic, &lt;1 sec.<br>
+    Tool: <a href="file:///Users/kritsotakis/Desktop/metis-cortex/prototypes/matter_dashboard.py">matter_dashboard.py</a> · Consistency report: <a href="file:///Users/kritsotakis/Desktop/metis-cortex/CONSISTENCY-REPORT-2026-06-01.md">today's report</a>
+  </div>
+</footer>
+
+</body>
+</html>

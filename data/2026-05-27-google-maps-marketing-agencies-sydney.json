@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "actor": "compass~crawler-google-places",
+    "run_at": "2026-05-27 (retry after memory cap)",
+    "input": {
+      "searchStringsArray": ["marketing agency","digital marketing agency","lead generation agency"],
+      "locationQuery": "Sydney, NSW, Australia",
+      "maxCrawledPlaces": 40
+    },
+    "purpose": "Metis Cortex market scan — Sydney agency landscape: who positions on speed-to-lead, who doesn't, pricing tier signals from reviews"
+  },
+  "data": 
+{
+  "error": {
+    "type": "not-enough-usage-to-run-paid-actor",
+    "message": "By launching this job you will exceed your remaining usage of $0.234554.  Please consider upgrading to a paid plan at https://console.apify.com/billing/subscription"
+  }
+}}

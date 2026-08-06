@@ -1,0 +1,238 @@
+#!/usr/bin/env python3
+"""
+metis — Single entry point for the Metis matter toolkit.
+
+Subcommands:
+  dashboard [<matter>]      Generate dashboard.html
+  open [<matter>]           Generate + open dashboard.html in browser
+  check [<matter>]          Run consistency checker → markdown report
+  intake <pdf> [<matter>]   Process an incoming PDF
+  inventory [<matter>]      T1 template inventory scan → markdown report
+  chat [<matter>]           Conversational shell over the matter (UPL-railed)
+  critique [<matter>]       Adversarial critique pass over drafts/ → report
+  pack [<matter>]           Assemble Matter Pack (HTML + PDF)
+  status [<matter>]         Print PAIR.md auto-header to terminal
+  tools                     List available tools + last modified
+  help                      This help
+
+Default matter (used when no <matter> arg given):
+  ~/Desktop/dpo
+
+Install:
+  chmod +x ~/Desktop/metis-cortex/prototypes/metis
+  ln -sf ~/Desktop/metis-cortex/prototypes/metis /usr/local/bin/metis   # optional
+  # or just add ~/Desktop/metis-cortex/prototypes to your PATH
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import subprocess
+import sys
+from datetime import date
+from pathlib import Path
+
+PROTOTYPES_DIR = Path(__file__).resolve().parent
+METIS_HOME = PROTOTYPES_DIR.parent
+DEFAULT_MATTER = Path.home() / "Desktop/dpo"
+
+
+# ---------------------------------------------------------------------------
+# Subcommand handlers
+# ---------------------------------------------------------------------------
+
+def _resolve_matter(args: list[str]) -> Path:
+    if args and not args[0].startswith("-"):
+        # Could be a matter path
+        p = Path(args[0]).expanduser()
+        if p.is_dir():
+            return p.resolve()
+    return DEFAULT_MATTER
+
+
+def cmd_dashboard(args: list[str]) -> int:
+    matter = _resolve_matter(args)
+    print(f"➜ generating dashboard for {matter.name}")
+    return subprocess.call(
+        [sys.executable, str(PROTOTYPES_DIR / "matter_dashboard.py"), str(matter)]
+    )
+
+
+def cmd_open(args: list[str]) -> int:
+    rc = cmd_dashboard(args)
+    if rc != 0:
+        return rc
+    out = METIS_HOME / "dashboard.html"
+    if out.exists():
+        print(f"➜ opening {out}")
+        subprocess.call(["open", str(out)])
+    else:
+        print(f"dashboard not found at {out}", file=sys.stderr)
+        return 1
+    return 0
+
+
+def cmd_check(args: list[str]) -> int:
+    matter = _resolve_matter(args)
+    print(f"➜ running consistency check on {matter.name}")
+    rc = subprocess.call(
+        [sys.executable, str(PROTOTYPES_DIR / "consistency_checker.py"), str(matter)]
+    )
+    if rc == 0:
+        out = METIS_HOME / f"CONSISTENCY-REPORT-{date.today().isoformat()}.md"
+        if out.exists():
+            print(f"\n➜ open the report:\n  open {out}")
+    return rc
+
+
+def cmd_intake(args: list[str]) -> int:
+    if not args:
+        print("usage: metis intake <pdf> [<matter>]", file=sys.stderr)
+        return 2
+    pdf = args[0]
+    rest = args[1:]
+    matter = _resolve_matter(rest)
+    print(f"➜ intaking {pdf} into {matter.name}")
+    return subprocess.call(
+        [sys.executable, str(PROTOTYPES_DIR / "intake.py"), pdf, str(matter)]
+    )
+
+
+def _run_module(mod: str, args: list[str]) -> int:
+    matter = _resolve_matter(args)
+    return subprocess.call(
+        [sys.executable, "-m", f"metis_client.{mod}", str(matter)],
+        cwd=str(PROTOTYPES_DIR),
+    )
+
+
+def cmd_inventory(args: list[str]) -> int:
+    return _run_module("inventory", args)
+
+
+def cmd_chat(args: list[str]) -> int:
+    return _run_module("chat", args)
+
+
+def cmd_critique(args: list[str]) -> int:
+    return _run_module("critique", args)
+
+
+def cmd_pack(args: list[str]) -> int:
+    return _run_module("matter_pack", args)
+
+
+def cmd_status(args: list[str]) -> int:
+    matter = _resolve_matter(args)
+    pair = matter / "PAIR.md"
+    if not pair.is_file():
+        print(f"no PAIR.md found in {matter}")
+        return 1
+    text = pair.read_text(encoding="utf-8", errors="ignore")
+    m = re.search(
+        r"<!-- AUTO-HEADER.*?-->\s*\n(.*?)\n<!-- /AUTO-HEADER -->",
+        text,
+        re.DOTALL,
+    )
+    if not m:
+        print("no AUTO-HEADER block found in PAIR.md")
+        return 1
+    header = m.group(1).strip()
+    print(f"╭─ {matter.name}")
+    print(f"│")
+    # Re-format the markdown table into terminal-friendly bullets
+    rows = re.findall(r"\|\s*\*\*(.+?)\*\*\s*\|\s*(.+?)\s*\|", header)
+    for label, value in rows:
+        # Strip markdown emphasis from value
+        value = re.sub(r"\*+", "", value)
+        print(f"│   {label:25} {value}")
+    print(f"│")
+    # Show action queue
+    queue = re.search(r"\*\*Action queue.*?\*\*[:\s]*\n(.*?)(?:\n\n|\Z)", header, re.DOTALL)
+    if queue:
+        print(f"│   Action queue:")
+        for line in queue.group(1).splitlines():
+            line = line.strip()
+            if line and not line.startswith(("<!--", "-->")):
+                cleaned = re.sub(r"^[\d\.\-\s]+", "", line)
+                cleaned = re.sub(r"\*+", "", cleaned)
+                if cleaned:
+                    print(f"│     • {cleaned[:120]}")
+    print(f"╰─")
+    return 0
+
+
+def cmd_tools(_args: list[str]) -> int:
+    print("Metis matter toolkit — installed tools:")
+    print()
+    tools = [
+        ("matter_dashboard.py", "Generate single-file HTML matter dashboard"),
+        ("consistency_checker.py", "Pattern-based consistency check across drafts → markdown report"),
+        ("intake.py", "Process incoming PDF → categorise + extract facts + file"),
+        ("metis", "This CLI wrapper"),
+    ]
+    for fname, desc in tools:
+        p = PROTOTYPES_DIR / fname
+        marker = "✓" if p.exists() else "✗"
+        if p.exists():
+            mtime = p.stat().st_mtime
+            from datetime import datetime
+            stamp = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+        else:
+            stamp = "-"
+        print(f"  {marker}  {fname:35} {desc}")
+        print(f"     {p}  ({stamp})")
+        print()
+    print("Default matter folder:")
+    print(f"  {DEFAULT_MATTER}{'  ✓' if DEFAULT_MATTER.is_dir() else '  ✗ does not exist'}")
+    print()
+    print("Output folder (reports, dashboard, etc.):")
+    print(f"  {METIS_HOME}")
+    return 0
+
+
+def cmd_help(_args: list[str]) -> int:
+    print(__doc__)
+    return 0
+
+
+COMMANDS = {
+    "dashboard": cmd_dashboard,
+    "d": cmd_dashboard,
+    "open": cmd_open,
+    "o": cmd_open,
+    "check": cmd_check,
+    "c": cmd_check,
+    "consistency": cmd_check,
+    "intake": cmd_intake,
+    "i": cmd_intake,
+    "inventory": cmd_inventory,
+    "inv": cmd_inventory,
+    "chat": cmd_chat,
+    "critique": cmd_critique,
+    "pack": cmd_pack,
+    "status": cmd_status,
+    "s": cmd_status,
+    "tools": cmd_tools,
+    "help": cmd_help,
+    "-h": cmd_help,
+    "--help": cmd_help,
+}
+
+
+def main() -> int:
+    args = sys.argv[1:]
+    if not args:
+        return cmd_help(args)
+    cmd = args[0]
+    handler = COMMANDS.get(cmd)
+    if not handler:
+        print(f"unknown command: {cmd}", file=sys.stderr)
+        print(f"run 'metis help' for available commands", file=sys.stderr)
+        return 2
+    return handler(args[1:])
+
+
+if __name__ == "__main__":
+    sys.exit(main())
