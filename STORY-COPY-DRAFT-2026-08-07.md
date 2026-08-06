@@ -9,62 +9,85 @@ Peter's actual reason, in his words (2026-08-07):
 > up to. What's happening? What do I need to do next? It was just too
 > overwhelming. That's the actual reason I built this."
 
-## What's wrong with the copy that's live now
+**Voice decision (Peter, 2026-08-07): company voice — "we", not "I".** Metis
+should read as a company, not a one-man show.
 
-It's true but it's held at arm's length, and it describes the wrong problem:
+---
 
-- *"Someone close to this project"* — the distance reads as evasion. On a page
-  headed "Why we built this", a reader assumes it's you and wonders why you
-  won't say so.
-- *"a team that's been both sides"* — there isn't a team. It's you.
-- *"made everything five times harder than it needed to be"* — a **productivity**
-  claim. What you actually described was **disorientation**: not knowing where
-  you were up to or what came next. That's a different problem and a better one,
-  because no competitor is solving it and every reader in a matter feels it.
-- It leads with enterprise IT credentials. Those matter for trust, but they are
-  not the reason the product exists, and putting them first buries the thing
-  that would make someone stay on the page.
+## The line to hold, and why
+
+"We" as corporate voice is completely standard. No reader audits headcount, and
+every small company writes this way. That is **not** the problem with the copy
+currently live.
+
+The problem is one specific phrase: **"Built by a team that's been both sides."**
+That asserts a *team with legal experience*, which is a checkable factual claim
+rather than a stylistic one. It also sits directly against
+`METIS-SAFETY-AND-REDUNDANCY-2026-08-07.md` §7, which lists **"Single founder —
+one person is the whole detection, response and continuity plan"** as a known
+gap — a document intended to be handed to the same solicitors reading the site.
+
+So: **"we" everywhere, and the origin attributed to the founder.** That is how
+companies with a personal founding story write it, it reads bigger than "I",
+and nothing in it can be contradicted by the pack.
+
+---
 
 ## Draft replacement
 
-**Heading:** I built this because I needed it.
+**Heading:** Built out of the mess it fixes.
 
-> I went through a divorce, then a custody matter, then a property settlement.
+> Metis exists because of one matter — our founder's own.
 >
-> The hardest part wasn't the law. It was that nothing was in one place.
-> Emails, phone calls, letters, forms, things people said on the phone that I
-> was sure mattered. At any given moment I couldn't have told you where I was
-> actually up to, what was happening next, or what I was meant to be doing
-> about it.
+> A divorce, then a custody matter, then a property settlement. The hardest
+> part was never the law. It was that nothing lived in one place: emails,
+> phone calls, letters, forms, things said on the phone that surely mattered.
+> At any given moment there was no way to say where the matter was actually up
+> to, what was happening next, or what needed doing about it.
 >
-> That's the part that wears you down. Not the legal question — the not
+> That is the part that wears people down. Not the legal question — the not
 > knowing.
 >
-> So I built the thing I needed: it tells you what your kind of matter usually
-> needs, tracks what you've already got, and turns it into something you can
-> hand a solicitor. You walk in organised instead of drowning.
+> So we built what was missing. Metis tells you what your kind of matter
+> usually needs, tracks what you already have, and turns it into something you
+> can hand a solicitor. You walk in organised instead of drowning.
 >
-> **The solicitor side came second.** Once I showed it to lawyers, they had the
-> same complaint from the other direction — the first hour of every new matter
-> spent working out what was going on.
+> **The solicitor side came second.** When we showed it to lawyers, they
+> described the same problem from the other direction — the first hour of a new
+> matter spent working out what was going on.
 
-**Sidebar — keep, reordered so the lived experience comes first:**
+**Sidebar — reordered so the lived experience leads:**
 
-- **The client, through multiple rounds of Australian family law** — including
-  preparing a matter self-represented
+- **Australian family law, from the client's side** — multiple rounds,
+  including a matter prepared self-represented
 - **Enterprise IT** — systems engineering at bank and telco scale
-- **Two decades operating a business** — built, ran, and sold
+- **Two decades operating a business** — built, run, and sold
 - **Built for Australian law** — current FLA reforms and NSW procedure, not a
   US tool with the labels changed
 
-## Things to decide before this goes live
+---
 
-1. **How much do you want public?** "A divorce, then a custody matter, then a
-   property settlement" is specific. It is also the single most credible thing
-   on the site, and it cannot be copied by a competitor. But it is permanent,
-   public, and findable by people in your own matter. Your call, not mine.
-2. **"I" or "we"?** The draft says "I" because "we" was doing work it hadn't
-   earned. If you'd rather keep a company voice, the story still works in first
-   person inside a quote attributed to you.
-3. **Children.** The draft deliberately never mentions them beyond "a custody
-   matter." Recommend keeping it that way regardless of how much else you share.
+## What changed from the live copy, and why
+
+| Live now | Draft | Reason |
+|---|---|---|
+| "Built by a team that's been both sides" | "Built out of the mess it fixes" | The old line asserts a team with legal experience. Checkable, and contradicted by the pack. |
+| "Someone close to this project" | "our founder's own" | The distance reads as evasion on a page headed *why we built this*. Naming the founder is both stronger and still company voice. |
+| "made everything five times harder than it needed to be" | "no way to say where the matter was actually up to" | The old line is a **productivity** claim any competitor can make. The real problem was **disorientation**, which is specific, un-copyable, and what readers in a matter actually feel. |
+| Enterprise IT led the section | Lived experience leads, credentials follow | Credentials build trust but aren't why the product exists. Leading with them buries the thing that keeps someone reading. |
+
+---
+
+## Still Peter's decision
+
+1. **How much detail is public.** "A divorce, then a custody matter, then a
+   property settlement" is specific, permanent and findable — including by
+   people involved in that matter. It is also the most credible sentence on the
+   site and cannot be copied. The draft attributes it to "our founder" rather
+   than naming him, which softens it without weakening it.
+2. **Children stay out of it** — the draft never goes past "a custody matter",
+   and that should hold regardless of what else is shared.
+3. **With John specifically, say it in first person out loud.** He knows the
+   company is you, and he may have acted on that matter. Corporate voice is for
+   strangers arriving on the website; in the room, "I built this because of my
+   own matter" is the stronger version.

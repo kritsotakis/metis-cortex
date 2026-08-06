@@ -15,11 +15,21 @@ you should distrust any legal-tech vendor who offers it.
 |---|---|
 | **Application and database** | Fly.io, **Sydney (`syd`)** |
 | **Documents you upload** | Encrypted disk on that same Sydney machine |
-| **Backups** | Cloudflare R2 — separate infrastructure and failure domain from the live machine. Both backups write to the same bucket under one set of credentials, so they are process-independent, not account-independent. **Bucket jurisdiction is to be confirmed and stated here.** |
+| **Backups** | Cloudflare R2, bucket location **`OC` — Oceania** (verified 7 August 2026). Separate infrastructure and failure domain from the live machine, and public access is disabled. Both backups write to the same bucket under one set of credentials, so they are process-independent rather than account-independent. |
 | **AI drafting** | Anthropic (Claude) — **processed in the United States** |
 | **Transcription** | Deepgram — only if audio is uploaded, and only after consent is confirmed |
 | **Email** | Resend — US-stored |
 | **Payments** | Stripe — receives your email and a matter reference only. No client names, no matter content |
+
+**On the backup location, precisely:** Cloudflare reports the bucket's storage
+location as `OC` (Oceania), so backups are held in this region rather than
+overseas. Two honest qualifications: R2's *formal* jurisdiction feature — a
+contractual restriction on where data may reside — exists only for the EU and
+FedRAMP, so there is no equivalent hard lock available for Australia; and
+Cloudflare treats location as a placement hint for the bucket rather than a
+guarantee written into the product. In practice the data is in Oceania; it is
+not the same thing as a contractual residency commitment, and we don't claim it
+is.
 
 The overseas AI processing is the honest caveat in an otherwise Australian
 stack. It is disclosed in the privacy policy rather than buried.
