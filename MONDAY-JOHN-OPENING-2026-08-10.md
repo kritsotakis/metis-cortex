@@ -100,11 +100,43 @@ Don't claim it's finished. The stronger answer:
 Four things gate real client use and **none of them are code**:
 1. Lawyer review of the generated wording ← this is him
 2. Professional indemnity insurance — not in force
-3. AU data residency — formal pass not done (Fly Sydney satisfies it in practice)
+3. AU data residency — the app and database are in Sydney, but the AI
+   processing happens in the US and is disclosed. The formal review is the
+   gate, not the hosting. **Don't say "Sydney satisfies it in practice"** — the
+   pack you hand him says the processing is overseas, and he will notice.
 4. ToS / privacy lawyer pass
 
 Also true if it comes up: **no real conference has ever been recorded through
 it**, and the client side and solicitor side are still separate data models.
+
+---
+
+## If he asks about data and security — and he should
+
+This is the least AI-feeling material you have, which makes it the best thing
+to talk about with someone who distrusts AI. Six lines, in this order:
+
+1. **Sydney.** App, database and documents. Overseas AI processing is disclosed
+   rather than buried.
+2. **Encrypted before it's stored** — transcripts, the file note itself, the
+   issues, proposals, document text, chat and portal messages, AES-256-GCM.
+   **Then say the limit out loud:** *"We hold the key. It protects a leaked
+   database or backup. It is not end-to-end encryption and I won't call it
+   that."* The limit is what makes the claim believable.
+3. **Sign-in and portal links are stored as one-way digests** — a database leak
+   yields nothing that can sign in as anyone.
+4. **Two independent daily backups** to separate infrastructure. **Restore has
+   been tested and measured: about 30 seconds.** And volunteer the gap: a full
+   replay rehearsal hasn't been done yet.
+5. **Audit trail** on exports, portal links and sharing.
+6. **No independent penetration test.** Say it before he asks.
+
+Volunteering 4 and 6 is what makes 1–3 credible. A vendor with no gaps is a
+vendor who hasn't looked.
+
+**Hand him `METIS-SAFETY-AND-REDUNDANCY-2026-08-07.md`** alongside the review
+pack — it's this conversation in writing, gaps table included, and it answers
+the retention question he has professional obligations about.
 
 ---
 
@@ -201,3 +233,35 @@ attempt after this one, and there are 25–30 of them queued.
 - "Integrates with LEAP" — **it does not.** Registration is in progress and
   nothing is built.
 - Any claim that a real client has used it. None has.
+
+---
+
+## Before you walk in — 5-minute checklist
+
+- [ ] **Open the demo matter and check the Ask Metis tab is clean.** Testing on
+      2026-08-07 left messages in it; they were cleared, but look before you
+      drive it in front of him. "New conversation" resets it.
+- [ ] **Delete any leftover test documents** in the Documents tab (there is now
+      a bin icon on each one).
+- [ ] **Confirm your callback number** on anything you hand over — outreach
+      material carried the DSK number for a while. Metis material should say
+      0414 885 366.
+- [ ] **Do NOT send the capabilities video** as follow-up until the narration is
+      re-recorded — it still mispronounces "Metis" as "Meaty", which is a bad
+      look in an artefact a solicitor keeps.
+- [ ] **Print or bring:** `METIS-LAWYER-REVIEW-PACK-2026-08-01.md` and
+      `METIS-SAFETY-AND-REDUNDANCY-2026-08-07.md`.
+- [ ] **Have the live product open and signed in** before the meeting starts —
+      not signing in in front of him.
+
+## One more free ask, if there's room
+
+The recording-consent policy is genuinely unwritten — eight open questions
+(who consents, how it's renewed, what happens on withdrawal, retention of audio
+vs transcript, disclosing the transcription provider, privilege wording,
+settings where recording is never appropriate, what evidence of consent to
+keep). Recording is the core mechanic and it is blocked until those are
+answered.
+
+John is exactly the person to answer them, it costs nothing to ask, and it's a
+second reason for him to stay involved after the review. Ask it last.

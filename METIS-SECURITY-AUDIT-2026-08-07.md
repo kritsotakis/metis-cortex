@@ -1,6 +1,15 @@
 # METIS CORTEX — SECURITY & DATA POSTURE AUDIT (2026-08-07)
 
-> **STATUS: H1–H6, M1 and M9 FIXED AND DEPLOYED 2026-08-07.** See the
+> **STATUS: H1–H6, M1 and M9 FIXED AND DEPLOYED 2026-08-07.**
+>
+> **LATER THE SAME DAY — the encryption position below was superseded.** §2 and
+> the "Deliberately NOT done" note say there is no application-layer encryption.
+> That was true when written and is now false: AES-256-GCM field encryption was
+> built, the key set, and encryption verified in production against a live
+> backup. See `METIS-SAFETY-AND-REDUNDANCY-2026-08-07.md` §2 for the current,
+> authoritative position and the exhaustive list of what is and is not covered.
+> The original text is left intact below so the record shows what was actually
+> found. See the
 > "Remediation" section at the end for what was changed, what was verified in
 > production, and what deliberately was not done. The findings below are kept
 > as written so the record shows what was actually wrong.
@@ -181,11 +190,13 @@ misrepresentations**.
 
 ## Deliberately NOT done
 
-- **App-layer field encryption (part of H4).** Transcripts, client PII and
-  document text remain plaintext columns. This is a real design decision with
-  real costs (search, performance, key management) and should be taken
-  consciously, not slipped in during a security pass. The auth *tokens* — the
-  part that hands over live access — are now hashed, which was the acute half.
+- ~~**App-layer field encryption (part of H4).**~~ **SUPERSEDED the same day —
+  this WAS subsequently built.** The reasoning below stood at the time; Peter
+  asked whether to defer it to the first client, and the answer was that
+  retrofitting onto a live firm's matters is a migration under pressure while
+  doing it against near-empty tables is close to free. Transcripts, case briefs,
+  legal issues, proposals, document text, chat and portal messages are now
+  encrypted; client names, emails and matter titles deliberately are not.
 - **A full restore rehearsal** into a scratch database. The dump has been
   retrieved and verified readable and complete; it has not been replayed.
 - **M2–M8, M10–M12 and the LOW findings** — none are exploitable authorisation

@@ -15,7 +15,7 @@ you should distrust any legal-tech vendor who offers it.
 |---|---|
 | **Application and database** | Fly.io, **Sydney (`syd`)** |
 | **Documents you upload** | Encrypted disk on that same Sydney machine |
-| **Backups** | Cloudflare R2 — separate infrastructure, separate failure domain |
+| **Backups** | Cloudflare R2 — separate infrastructure and failure domain from the live machine. Both backups write to the same bucket under one set of credentials, so they are process-independent, not account-independent. **Bucket jurisdiction is to be confirmed and stated here.** |
 | **AI drafting** | Anthropic (Claude) — **processed in the United States** |
 | **Transcription** | Deepgram — only if audio is uploaded, and only after consent is confirmed |
 | **Email** | Resend — US-stored |
@@ -37,22 +37,32 @@ rather than interception.
 **At rest — infrastructure.** Provider disk encryption on both the Sydney
 volume and the backup storage.
 
-**At rest — application layer.** The most sensitive columns are encrypted by
-Metis itself with **AES-256-GCM** before they reach the database:
+**At rest — application layer.** The sensitive content is encrypted by Metis
+itself with **AES-256-GCM** before it reaches the database:
 
 - conference transcripts (raw and processed)
+- the case brief / file note, including the risks-warned and client-response fields
+- identified legal issues and the transcript excerpts supporting them
+- case proposals
 - the full extracted text of every uploaded document
-- matter chat history
+- matter chat history and client-portal messages
 - the client's own free-text account of their problem
 
 Authenticated encryption, so tampered data fails loudly rather than silently
 returning something altered — which matters when the content is a file note.
 
-**Deliberately not encrypted:** client names, emails, phone numbers and matter
-titles. They are sorted, searched and displayed in list views, and encrypting
-them would break those features for a small gain over the free-text content
+**Not encrypted, and this list is exhaustive:** client names, emails, phone
+numbers, matter titles, research citations, action items and milestones,
+conflict-check and client-ID notes, and the portal access log (including IP
+addresses). Names and titles are sorted, searched and displayed in list views,
+so encrypting them would break those features for a small gain over the content
 above. That is a product decision, recorded here so it is visible rather than
 assumed.
+
+**Applies to data written from 7 August 2026 onward.** Records created before
+that date remain in plain columns until they are next rewritten. Both forms are
+readable by the application; the distinction only matters if a backup from
+before that date were exposed.
 
 **Authentication tokens are stored hashed**, never in readable form. A database
 leak exposes useless digests, not working sign-in links.
@@ -76,7 +86,7 @@ Two independent daily backups to infrastructure separate from the live system:
 | What | Where | Frequency | Retention |
 |---|---|---|---|
 | Every uploaded document | Cloudflare R2 | Daily, incremental | Indefinite |
-| Full database — all 27 tables | Cloudflare R2, gzipped | Daily | 30 days |
+| Full database — all 29 tables | Cloudflare R2, gzipped | Daily | 30 days |
 | Volume snapshots | Fly.io | Automatic | 5 days |
 
 An on-demand backup can be taken at any time before anything risky.
@@ -86,8 +96,8 @@ An on-demand backup can be taken at any time before anything risky.
   volume, contents verified, and the test resources torn down. **Measured
   recovery time ≈ 30 seconds. Recovery point ≤ 24 hours.**
 - **Database dump, actually retrieved:** a dump was downloaded from R2 and
-  decompressed *outside* the application, confirming 27 tables and every matter
-  and document record present and readable.
+  decompressed *outside* the application, confirming every table and every
+  matter and document record present and readable.
 - Spent authentication tokens are purged **before** each dump, so dead
   credentials never travel offsite.
 
@@ -102,27 +112,31 @@ distinction is stated rather than glossed, and closing it is the next step.
 
 - **No passwords.** Sign-in is by single-use emailed link, valid 15 minutes.
   There is no password to breach, reuse or phish.
-- **Every database query is scoped to the owning user in SQL**, not filtered
-  after the fact. This is the failure class that has bitten the project before;
-  it is now pinned by automated tests that fail the build if a new feature
-  forgets it.
+- **The tenancy-critical queries filter by the owning user in SQL**, not after
+  the fact. A small number of fetch-by-id helpers are explicitly labelled as
+  unfiltered and are checked at each call site. This is the failure class that
+  has bitten the project before, and the known paths are regression-tested — a
+  test suite cannot, however, detect a *new* feature that forgets the check.
 - **Solicitor features are role-gated** — verified exhaustively across all 41
   solicitor procedures.
 - **Client portal links** expire in 30 days, can be revoked instantly by the
   solicitor, and are stored hashed.
-- **Cross-site request forgery protection** and a **Content-Security-Policy**
-  are enforced on every request.
+- **State-changing API requests are origin-checked** (cross-site writes are
+  rejected), and a **Content-Security-Policy** with `script-src 'self'` is
+  served in production.
 
 ---
 
 ## 5. Audit trail
 
-Access to and export of client material is recorded: who, what, when, from
-which address. Covered events include full matter-pack exports, portal link
-creation and revocation, and sharing a proposal with a client.
+**Export and sharing** of client material is recorded: who, what and when.
+The covered events are full matter-pack exports (which also record the IP
+address and browser), portal link creation and revocation, sharing a proposal
+with a client, and deleting a document.
 
 Deliberately not a general request log — recording every list view would bury
-the events that actually matter.
+the events that matter. To be precise about the current limit: **viewing a
+matter or opening a transcript is not itself logged**, only export and sharing.
 
 ---
 
@@ -133,11 +147,11 @@ an answer. Three points:
 
 1. **Export whenever you like.** Any matter exports as a single archive
    containing every document plus a summary. Nothing is held hostage.
-2. **Intended practice-management integration.** A LEAP integration is in
-   development — the finished file note and brief would land in your LEAP
-   matter, which is already your system of record and already inside your own
-   backup and retention regime. **It is not built yet** and nothing may be
-   claimed as "integrates with LEAP" until it is.
+2. **Intended practice-management integration.** Our LEAP developer
+   registration is in progress; **nothing is built.** The intention is narrow:
+   push the finished file note and brief into the right LEAP matter, which is
+   already your system of record and already inside your own backup and
+   retention regime. Until it exists, you would copy the file note across.
 3. **We do not push copies onto firm hardware,** and that is deliberate: a copy
    on an unmanaged laptop is one nobody can secure, audit, or delete on
    request.
@@ -150,39 +164,15 @@ A vendor who lists none of these is not being straight with you.
 
 | Gap | Status |
 |---|---|
-| **No independent penetration test or third-party security audit** | Real. The code has been audited internally and the findings fixed; nobody external has tried to break it. |
+| **No independent penetration test or third-party security audit** | Real. The code was audited internally on 7 August 2026 and the high-severity findings fixed; a documented hardening backlog remains open. Nobody external has tried to break it. |
 | **No 24/7 automated intrusion monitoring** | One person checks manually. |
 | **Single founder** | One person is the whole detection, response and continuity plan. A continuity arrangement is not yet documented. |
 | **Overseas AI processing without a zero-retention agreement** | Matter content reaches Anthropic in the US under standard retention. Disclosed, not yet negotiated away. |
 | **Subprocessor data-processing agreements not all confirmed executed** | In progress. |
 | **Professional indemnity and cyber insurance not yet in force** | Blocks real client data on the solicitor side. |
 | **Costs-disclosure wording not yet lawyer-reviewed** | The four s174 client-rights statements generate as a visible blank rather than invented text. Blocks real client use. |
+| **Terms of service and privacy policy have not had a lawyer's review** | One of the four standing pre-launch gates. |
+| **Formal Australian data-residency review not done** | Hosting is in Sydney, but AI processing happens in the US. The formal review is the gate, not the hosting. |
 | **No real client conference has ever been recorded through the product** | The pipeline is proven on pasted and synthetic transcripts only. |
 
 ---
-
-## 8. ⚠️ Operator note — NOT for client distribution
-
-**The encryption key is now a single point of failure for disaster recovery,
-and it must be stored outside Fly.io.**
-
-Fly secrets cannot be read back. If the Fly application is lost and the key
-exists nowhere else, **the R2 database backups become permanently
-undecryptable** — encryption would have made the disaster-recovery position
-worse, not better.
-
-Required sequence, and the key must never be handled anywhere it could be
-logged or transcribed:
-
-1. Generate and store it in a password manager first.
-2. Then set it on Fly:
-   ```
-   flyctl secrets set FIELD_ENCRYPTION_KEY="<the value>" -a metis-cortex
-   ```
-3. Confirm the boot warning stops appearing in the logs.
-
-Until it is set, the application logs a warning at every boot and the sensitive
-columns are stored as plaintext — the state described in §2 is not yet in
-force. Existing rows convert as they are rewritten; nothing needs migrating.
-
-**Treat this key like the backups themselves. Losing it loses the data.**
