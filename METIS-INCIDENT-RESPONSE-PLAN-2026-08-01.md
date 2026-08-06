@@ -258,8 +258,28 @@ of rows (minutes, not hours). RPO is up to 24 hours — the gap between the last
 nightly dump and the incident. Run `pnpm backup:db` manually before anything
 risky to shrink that to zero.
 
-**Not yet done:** a full restore rehearsal into a scratch database. The dump has
-been retrieved and verified as readable and complete; it has not been replayed
-into a live schema. That rehearsal is the remaining step before this can be
-called fully proven — the same distinction that made the volume restore test
-worth doing in §6.
+## Restore rehearsal — DONE, 7 August 2026
+
+The remaining step in this section is now closed. Performed end to end:
+
+1. Downloaded the most recent dump from R2.
+2. Created an empty database and built the schema from the migrations.
+3. Replayed the dump with `scripts/restoreDatabaseDump.ts` (foreign-key-safe
+   insert order, refuses to run against a target that doesn't look like a
+   restore target unless `--force`).
+4. **Result: 120 rows across 29 tables, an exact match to the dump manifest.**
+   Verified afterwards by query: 4 matters with titles and payment status, 90
+   document records, and 3 dated client-agreement acceptances.
+5. Scratch database dropped.
+
+Repeat it with:
+
+```
+RESTORE_DATABASE_URL="mysql://root@127.0.0.1:3306/metis_restore_test" \
+  npx tsx scripts/restoreDatabaseDump.ts <dump.json.gz>
+```
+
+**Residual limits, stated:** the rehearsal restored into an empty database
+rather than over a damaged live one, and was run by the author of the backup.
+It proves the dump is complete and replayable; it is not an independent
+disaster-recovery audit.

@@ -111,10 +111,19 @@ An on-demand backup can be taken at any time before anything risky.
 - Spent authentication tokens are purged **before** each dump, so dead
   credentials never travel offsite.
 
-### Not yet verified
-A full restore *rehearsal* — replaying a dump into a live schema. The backup is
-proven readable and complete; it has not been proven replayable. That
-distinction is stated rather than glossed, and closing it is the next step.
+- **Full restore rehearsal, actually performed (7 August 2026):** the most
+  recent dump was downloaded from R2, replayed into a freshly-built empty
+  database, and the result checked. **120 rows across 29 tables restored, an
+  exact match to the dump's own manifest.** Spot-checked afterwards: all four
+  matters with their titles and payment status, 90 document records, and the
+  dated records of clients accepting the client agreement — the legal record
+  that a disclaimer was accepted before the tool was used.
+
+### Still honest about the limits
+The rehearsal restored into an empty database, not over a damaged live one, and
+it was performed by the person who wrote the backup. It proves the dump is
+replayable and complete. It is not a substitute for an independent disaster-
+recovery audit, and we don't present it as one.
 
 ---
 

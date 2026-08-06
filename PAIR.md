@@ -4,19 +4,18 @@
 
 | Field | Value |
 |---|---|
-| **Owner now** | peter |
-| **🔴 Peter blocked** | 1 · oldest 23h |
+| **Owner now** | code |
+| **🔴 Peter blocked** | none |
 | **⏸️ Waiting on cowork** | none |
 | **⏸️ Waiting on code** | 2 · oldest 5d |
 | **Stale (>SLA)** | 1 |
-| **Last touched** | 2026-08-07 07:30 AEST · code |
-| **Total entries** | 76 |
+| **Last touched** | 2026-08-07 09:35 AEST · code |
+| **Total entries** | 77 |
 
 **Action queue (oldest first):**
 
 1. ⏸️ code — (later afternoon, cont'd) — cowork → code/peter (Facebook portfolio + LinkedIn p · cowork→code · 2026-08-02 00:00 · 5d ago · **STALE**
 2. 🟡 cowork — code → cowork · code→cowork · 2026-08-06 01:20 · 1d ago
-3. ⏸️ peter — code → peter · code→peter · 2026-08-07 07:30 · 23h ago
 
 <!-- /AUTO-HEADER -->
 
@@ -1207,3 +1206,7 @@ Same hard rule applies to you as to me: you can stage everything and drive him t
 **Did:** Capabilities video v2 approved ("perfect") — brand fonts/colours, cards, captions, watermark, pacing fixed. Full build: scripts/render-capabilities-v2.sh.
 **Need from you:** New sk_ ElevenLabs key (old hex key dead at API level) → I re-render 4 lines to fix "Meaty" → final video. Plus the standing LEAP-draft edit + Monday-afternoon send.
 **Status:** ⏸️ waiting-on-pair
+### 2026-08-07 09:35 — code → peter
+**Did:** Story live on site (company voice, founder origin). Restore rehearsal PASSED — 120 rows/29 tables replayed into a scratch DB, exact manifest match. R2 verified in Oceania, public access off. Document delete built. Security audit findings fixed.
+**Need from you:** New ElevenLabs sk_ key (only thing blocking the video), send the LEAP reply Monday PM, Google Search Console setup.
+**Status:** 🟢 done

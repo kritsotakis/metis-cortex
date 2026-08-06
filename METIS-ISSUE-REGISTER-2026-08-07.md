@@ -37,12 +37,12 @@ Status: open / mitigated / accepted-risk / closed-residual.
 | B2 | **No real conference has ever been recorded through the product** — pipeline proven only on pasted/synthetic transcripts | HIGH | open |
 | B3 | **LEAP integration not built; registration stalled** — reply drafted, held for Monday PM; needs Peter's manual 4-word edit | HIGH | open |
 | B4 | Deepgram configured but consent-gated; real audio untouched | MED | mitigated |
-| B5 | Capabilities video says "Meaty" in up to 4 lines — do not send externally until re-rendered (blocked on sk_ key) | MED | open |
+| B5 | Capabilities video says "Meaty" in 4 lines — do not send externally until re-rendered. Blocked on a new ElevenLabs `sk_` key (legacy hex keys are now rejected by their API). Video content is otherwise still accurate — verified 2026-08-07 that nothing in the narration was made false by the security work or the origin-story correction. | MED | open |
 | B6 | Website-facing 60–90s client video cut not made | LOW | open |
 | B7 | app/CLAUDE.md stale storage claim ("R2 in production" — actually local Fly volume + R2 backup) | LOW | open (doc drift) |
 | B8 | No solicitor billing (deliberate; sales-led grants) — becomes work at firm #2 | LOW | accepted-risk |
 | B9 | n08 narration "seventy seconds" nit — FIXED 2026-08-07 (claim cut from audio) | LOW | closed |
-| B10 | HANDOFF-METIS.md lists the DSK phone number on the Metis owner line | LOW | open |
+| B10 | HANDOFF-METIS.md listed the DSK phone number on the Metis owner line | LOW | **fixed 2026-08-07** |
 | B11 | 5th outreach letter (Family Mediation NSW) never got the de-AI pass | LOW | open |
 | B12 | Dormant Gemini fallback path with no key — update register if switched on | LOW | accepted-risk |
 
@@ -69,7 +69,7 @@ Status: open / mitigated / accepted-risk / closed-residual.
 | D1 | **No automated breach/intrusion detection, no monitoring** — one person checking manually; incident plan never rehearsed | HIGH | open |
 | D2 | **No independent security audit or pen test** — disclosed, but real for a product holding family-violence and children's data | HIGH | open |
 | D3 | **Subprocessor DPAs unconfirmed across the board** — Fly DPA TBC; Anthropic DPA TBC + **no ZDR (~30-day US retention of matter content)**; Resend TBC; register unpublished | HIGH | open |
-| D4 | No application-level encryption of documents — platform disk encryption + TLS only; wording on-site is precise about this | MED | accepted-risk (disclosed) |
+| D4 | **PARTLY CLOSED 2026-08-07.** The extracted *text* of every document is now app-layer encrypted (AES-256-GCM), as are transcripts, case briefs, legal issues, proposals, chat and portal messages. The document **bytes** on the volume remain protected only by platform disk encryption. | MED | partly mitigated; residual disclosed |
 | D5 | Single-machine local volume — mitigated by measured restore test (RTO ~30s, RPO ≤24h) + verified daily R2 mirror | MED | mitigated |
 | D6 | HISTORY: storage writes on ephemeral FS for ~2 months (fixed 1 Aug, data recovered byte-verified) | MED | closed-residual |
 | D7 | HISTORY: public pages exposed a real person's matter/claim numbers (fixed same day); public-claims pass not yet recurring practice | MED | closed-residual |
