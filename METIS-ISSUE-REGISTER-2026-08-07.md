@@ -56,7 +56,7 @@ Status: open / mitigated / accepted-risk / closed-residual.
 | C4 | **John relationship is the critical path; he hates AI for legal work** — lead with refusals; video risky for him specifically; he is also the LEAP unlock | HIGH | mitigated (Monday doc) |
 | C5 | **STATUS record reliability** — wrong twice about outreach state (Simon "SENT"; LEAP "not started"). Check Mail before trusting the log | MED | open (recurring process risk) |
 | C6 | Outreach was cold-email-first (just failed with John); reworked call-first; DSK number found in signatures and fixed | MED | mitigated |
-| C7 | Google Search Console never set up — SEO clock not started despite 40 guides | MED | open (10-min Peter action) |
+| C7 | Google Search Console — **claim was WRONG. Verified 2026-08-07: sitemap had already been submitted 4 Aug (Success, 30 pages). Domain property now added, ownership auto-verified via Cloudflare, sitemap resubmitted → 46 pages.** | MED | **closed 2026-08-07** |
 | C8 | Socials stuck at Peter's final clicks; never automate Meta/LinkedIn (account restriction) | LOW | constraint accepted |
 | C9 | Refunds honoured manually via Stripe dashboard | LOW | accepted-risk |
 | C10 | No trademark registration (decision recorded: skip for now) | LOW | accepted-risk |
