@@ -30,6 +30,18 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 dur () { ffprobe -v error -show_entries format=duration -of csv=p=0 "$1"; }
 
+# Segment lengths are DERIVED from the narration, never hardcoded.
+#
+# They used to be literal numbers matching the original recordings. When four
+# lines were re-recorded to fix a mispronunciation their durations moved by up
+# to 1.6s, which would have left narration running past its own visual and a
+# second and a half of dead air on the close. Deriving them means a re-record
+# can never silently desynchronise the video again.
+#
+# PAD gives a beat before the voice starts and a moment after it ends.
+PAD=0.75
+segdur () { echo "$(dur "$V/$1.wav") + $PAD" | bc -l; }
+
 # ---------- 1. cards (still PNG -> clip) ------------------------------------
 still () { # out png dur
   ffmpeg -y -loop 1 -i "$B/$2.png" -t "$3" -r 30 -vf "scale=1600:850,format=yuv420p" \
@@ -68,17 +80,17 @@ hseg () { # out src dur [capname]
     -map "[o]" -c:v libx264 -preset medium -crf 20 -t "$3" "$WORK/$1.mp4" -loglevel error
 }
 
-seg  v00 home-tall    9.20 0    300
-seg  v01 home-tall   12.59 300  1900
-seg  v02 guides-tall  8.50 300  900  cap_guides
-seg  v03 checklist-tall 14.07 0   450 cap_17
-seg  v04 checklist-tall  9.75 450 900 cap_flag
-seg  v05 checklist-tall 12.59 1900 2483 cap_gates
+seg  v00 home-tall    "$(segdur n00)" 0    300
+seg  v01 home-tall   "$(segdur n01)" 300  1900
+seg  v02 guides-tall "$(segdur n02)" 300  900  cap_guides
+seg  v03 checklist-tall "$(segdur n03)" 0   450 cap_17
+seg  v04 checklist-tall "$(segdur n04)" 450 900 cap_flag
+seg  v05 checklist-tall "$(segdur n05)" 1900 2483 cap_gates
 hseg v06a askmetis-850       6.00 cap_ask
 hseg v06b documents-tall-850 6.03 cap_docs
 hseg v06c forms-tall-850     3.00 cap_forms
-seg  v14 home-tall   19.46 3813 4400 cap_leap
-seg  v15 home-tall   20.53 4400 4700
+seg  v14 home-tall   "$(segdur n14)" 3813 4400 cap_leap
+seg  v15 home-tall   "$(segdur n15)" 4400 4700
 
 # ---------- 3. solicitor block: trim, watermark, three timed captions -------
 ffmpeg -y -i "$SOLICITOR" -i "$B/wm.png" -i "$B/cap_sewell.png" -i "$B/cap_s174.png" -i "$B/cap_portal.png" \

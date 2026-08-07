@@ -37,7 +37,7 @@ Status: open / mitigated / accepted-risk / closed-residual.
 | B2 | **No real conference has ever been recorded through the product** — pipeline proven only on pasted/synthetic transcripts | HIGH | open |
 | B3 | **LEAP integration not built; registration stalled** — reply drafted, held for Monday PM; needs Peter's manual 4-word edit | HIGH | open |
 | B4 | Deepgram configured but consent-gated; real audio untouched | MED | mitigated |
-| B5 | Capabilities video says "Meaty" in 4 lines — do not send externally until re-rendered. Blocked on a new ElevenLabs `sk_` key (legacy hex keys are now rejected by their API). Video content is otherwise still accurate — verified 2026-08-07 that nothing in the narration was made false by the security work or the origin-story correction. | MED | open |
+| B5 | Capabilities video mispronunciation — **FIXED 2026-08-07.** Four lines re-rendered with a new ElevenLabs `sk_` key; the render script now DERIVES segment lengths from the audio, so a future re-record can't silently desynchronise the video (the new lines moved by up to 1.6s). | MED | **closed** |
 | B6 | Website-facing 60–90s client video cut not made | LOW | open |
 | B7 | app/CLAUDE.md stale storage claim ("R2 in production" — actually local Fly volume + R2 backup) | LOW | open (doc drift) |
 | B8 | No solicitor billing (deliberate; sales-led grants) — becomes work at firm #2 | LOW | accepted-risk |
