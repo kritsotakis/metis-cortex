@@ -1,11 +1,6 @@
-# Metis — client agreement (as shown before any access)
+# Metis Cortex — Client Agreement (live text)
 
-**Version:** 2026-07-28.2
-
-Every user must read and accept this before they can open a matter. Changing
-the version forces everyone to accept again.
-
----
+Version: 2026-08-16.1 — regenerated from shared/clientAgreement.ts on 2026-08-16. This is exactly what the app shows and records acceptance of.
 
 ## Metis is not a lawyer, and this is not legal advice
 
@@ -21,7 +16,7 @@ Metis uses AI, and AI makes mistakes. It cannot read handwriting or scanned docu
 
 ## If your situation is urgent, get help now — not from Metis
 
-Metis is not for emergencies. If you or a child are in immediate danger, call 000. If you are worried about family violence, or that someone may take a child overseas or refuse to return them, that needs a lawyer urgently — there are court orders that can only help if they are made in time. Free help: Legal Aid NSW 1800 451 784, or 1800RESPECT (1800 737 732) for family violence support. Do not wait on Metis before making those calls.
+Metis is not for emergencies. If you or a child are in immediate danger, call 000. If you are worried about family violence, or that someone may take a child overseas or refuse to return them, that needs a lawyer urgently — there are court orders that can only help if they are made in time. Free help: Legal Aid NSW LawAccess 1300 888 529, or 1800RESPECT (1800 737 732) for family violence support. Do not wait on Metis before making those calls.
 
 ## If your matter goes to court, there are rules about using AI
 
@@ -29,9 +24,12 @@ The Federal Circuit and Family Court issued a Practice Direction on artificial i
 
 ## Your information
 
-What you upload is stored so the tool can work, and is visible only to your account. We do not use your documents or your matter to train AI models. To read and answer your questions, the text of your documents is sent to an AI provider that processes it overseas. If that is not acceptable for your matter, please don't upload sensitive material — and raise it with your solicitor.
+What you upload is stored so the tool can work, and is visible only to your account. We do not use your documents or your matter to train AI models. To read and answer your questions, the text of your documents is sent to Anthropic in the United States, under commercial terms that prohibit training on it. If that is not acceptable for your matter, please don't upload sensitive material — and raise it with your solicitor. Using Metis does not create a lawyer–client relationship, and what you write here is not privileged; if privilege matters to your case, ask your solicitor before uploading.
 
 ## This is early software
 
-Metis is new and still being built. Parts of it will be rough, and some things will be missing entirely. It is offered as-is, with no guarantee, and you use it at your own risk. You can stop at any time and ask us to delete your matter.
+Metis is new and still being built. Parts of it will be rough, and some things will be missing entirely. We don't promise it is complete or error-free — please check anything that matters. Your rights under the Australian Consumer Law are not affected. You can stop at any time and ask us to delete your matter.
 
+---
+
+**Confirmation the user ticks:** I understand Metis is not a lawyer and does not give legal advice, and that a qualified solicitor needs to review anything before I rely on it.

@@ -1,0 +1,39 @@
+# Solicitor lifecycle — primary-source compliance research (2026-08-16)
+
+Five parallel research passes, same discipline as the billing/trust pass: statute and regulator text fetched and quoted, secondary sources flagged, anything unfetchable marked unverified. What each found and what changed in Metis (v146–v148).
+
+## 1. Costs disclosure & conflicts
+- **s 174(2)(a) rights fetched verbatim** — the four client rights are now reproduced word-for-word (with the NSW authority named for (iv)) instead of the `[LAWYER TO CONFIRM]` placeholder. s 174(1)(b) ongoing-disclosure sentence included. Form 1's seven rights and fixed estimate sentence available for the standard tier.
+- **Thresholds are LPUL Sch 4 cl 18** ($750 / $3,000 ex GST ex disbursements): <$750 no disclosure required; $750–$3,000 Form 1 *permitted*; >$3,000 full. LSC's draft amendment (consultation closed 16 Jul 2026) would lift the upper to **$10,000** and replace Forms 1/2 — not yet made. Now config in `server/costsRules.ts`.
+- **s 181(7)(b)**: no conditional ("no win no fee") costs agreements in Family Law Act proceedings — stated in the generated agreement; s 180(4) noted.
+- **Conflict checks** (ASCR rr 10–12; LSNSW Compliance Review 2024; LSJ Feb 2026 "robust conflict checking systems"): search full names incl. aliases and — in family law — the spouse/partner; related entities; scope must include prospective/consult-only contacts ("former client" includes anyone who gave confidential information without a retainer); record the decision AND rationale; re-run when parties change. Record expanded accordingly; non-clear outcomes must name the rule engaged; conflicts must record resolution (declined / informed consent / information barrier). Family-law stricter standard flagged (*Thevenaz*, *Magro*).
+
+## 2. Client identification & AML/CTF Tranche 2
+- Lawyers providing **Table 6 designated services** (real-estate transactions, entity/trust formation, managing client property to advance a transaction, etc.) are AUSTRAC reporting entities from **1 July 2026** (enrol within 28 days of first designated service). **Ordinary litigation and court-ordered settlements — including family-law consent orders — are NOT designated services** (AUSTRAC worked examples).
+- AUSTRAC's expectation is to **record the document details used to verify, not keep a copy** ("you must record the passport details … rather than making a copy"). Metis' old record (type + sighted) was too thin. Now: number (encrypted, never an identifier), issuer, expiry, original sighted, likeness confirmed, method, verifier, PEP/TFS screen, risk rating, and a per-matter designated-service flag so a family-law-only matter can legitimately say "no CDD engaged".
+- ARNECC VOI Standard (conveyancing) differs — it requires copies for 7 years from lodgment. Not built (Metis is not a conveyancing tool).
+- Cyber: LSJ Jun 2026 (Chief Trust Account Investigator): payment instructions verified by call-back to a known number; "Reliance on email instructions alone is not sufficient."
+
+## 3. File notes, retention, close-out, safe custody, undertakings
+- ***Sewell v Zelden* [2010] NSWSC 1180 at [56]** (fetched): no letter or file note "particularly where the subject matter of the advice is relevant to the existence of a conflict of interest or where the client has indicated that he or she does not wish to follow the express advice given, is extraordinary." Now: attendance notes carry *advice declined* and *conflict-related* flags; either creates a confirm-in-writing obligation that **blocks matter finalisation** until a letter/email reference is recorded. Also added persons present, mode, instructions received, next actions (Lawcover template; LSNSW toolkit prompts).
+- **Retention**: ASCR r 14.2 7 years (fetched); "7 years after a minor turns 18" is **LSNSW practice, not a rule** — labelled so. Longer-retention triggers (wills/BFA instructions, live claim, LPP, tax, running limitation) listed. Safe-custody items are outside r 14 entirely.
+- **Close-out**: rebuilt from LSNSW end-of-matter strategy + LPLC file-closing guidance — closing letter; final bill or written nil-owing; r 52 trust statement (copy kept); paginated copy of returned documents; filings/orders/exhibits/counsel's brief; completed-file register (r 93); retention date. **s 177 is a pre-settlement gate**, now labelled as such.
+- **Safe custody: LPUGR r 94 is a MANDATORY register** — depositor full name and address, description, date received, packet identifier. Metis lacked depositor address and packet ID; both required now, plus owners, release authority and releasing practitioner. Wills: no NSW retention limit — effectively indefinite (QLS: "may exceed 100 years").
+- **Undertakings** (ASCR r 6): new register — given by/to, capacity (personal vs on behalf of client), exact wording, due date, performed/released in writing. Open undertakings block finalisation.
+
+## 4. Recording consent, AI use, client comms
+- **Surveillance Devices Act 2007 (NSW) s 7(3)(a)** — all *principal parties* (anyone who speaks: client, support person, interpreter) must consent. Consent record now names each attendee, role and method, not just a timestamp. [Exact section wording taken from secondary sources this pass — legislation.nsw.gov.au blocked; substance not in doubt.]
+- **SC Gen 23** (3 Feb 2025) and **FCFCOA PD-AI** (2026): no Gen-AI content in affidavits/witness statements (§10 / §4.9); citations verified independently and not with an AI tool (§§16–17); "closed AI" posture (no training, controlled environment). Brief prompt now says so explicitly. LSNSW *Solicitor's Guide to Responsible Use of AI* (Jan 2026): client should be aware and approve of AI use; time saved should be reflected in the bill.
+- **LPUL s 10** (LSNSW PSU paper Aug 2025): whether something is legal practice is objective — a disclaimer alone doesn't save a tool; what does is that AI drafts cannot reach a client without a solicitor's affirmative approval (already the design).
+- **Portal**: APP 5-shaped notice added (AML/CTF-linked firms are APP entities from 1 Jul 2026; general small-business exemption removal still not legislated); payment-fraud warning fixed in the portal; outbound solicitor messages containing bank-detail patterns require an explicit confirmation step.
+
+## 5. Client-side key dates
+- All five existing rules verified verbatim. Anchor sharpened: s 44(3) runs from the date the divorce order **took effect** (s 55: one month after made) — the UI now says "not the hearing date".
+- Added 14 fixed periods (each quoted): FCFCOA r 13.03 appeal 28d; CS(R&C) s 81 objection 28d; P&A s 92 both limbs (earliest protected distribution) + s 42(2)(b) 14d; WIMWCA s 261 6mo (awareness anchor, extendable) + WCA 1987 s 151D 3y; RTA reg 39(8) bond 6mo from *pay-out* + 30d rent-increase; Bankruptcy Act s 41(2A) 21d + s 44(1)(c) 6mo; Limitation Act s 14(1) 6y + FTA s 79L 3y; SSAA s 109 13-week arrears cut-off + ART second review 28d.
+- **Rejected as unsafe**: immigration (Migration Act s 347(3) 14/28d with **no extension**, anchor is *deemed* notification under s 494C; reg 4.10 is repealed and must not be cited); Fines Act (dates printed on the notice); personal-injury discoverability; contraventions/consent orders (no fixed period).
+
+## Still open / for John–Konstan
+- Whether their costs agreement discloses the 6-minute unit; whether they want fee push into LEAP (API needs Marketplace approval) or CSV.
+- SDA s 7 exact wording to be re-read on legislation.nsw.gov.au before any client-facing consent script is finalised.
+- LSC costs-disclosure amendment (upper threshold → $10,000): watch for gazettal; thresholds are config.
+- Whether the firm provides any Table 6 designated service (conveyancing/estates with property transfers) — decides whether AML/CTF CDD, enrolment and a program apply to them at all.
