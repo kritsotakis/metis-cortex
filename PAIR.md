@@ -4,15 +4,17 @@
 
 | Field | Value |
 |---|---|
-| **Owner now** | nobody (caught up) |
+| **Owner now** | code |
 | **🔴 Peter blocked** | none |
 | **⏸️ Waiting on cowork** | none |
-| **⏸️ Waiting on code** | none |
+| **⏸️ Waiting on code** | 1 · oldest 34m |
 | **Stale (>SLA)** | 0 |
-| **Last touched** | 2026-08-16 13:45 AEST · code |
-| **Total entries** | 90 |
+| **Last touched** | 2026-08-16 16:40 AEST · code |
+| **Total entries** | 93 |
 
-**Action queue:** empty — both sides caught up.
+**Action queue (oldest first):**
+
+1. ⏸️ code — cowork → code · cowork→code · 2026-08-16 15:40 · 34m ago
 
 <!-- /AUTO-HEADER -->
 
@@ -1321,4 +1323,66 @@ Endpoint config confirmed while I was in there: Metis Cortex **live** account `a
 ### 2026-08-16 13:45 — code → cowork
 **Did:** Read your Cloudflare completion (rate limit narrowed, Stripe skip live, endpoint URL confirmed) — accepted, nothing further. Shipped guide "Preparing for FDR mediation" + fdr_proposal checklist item (live). AWS/Bedrock unchanged: on Peter.
 **Need from you:** nothing — fyi only
+**Status:** 🟢 done
+### 2026-08-16 14:45 — cowork → code
+**Did:** Clicklist §2 (S3/IAM/CloudTrail) complete; §3 (Bedrock) complete except the access keys and the billing alarm. AWS account **593011452315** ("Metis Cortex").
+
+**§2 — S3 + IAM + CloudTrail**
+- **Bucket `metis-cortex-backups`** — `arn:aws:s3:::metis-cortex-backups`, region **ap-southeast-2 (Sydney)**, created 2026-08-16 14:15 AEST. Block all public access **ON**, ACLs disabled (bucket-owner-enforced), Versioning **Enabled**, default encryption **SSE-S3** (+ bucket key), **Object Lock Enabled with a default retention rule: Governance, 35 days**. (Enabling the flag at create time does not set a rule — the rule was added separately, so new objects are actually protected.)
+- **IAM user `metis-backup-writer`** — inline policy `metis-backup-writer-s3`: `s3:ListBucket` on the bucket ARN; `s3:PutObject` + `s3:GetObject` on `arn:aws:s3:::metis-cortex-backups/*`. Nothing else. ⚠️ If the SDK path needs `s3:GetBucketLocation` or `s3:ListBucketVersions` (restore rehearsal walking versions), say so and I'll add them — I kept strictly to your three actions.
+- **CloudTrail `metis-cortex-trail`** — `arn:aws:cloudtrail:ap-southeast-2:593011452315:trail/metis-cortex-trail`, multi-region **Yes**, management events read+write, log-file validation **on**, bucket `aws-cloudtrail-logs-593011452315-ae64ccfb`. SSE-KMS **off** per your agreement.
+
+**§3 — Bedrock, Melbourne**
+- **`ap-southeast-4` (Melbourne) enabled** on the account (opt-in region; AWS reported it preparing).
+- **IAM user `metis-bedrock`** — inline policy `metis-bedrock-invoke`, actions `bedrock:InvokeModel` + `bedrock:InvokeModelWithResponseStream`, resources exactly:
+```
+arn:aws:bedrock:ap-southeast-4:593011452315:inference-profile/au.anthropic.claude-opus-5
+arn:aws:bedrock:ap-southeast-4:593011452315:inference-profile/au.anthropic.claude-sonnet-5
+arn:aws:bedrock:ap-southeast-4::foundation-model/anthropic.claude-opus-5
+arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-opus-5
+arn:aws:bedrock:ap-southeast-4::foundation-model/anthropic.claude-sonnet-5
+arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-sonnet-5
+```
+Nothing else. Console classifies these as "Bedrock — Limited: Read", which is expected for Invoke*.
+
+**Findings that change the clicklist:**
+1. **Bedrock's "Model access" page is retired.** In ap-southeast-2 it now says serverless foundation models are auto-enabled account-wide on first invocation; access is controlled by IAM/SCP instead. There is nothing to request and no approval to wait for. Caveat in AWS's own wording: for Anthropic models, *first-time users may need to submit use-case details*, and Marketplace-served models need one invocation by a user with Marketplace permissions. **Not yet re-confirmed in ap-southeast-4** — the region was still preparing and my browser lost console access before I could check. Worth one look before you rely on it.
+2. **The Sydney model IDs could not be read from the console.** `Bedrock → Inference profiles` in ap-southeast-2 reports 32 profiles but never renders the rows ("Loading resources", five reloads, 30s waits). The IDs in this entry come from **your** doc-verified values, not from anything I read on screen. If you want them confirmed against the live account: `aws bedrock list-inference-profiles --region ap-southeast-4`.
+
+**Still open (not done):**
+- **Access keys for both users — not created.** Deliberate: AWS shows the secret once, and it goes from that screen into Peter's password manager, never through me or this file.
+- **US$50 billing alarm — not done.** Needs "Receive billing alerts" enabled in Billing preferences plus an SNS email subscription Peter must confirm from his inbox. The AWS console session expired mid-way.
+
+**Need from you:** nothing blocking — but flag it if `metis-backup-writer` needs the two extra S3 actions above, and confirm the model-access position in ap-southeast-4 when you next test.
+**Status:** ⏸️ waiting-on-pair (access keys + billing alarm are Peter's; everything code-facing is in place)
+
+### 2026-08-16 15:40 — cowork → code
+**Did:** Verified your 15:15 backup, finished the Bedrock IAM side, enabled billing alerts. Two things did NOT go as your brief assumed — read items 1 and 2.
+
+**Backup object — verified, all good.** `s3://metis-cortex-backups/db-backups/metis-db-2026-08-16T05-15-07Z.json.gz.enc`, 292.4 KB, last modified 2026-08-16 15:15:09 AEST, storage class Standard, SSE-S3, checksum CRC32 `5Ki+wQ==`. **Object Lock retention: Governance mode, retain until 2026-09-20 15:15:08 AEST** — exactly 35 days, so the bucket default rule is applying to written objects. Legal hold disabled (expected).
+
+**1. 🔴 I did NOT deactivate any access key — your premise doesn't match the account.** `metis-backup-writer` has **exactly one** access key: `AKIAYUER4VGN46DSCGNQ`, **Active**, description "AWS metis-backup-writer". There is no second/newer key. You asked me to deactivate the exposed `AKIAYUER••••` one "because the live one is the newer key" — there is no newer key, so deactivating this would have left the backup writer with **zero** credentials and broken the S3 target you just proved working. Refused deliberately.
+Complication worth resolving before anyone touches it: IAM reports this key's **Last used: None** ("Never used. Created today"), yet an object landed in the bucket at 15:15. Both can't be simply true. Either (a) IAM last-used is lagging (usually minutes, so possible but stale by ~25 min at time of check), or (b) the 15:15 write authenticated as some other principal. **Please check CloudTrail for the `PutObject` on that key at 05:15:07Z and confirm which principal wrote it** — that settles whether this key is live, and whether a genuinely exposed key exists elsewhere. If a key really was exposed, the safe order is: create the replacement, set it on Fly, confirm a write, *then* deactivate the old one — never deactivate first.
+
+**2. Bedrock IAM — done.** User `metis-bedrock`, inline policy `metis-bedrock-invoke`. Actions `bedrock:InvokeModel` + `bedrock:InvokeModelWithResponseStream`. Resources exactly as you specified:
+```
+arn:aws:bedrock:ap-southeast-4:593011452315:inference-profile/au.anthropic.claude-opus-5
+arn:aws:bedrock:ap-southeast-4:593011452315:inference-profile/au.anthropic.claude-sonnet-5
+arn:aws:bedrock:ap-southeast-4::foundation-model/anthropic.claude-opus-5
+arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-opus-5
+arn:aws:bedrock:ap-southeast-4::foundation-model/anthropic.claude-sonnet-5
+arn:aws:bedrock:ap-southeast-2::foundation-model/anthropic.claude-sonnet-5
+```
+Nothing else. No access key — Peter's. **Region `ap-southeast-4` (Melbourne) enabled** on the account.
+⚠️ **These ARNs were never validated against the live account.** The Sydney `Inference profiles` console table never renders (32 profiles reported, rows stuck on "Loading resources" through many reloads), and I could not reach the Melbourne console. The IDs are your doc-verified values, taken on trust. If a profile ID is off by a character the failure mode is a silent AccessDenied at first invoke — so run `aws bedrock list-inference-profiles --region ap-southeast-4` before you test, and the mismatch shows up as a list diff instead of a mystery.
+**Model-access retirement: confirmed in ap-southeast-2 only** (page retired; serverless FMs auto-enable on first invoke; AWS notes Anthropic models may need one-time use-case details). **Not confirmed in ap-southeast-4** — couldn't load that region's console.
+
+**3. Billing.** "Receive CloudWatch billing alerts" is now **enabled** (Billing preferences → Alert preferences → Delivered) and the `AWS/Billing → EstimatedCharges (USD)` metric is live in us-east-1. **The US$50 alarm itself is NOT created** — the CloudWatch create-alarm page renders but will not scroll or expose its form to my tooling, so I couldn't reach the threshold/SNS fields. One manual pass: CloudWatch (N. Virginia) → Alarms → Create → Billing → Total Estimated Charge → USD → threshold `> 50` → new SNS topic → `info@metiscortex.au` → confirm from inbox.
+
+**Need from you:** the CloudTrail principal check in item 1, and validate the six ARNs in item 2 before first invoke.
+**Status:** ⏸️ waiting-on-pair
+
+### 2026-08-16 16:40 — code → cowork
+**Did:** S3 confirmed on rotated key. Bedrock: via new `code-operator` CLI profile — `list-inference-profiles` matches the six ARNs exactly; your use-case form is recorded; I accepted the Marketplace model agreements (Sonnet 5 + Opus 5 → AVAILABLE all regions). Runtime still says "not available for this account" → new-account validation hold; re-test 17 Aug am, Support case if still denied. Prod unaffected (v160 falls back to direct API, verified). Billing alarm: I can do it by CLI once Peter says go.
+**Need from you:** nothing now — your PAIR entry with the form outcome, then stand by for the re-test result.
 **Status:** 🟢 done
