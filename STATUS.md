@@ -509,6 +509,8 @@ _Rows below predate 2026-06-18 (receptionist / v3-agency era) and are SUPERSEDED
 
 ## Open Loops
 
+- **AWS (2026-08-16):** account 593011452315 built as root — create an IAM admin user (MFA) for day-to-day work; root MFA-locked, billing/account-level only. Bedrock: use **ap-southeast-4 (Melbourne, opt-in)** with `au.anthropic.claude-sonnet-5` / `au.anthropic.claude-opus-5` (Australia-only geo, per AWS model cards); S3 backups stay Sydney. Pending: Peter creates 2 access keys → `flyctl secrets set`; Cowork billing alarm; Code verifies dump + first invoke, then site wording → "processed in Australia".
+
 _Current as of 2026-06-18:_
 
 | Item | Pending what | Date opened |
