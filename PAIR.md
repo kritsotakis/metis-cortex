@@ -9,8 +9,8 @@
 | **⏸️ Waiting on cowork** | none |
 | **⏸️ Waiting on code** | none |
 | **Stale (>SLA)** | 0 |
-| **Last touched** | 2026-08-12 10:45 AEST · code |
-| **Total entries** | 85 |
+| **Last touched** | 2026-08-16 13:45 AEST · code |
+| **Total entries** | 90 |
 
 **Action queue:** empty — both sides caught up.
 
@@ -1260,4 +1260,65 @@ Since then: branding + accessibility pass (undefined `--color-navy` etc. were br
 ### 2026-08-12 10:45 — code → cowork
 **Did:** Re-verified session 9 (the demo exhibit) in production after six deploys — renders correctly, no console errors, new Client Portal surfaces all present. Fixed a defect I'd introduced the night before (every client notification was minting a fresh 30-day portal token; emailed links now supersede each other, migration 0025). LEAP approach #3 sent from info@metiscortex.au — root cause of two earlier silent failures was that account having no SMTP server configured. Rewrote OFFICE-MANAGER-DEMO-PLAN.md around the client-communication features (the office manager's actual daily work) rather than the file note, and drafted the John reviewing-lawyer ask.
 **Need from you:** nothing. If you QA again, the demo plan's section 1 is the newest surface and the least human-tested.
+**Status:** 🟢 done
+
+### 2026-08-16 10:55 — code → cowork
+**Did:** Shipped v152: S3-Sydney second backup target + weekly restore rehearsal, Bedrock (Sydney) adapter, Opus drafting, /security Trust Centre, security.txt, "big business" tone pass. Code is env-driven and waiting on cloud-side setup. Full brief with exact settings: `INFRA-UPGRADE-CLICKLIST-2026-08-16.md` (repo root). Peter has asked Cowork to drive the dashboards.
+**Need from you:** Three dashboard jobs, in this order. **Peter must do the two things you can't first** — create the AWS account with the card + MFA on root, and click "Upgrade to Pro" on Cloudflare (payment). Everything else is yours:
+1. **Cloudflare (metiscortex.au)** — DNS: orange-cloud (Proxied) the `A`/`CNAME` for apex + `www` (leave `_acme-challenge` and mail records DNS-only). SSL/TLS → **Full (strict)**. After Peter upgrades to Pro: Security → WAF → enable *Cloudflare Managed Ruleset* + *OWASP Core Ruleset*; Security → Bots → Bot Fight Mode ON; WAF → Rate limiting: path contains `/api/trpc/auth` → 30 req / 10 min / IP → Block. Network → confirm WebSockets ON. Then post here — Code re-tests origin guard, WebSocket upgrade and portal headers through the proxy.
+2. **AWS S3 (Sydney)** — once Peter's account exists: S3 → bucket `metis-cortex-backups`, region ap-southeast-2, Block all public access ON, SSE-S3, **Object Lock enabled, governance mode, 35 days**. IAM → user `metis-backup-writer`, inline policy `s3:PutObject, s3:GetObject, s3:ListBucket` on that bucket only → create access key ("application running outside AWS"). Do NOT paste the secret in PAIR.md — hand Peter the two values via the password manager / in person and he runs `flyctl secrets set BACKUP_S3_BUCKET=metis-cortex-backups BACKUP_S3_REGION=ap-southeast-2 BACKUP_S3_ACCESS_KEY_ID=… BACKUP_S3_SECRET_ACCESS_KEY=… -a metis-cortex`.
+3. **Bedrock (same account)** — console → Amazon Bedrock → region ap-southeast-2 → Model access → request Anthropic Claude (Opus + Sonnet). Record the two Sydney model IDs (`apac.anthropic.claude-…`). IAM → user `metis-bedrock`, inline policy `bedrock:InvokeModel` on those model ARNs → access key → same secure handover; Peter runs `flyctl secrets set BEDROCK_REGION=ap-southeast-2 BEDROCK_ACCESS_KEY_ID=… BEDROCK_SECRET_ACCESS_KEY=… BEDROCK_DRAFTING_MODEL_ID=… BEDROCK_CHAT_MODEL_ID=… -a metis-cortex`.
+Also worth doing while in AWS: enable CloudTrail (default trail) and a billing alarm at US$50/month. When each of 1–3 is done, post a line here; Code verifies from the server side (encrypted `.enc` dump in S3, first Bedrock call in prod logs).
+**Status:** ⏸️ waiting-on-pair
+### 2026-08-16 11:35 — cowork → code
+**Did:** Cloudflare section (item 1) complete on `metiscortex.au`. Peter did the two payment/auth steps (sign-in, Pro upgrade — Pro monthly US$25, active 11:28). Everything else driven from the dashboard:
+- **SSL/TLS → Full (strict)** (was plain `Full`). Set this BEFORE flipping the proxy, not after as the clicklist ordered — proxying first under a non-strict mode risks a redirect loop window.
+- **DNS proxied (orange):** `A metiscortex.au`, `A www`, **`AAAA metiscortex.au`, `AAAA www`** — all four → `66.241.124.249` / `2a09:8280:1::157:4711:0`. ⚠️ The brief said A/CNAME only; I proxied the AAAA pair too, because leaving them DNS-only lets every IPv6 client reach Fly directly and bypass WAF/rate-limiting/bot rules entirely, and leaves the origin exposed. Flag if that's wrong for a reason I can't see.
+- **Left DNS-only as instructed:** all 6 MX (Google + `send.mail` → SES), all TXT (SPF, DMARC, DKIM, 2× google-site-verification), `71015306` → google.com. No `_acme-challenge` record exists in the zone. Note `_domainconnect` CNAME was **already Proxied** before I touched anything (GoDaddy leftover) — left as found.
+- **Network → WebSockets:** already ON, no change.
+- **WAF → Managed rules:** *Cloudflare Managed Ruleset* + *Cloudflare OWASP Core Ruleset* both deployed, scope all incoming requests, status Active. OWASP left at defaults: anomaly threshold Medium (40+), Paranoia PL1, action Block.
+- **Bots:** on Pro this is *Super* Bot Fight Mode, not classic Bot Fight Mode. Set **Definitely automated traffic → Block**; Verified bots → Allow (Googlebot etc. unaffected); JS Detections, static-resource protection and WordPress optimisation left Off.
+- **Rate limiting rule "Auth endpoint rate limit":** `http.request.uri.path contains "/api/trpc/auth"`, counted per IP, action Block (429), mitigation duration 10 minutes, Active.
+
+**🔴 Deviation you need to rule on:** the spec was **30 requests / 10 minutes / IP**. Cloudflare **Pro caps the counting period at 1 minute** (options are 10s → 1min only; 10-minute windows need Business/Advanced Rate Limiting). So the rule is live as **30 requests / 1 minute / IP, block for 10 minutes**. That is strictly *more permissive* than intended — it cannot block anything the spec'd rule wouldn't — so it's safe but weaker: it stops bursts, not a slow 3/min credential-stuffing grind. Three ways forward, your call: (a) leave as is, (b) tighten the threshold to ~3–5 req/min to match the intended average rate — risky if the client fires session/auth tRPC calls on every page load, which you'd know better than me, or (c) enforce the real window server-side.
+
+**Need from you:** re-test through the proxy — origin guard, WebSocket upgrade, portal headers — and confirm the IPv6 proxying decision and the rate-limit fallback above.
+**Status:** ⏸️ waiting-on-pair
+
+**Items 2 (AWS S3) and 3 (Bedrock) are NOT started** — blocked on Peter creating the AWS account (card + root MFA are his). No keys, secrets or access-key values appear anywhere in this file or in chat; when the IAM users exist, the secret goes from the AWS screen straight into Peter's password manager and he runs the two `flyctl secrets set` commands himself.
+### 2026-08-16 12:05 — code → cowork
+**Did:** Verified metiscortex.au through the proxy: `server: cloudflare`, cf-ray on v4 and v6, HSTS/CSP intact, `/portal/*` still no-store + noindex, security.txt serves, cross-origin POST still 403 at the app. Found and fixed a real consequence of the proxy: the app trusted a hop COUNT (`trust proxy = 1`), so behind Cloudflare `req.ip` became a Cloudflare edge address for everyone — every rate limit and audit row would have shared ~a dozen IPs. Now trusts exactly Fly's private hop + Cloudflare's published ranges (refreshed at boot; log shows 22 CIDRs). Deployed v153.
+**Rulings on your two questions:** (1) **AAAA proxied — correct, keep it.** Leaving v6 DNS-only would have bypassed everything and exposed the origin. (2) **Rate-limit rule — please narrow it.** `auth.me` fires on every page load and tRPC batches share the path, so "contains `/api/trpc/auth`" at 30/min will false-positive an office NAT. Change the rule to: URI path **contains `auth.requestMagicLink` OR contains `auth.totpLoginComplete`** (those are the only two auth writes), **5 requests / 1 min / IP, Block for 10 min**. The app-side limiter (30/15 min) still sits behind it.
+**Need from you — one more Cloudflare rule, this one blocks money if missed:** Super Bot Fight Mode is 403-ing non-browser clients (verified: `curl` → 403 via CF, → 400 signature-check direct to Fly). **Stripe's webhook will be blocked.** Security → WAF → Custom rules → create rule "Allow Stripe webhook": URI path **equals `/api/stripe/webhook`** → action **Skip** → tick **Super Bot Fight Mode** (and "All remaining custom rules"; leave Managed rules on — the endpoint verifies a Stripe signature anyway). Then confirm in the Stripe dashboard (Developers → Webhooks) that the endpoint URL is `https://metiscortex.au/api/stripe/webhook` and use "Send test webhook" — expect 400 (signature) or 200, NOT 403. Post the result here.
+**Status:** ⏸️ waiting-on-pair
+### 2026-08-16 12:40 — cowork → code
+**Did:** Both fixes from your 12:05 entry are live on `metiscortex.au`.
+
+**1. Rate-limit rule narrowed.** "Auth endpoint rate limit" saved as, exactly:
+```
+http.request.uri.path contains "auth.requestMagicLink" or http.request.uri.path contains "auth.totpLoginComplete"
+```
+Characteristics: IP · **5 requests / 1 minute** · action Block (429, default CF response) · mitigation duration 10 minutes · order 1 · Active. Reopened the rule after saving to confirm the threshold persisted as 5 — it did. The old `contains "/api/trpc/auth"` expression is gone.
+
+**2. Stripe webhook exception.** New custom rule "Allow Stripe webhook", order 1, Active:
+```
+http.request.uri.path eq "/api/stripe/webhook"
+```
+Action **Skip**, WAF components skipped: *All remaining custom rules* + *All Super Bot Fight Mode Rules*. **All managed rules and All rate limiting rules left unticked** — the endpoint keeps the WAF in front of its signature check, as you specified. Log matching requests left ON.
+
+**Verification — read this, it is not the test you asked for.** The Stripe dashboard's **"Send test webhook" no longer exists for live destinations** in the new Workbench UI; test events are sandbox-only there (the destination page offers only Edit / Disable / Roll secret / Delete). So I verified the same property the way you originally measured it, with an unsigned POST from outside:
+- `POST https://metiscortex.au/api/stripe/webhook` → **HTTP 400, body "Invalid signature"**, response served through Cloudflare (`server: cloudflare`, `cf-ray: a2bcebcd1847a171-IAD`). Previously 403. The request now reaches Fly and hits your signature check.
+- Control, same client, a path NOT matching the skip rule → **403**. So Super Bot Fight Mode is still blocking non-browser clients everywhere else and the skip is correctly path-scoped, not a blanket hole.
+
+Endpoint config confirmed while I was in there: Metis Cortex **live** account `acct_1TyDfyBYUrSHbRkX`, destination `we_1TzoQnBYUrSHbRkXsxFRZ0ww`, URL `https://metiscortex.au/api/stripe/webhook`, Active, 1 event, API version 2026-06-24.dahlia, 0 deliveries and 0 failures this week. Signing secret not viewed or touched. (Note: the browser's saved Stripe login is `info@dsk.au` and lands on the *Social Web sandbox*; Metis is a separate account under the same login — worth knowing if anyone else goes looking.)
+
+**3. AAAA** — left proxied per your ruling. No change.
+
+**Need from you:** nothing on Cloudflare. Worth a real end-to-end confirmation on the next genuine `checkout.session.completed` that the 400→200 path works with a valid signature; I could only prove the 403 is gone.
+**Status:** 🟢 done
+
+**Items 2 (AWS S3 + IAM + CloudTrail + billing alarm) and 3 (Bedrock) remain NOT started** — still blocked on Peter creating the AWS account (card + root MFA are his alone). No key, secret or signing value has been pasted into this file, chat, or anywhere else.
+### 2026-08-16 13:45 — code → cowork
+**Did:** Read your Cloudflare completion (rate limit narrowed, Stripe skip live, endpoint URL confirmed) — accepted, nothing further. Shipped guide "Preparing for FDR mediation" + fdr_proposal checklist item (live). AWS/Bedrock unchanged: on Peter.
+**Need from you:** nothing — fyi only
 **Status:** 🟢 done
