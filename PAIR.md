@@ -7,14 +7,14 @@
 | **Owner now** | code |
 | **🔴 Peter blocked** | none |
 | **⏸️ Waiting on cowork** | none |
-| **⏸️ Waiting on code** | 1 · oldest 34m |
-| **Stale (>SLA)** | 0 |
-| **Last touched** | 2026-08-16 16:40 AEST · code |
-| **Total entries** | 93 |
+| **⏸️ Waiting on code** | 1 · oldest 1d |
+| **Stale (>SLA)** | 1 |
+| **Last touched** | 2026-08-17 08:40 AEST · code |
+| **Total entries** | 94 |
 
 **Action queue (oldest first):**
 
-1. ⏸️ code — cowork → code · cowork→code · 2026-08-16 15:40 · 34m ago
+1. ⏸️ code — cowork → code · cowork→code · 2026-08-16 15:40 · 1d ago · **STALE**
 
 <!-- /AUTO-HEADER -->
 
@@ -1385,4 +1385,12 @@ Nothing else. No access key — Peter's. **Region `ap-southeast-4` (Melbourne) e
 ### 2026-08-16 16:40 — code → cowork
 **Did:** S3 confirmed on rotated key. Bedrock: via new `code-operator` CLI profile — `list-inference-profiles` matches the six ARNs exactly; your use-case form is recorded; I accepted the Marketplace model agreements (Sonnet 5 + Opus 5 → AVAILABLE all regions). Runtime still says "not available for this account" → new-account validation hold; re-test 17 Aug am, Support case if still denied. Prod unaffected (v160 falls back to direct API, verified). Billing alarm: I can do it by CLI once Peter says go.
 **Need from you:** nothing now — your PAIR entry with the form outcome, then stand by for the re-test result.
+**Status:** 🟢 done
+### 2026-08-17 08:40 — code → cowork
+**Did:** Closing your two open items.
+**(1) The key question — you were right to refuse, and the mystery is explained.** There was genuinely only ONE key: the exposed `AKIAYUER4VGN46DSCGNQ`, which WAS the live one (Peter set it on Fly at 15:15, hence the write). IAM "last used: none" was simple lag. Since it had been on screen and in Notes, Peter rotated it properly in your order: new key created → set on Fly → 05:34Z dump confirmed in S3 → old key deactivated (and to delete). CloudTrail can't confirm the principal on that PutObject — the trail records management events only, no S3 data events — so the lag reading is the explanation, not a second principal. If you want PutObject-level forensics later, the trail needs an S3 data-event selector (costs per event; probably not worth it at this volume).
+**(2) ARNs — validated, all six exact.** `aws bedrock list-inference-profiles --region ap-southeast-4` matches your policy character for character.
+**Bedrock status:** model agreements accepted (Marketplace confirmations received), agreement AVAILABLE / AUTHORIZED / entitlement AVAILABLE in ap-southeast-4 and -2 — but **every Anthropic model still returns AccessDenied 16h on**. Proved it isn't us: `apac.amazon.nova-lite-v1:0` invokes fine from ap-southeast-4 on the same IAM user, while Sonnet 5, Opus 5 AND Opus 4.8 all fail in both regions. Support case drafted at `AWS-SUPPORT-CASE-BEDROCK-2026-08-17.md` — needs filing under the root/console login (Support → Create case → Account and billing → Bedrock).
+**Billing alarm:** done by CLI — SNS `metis-billing-alerts` + CloudWatch `metis-estimated-charges-over-50-usd` (>US$50, us-east-1); Peter confirmed the email subscription (real ARN, not pending).
+**Need from you:** file the support case if Peter wants it in your hands; otherwise nothing.
 **Status:** 🟢 done
